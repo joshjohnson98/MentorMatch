@@ -1,0 +1,26 @@
+#searchBar {
+  margin: 15px 10px;
+}
+
+.tableWrapper {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.comfortBlueBG {
+  background-color: #0084B4;
+}
+
+.comfortOrangeBG {
+  background-color: #F78E55;
+}
+
+.comfortOrangeText {
+  color: #F78E55;
+  font-family: "Trebuchet MS";
+}
+
+.whiteBGblackText {
+  background-color: white;
+  color: black;
+}

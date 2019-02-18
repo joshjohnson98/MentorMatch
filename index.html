@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="comfortBlueBG" ng-app="directoryApp">
+    <div class="container">
+      <div class="comfortOrangeText row">
+        <h1><strong>UF Directory App</strong></h1>
+      </div>
+      <div class="row" ng-controller="ListingsController">
+        <div class="col-md-6">
+          <div class="input-group" id="searchBar">
+            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+            <input ng-model="typedName" type="text" class="form-control" placeholder="Search">
+          </div>
+          <div class="whiteBGblackText tableWrapper">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Building Name</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tr ng-repeat="l in listings | filter : typedName">
+                <td>{{ l.code }}</td>
+                <td>{{ l.name }}</td>
+                <td>
+                  <button ng-click="showDetails(l.code)">
+                    Info
+                  </button>
+                </td>
+                <td>
+                  <button ng-click="deleteListing(l.code)">
+                    Delete
+                  </button>
+                </td>                
+              </tr>
+            </table>
+          </div>
+          <div>
+              <form class="comfortOrangeBG jumbotron">
+                  <h2><strong>Insert New Listing</strong></h2><br>
+                  Code: <input type="text" ng-model="newCode"><br>
+                  Name: <input type="text" ng-model="newName"><br>
+                  Latitude: <input type="text" ng-model="newLat"><br>
+                  Longitude: <input type="text" ng-model="newLong"><br>
+                  Address <input type="text" ng-model="newAddress"><br>
+                  <button ng-click="addListing()">
+                    Submit
+                  </button>
+                </form>
+          </div>  
+        </div>
+        <div class="col-md-6">
+          <div class="comfortOrangeBG jumbotron">
+            <h2><strong>Detailed Information</strong></h2>
+             <p><strong> Code: </strong> {{ detailedInfo.code }} </p>
+             <p><strong> Name: </strong> {{ detailedInfo.name }} </p>
+             <p><strong> Coordinates: </strong> </p>
+                <p> Lat: {{ detailedInfo.coordinates.latitude }}</p>
+                <p> Long: {{ detailedInfo.coordinates.longitude }}</p>
+             <p><strong> Address: </strong> {{ detailedInfo.address }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="listingController.js"></script>
+    <script src="listingFactory.js"></script>
+  </body>
+</html>
