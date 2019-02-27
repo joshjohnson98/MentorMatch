@@ -1,0 +1,36 @@
+#pageTitle {
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+body {
+  background-color: #f4f3f2;
+}
+
+th {
+  background-color: #31444b;
+  color: white;
+}
+
+.glyphicon-remove-sign {
+  color:#990000;
+}
+
+#infoArea {
+  background-color: #31444b;
+  color:white;
+
+}
+
+#addArea h3 {
+  color: #222;
+}
+
+#searchBar {
+  margin: 15px 10px;
+}
+
+.tableWrapper {
+  max-height: 400px;
+  overflow: auto;
+}
