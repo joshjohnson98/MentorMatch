@@ -1,9 +1,9 @@
 {
-  "name": "Assignment4",
+  "name": "MentorMatchApp",
   "version": "1.0.0",
-  "description": "Routing server-side requests using ExpressJS",
+  "description": "Connecting awesome people wanting to hone their craft",
   "main": "server.js",
-  "author": "Medhir Bhargava",
+  "author": "Scrum Team 5",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.14.1",
