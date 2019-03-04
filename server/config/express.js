@@ -4,7 +4,7 @@ var path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
-    listingsRouter = require('../routes/listings.server.routes');
+    router = require('../routes/server.routes');
 
 module.exports.init = function() {
   //connect to database
@@ -24,7 +24,7 @@ module.exports.init = function() {
   app.use('/', express.static(__dirname + '/../../client'));
 
   /* Use the listings router for requests to the api */
-  app.use('/api/listings', listingsRouter);
+  app.use('/api/listings', router);
 
   /* Go to homepage for all routes not specified */
   app.all('/*', function(req, res) {
