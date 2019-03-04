@@ -1,62 +1,62 @@
 
 /* Dependencies */
 var mongoose = require('mongoose'),
-    Listing = require('../models/server.model.js');
+    Person = require('../models/server.model.js');
 
 /*
-  In this file, you should use Mongoose queries in order to retrieve/add/remove/update listings.
+  In this file, you should use Mongoose queries in order to retrieve/add/remove/update persons.
   On an error you should send a 404 status code, as well as the error message.
-  On success (aka no error), you should send the listing(s) as JSON in the response.
+  On success (aka no error), you should send the person(s) as JSON in the response.
 
   HINT: if you are struggling with implementing these functions, refer back to this tutorial
   from assignment 3 https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
  */
 
-/* Create a listing */
+/* Create a person */
 exports.create = function(req, res) {
 
-  /* Instantiate a Listing */
-  var listing = new Listing(req.body);
+  /* Instantiate a Person */
+  var person = new Person(req.body);
 
 
-  /* Then save the listing */
-  listing.save(function(err) {
+  /* Then save the person */
+  person.save(function(err) {
     if(err) {
       console.log(err);
       res.status(404).send(err);
     } else {
-      res.json(listing);
+      res.json(person);
     }
   });
 };
 
-/* Show the current listing */
+/* Show the current person */
 exports.read = function(req, res) {
-  /* send back the listing as json from the request */
-  res.json(req.listing);
+  /* send back the person as json from the request */
+  res.json(req.person);
 };
 
-/* Update a listing */
+/* Update a person */
 exports.update = function(req, res) {
-  var listing = req.listing;
-  listing.name = req.body.name;
-  listing.code = req.body.code;
-  listing.address = req.body.address;
+  var person = req.person;
+  person.name = req.body.name;
+  person.code = req.body.code;
+  person.address = req.body.address;
 
-  listing.save(function(err) {
+  person.save(function(err) {
     if(err) {
       console.log(err);
       res.status(404).send(err);
     } else {
-      res.json(listing);
+      res.json(person);
     }
   });
 };
 
-/* Delete a listing */
+/* Delete a person */
 exports.delete = function(req, res) {
-  var listing = req.listing;
-  listing.remove(function(err) {
+  var person = req.person;
+  person.remove(function(err) {
     if(err) {
       res.status(404).send(err);
     }
@@ -66,26 +66,26 @@ exports.delete = function(req, res) {
   })
 };
 
-/* Retreive all the directory listings, sorted alphabetically by listing code */
+/* Retreive all the directory persons, sorted alphabetically by person code */
 exports.list = function(req, res) {
-  Listing.find({}, null, {sort: {code: 1}}, function(err, obj){
+  Person.find({}, null, {sort: {code: 1}}, function(err, obj){
     res.json(obj);
   });
 };
 
 /*
-  Middleware: find a listing by its ID, then pass it to the next request handler.
+  Middleware: find a person by its ID, then pass it to the next request handler.
 
-  Find the listing using a mongoose query,
-        bind it to the request object as the property 'listing',
+  Find the person using a mongoose query,
+        bind it to the request object as the property 'person',
         then finally call next
  */
 exports.listingByID = function(req, res, next, id) {
-  Listing.findById(id).exec(function(err, listing) {
+  Person.findById(id).exec(function(err, person) {
     if(err) {
       res.status(404).send(err);
     } else {
-      req.listing = listing;
+      req.person = person;
       next();
     }
   });
