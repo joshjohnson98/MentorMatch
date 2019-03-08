@@ -34,4 +34,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       $scope.detailedInfo = $scope.listings[index];
     };
   }
+
+
+  
 ]);

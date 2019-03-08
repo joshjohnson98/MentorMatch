@@ -1,10 +1,10 @@
 #pageTitle {
-  color: #ffffff;
+  color: #2A363B;
   margin-left: 10px;
 }
 
 body {
-  background-color: #f4f3f2;
+  background-color: #EEEEEE;
 }
 
 th {
@@ -44,4 +44,11 @@ th {
 }
 .offWhite{
   color: #EEEEEE;
+}
+.form-check-label{
+  font-size: 14px;
+  
+}
+.bottom-buffer{
+  margin-bottom: 20px;
 }
