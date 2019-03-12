@@ -2,13 +2,30 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+  	<meta charset = "utf-8">
+	  <title>Firebase Login</title>
   </head>
   <body ng-app="directoryApp">
 
+    <div class ="main-div">
+      <h1>Create New Account</h1>
+      <h3>Email</h3>
+      <input id = "textEditEmailSignUp" type = "email"/>
+      <h3>Password</h3>
+      <input id = "textEditPasswordSignUp" type = "password" />
+      <h3>Confirm Password</h3>
+      <input id = "textEditPasswordSignUp2" type = "password" />
+      
+      <button1 id = "buttonSignUp"> Sign Up </button1>
+    </div>
+
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src = "js/signup.js"></script>
     <script src="js/app.js"></script>
     <script src="js/factories/factory.js"></script>
     <script src="js/controllers/controller.js"></script>

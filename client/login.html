@@ -2,10 +2,31 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css"/>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+	  <meta charset = "utf-8">
+	  <title>Firebase Login</title>
+	  <meta name="google-signin-scope" content="profile email">
+	  <meta name="google-signin-client_id" content="94097431082-u080o437bpmes48td7lh5ojcungl8hsn.apps.googleusercontent.com" >
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
   </head>
   <body ng-app="directoryApp">
 
+    <div class ="main-div">
+      <h1>Sign In</h1>
+      <h3>Email</h3>
+      <input id = "textEditEmailLogin" type = "email"/>
+      <h3>Password</h3>
+      <input id = "textEditPasswordLogin" type = "password" />
+      <!--<button id = "buttonToSignUp" onclick="location.href='signup.html';"> Sign up</button>-->
+      <button1 id = "buttonLogin"> Login </button1>
+      <div id = "googleButton" class = "g-signin2" data-onsuccess = "onSignin" align="center"></div>
+      <div align="center" ><button class = "link" id = "buttonToSignUp" >FORGOT PASSWORD</button>/<button class = "link" onclick="location.href='signup.html';">CREATE ACCOUNT</button></div>
+    </div>
+    
+
+
+    <script src = "js/login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
