@@ -3,21 +3,50 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /* Create your schema */
-var listingSchema = new Schema({
-  name: {
+var profileSchema = new Schema({
+  ID: {
     type: String, 
     required: true
   }, 
-  code: {
-    type: String, 
-    required: true, 
-    unique: true
-  }, 
-  address: String, 
-  coordinates: {
-    latitude: Number, 
-    longitude: Number
+  name:{
+    type:String,
+    score:Number
   },
+  ethnicity:{
+    type:String,
+    score:Number
+  },
+  gender: {
+    type:String,
+    score:Number
+  },
+  industry:{
+    type:String,
+    score:Number
+  },
+  bio:String,
+  isMentor:boolean,
+  mentorStrengths:{
+    type:String,
+    score:Number
+  },
+  isMentee:boolean,
+  menteeGoals:{
+    type:String,
+    score:Number
+  },
+  language:{
+    type:String,
+    score:Number
+  },
+  location:{
+    country:String,
+    state:String,
+    city:String,
+    score:Number
+
+  },
+
   created_at: Date,
   updated_at: Date
 });
@@ -34,7 +63,7 @@ listingSchema.pre('save', function(next) {
 });
 
 /* Use your schema to instantiate a Mongoose model */
-var Listing = mongoose.model('Listing', listingSchema);
+var Profile = mongoose.model('Profile', profileSchema);
 
 /* Export the model to make it avaiable to other parts of your Node application */
-module.exports = Listing;
+module.exports = Profile;

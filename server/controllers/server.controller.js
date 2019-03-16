@@ -1,7 +1,7 @@
 
 /* Dependencies */
 var mongoose = require('mongoose'),
-    Person = require('../models/server.model.js');
+    Profile = require('../models/server.model.js');
 
 /*
   In this file, you should use Mongoose queries in order to retrieve/add/remove/update persons.
@@ -16,16 +16,16 @@ var mongoose = require('mongoose'),
 exports.create = function(req, res) {
 
   /* Instantiate a Person */
-  var person = new Person(req.body);
+  var profile = new Profile(req.body);
 
 
   /* Then save the person */
-  person.save(function(err) {
+  profile.save(function(err) {
     if(err) {
       console.log(err);
       res.status(404).send(err);
     } else {
-      res.json(person);
+      res.json(profile);
     }
   });
 };
@@ -33,17 +33,41 @@ exports.create = function(req, res) {
 /* Show the current person */
 exports.read = function(req, res) {
   /* send back the person as json from the request */
-  res.json(req.person);
+  res.json(req.profile);
 };
 
 /* Update a person */
 exports.update = function(req, res) {
-  var person = req.person;
-  person.name = req.body.name;
-  person.code = req.body.code;
-  person.address = req.body.address;
+  var profile = req.profile;
+  profile.ID = req.body.ID;
+  profile.name = req.body.name;
 
-  person.save(function(err) {
+  profile.ethnicity = req.body.ethnicity;
+  profile.ethnicity.score = req.body.ethnicity.score;
+
+  profile.industry = req.body.industry;
+  profile.industry.score = req.body.industry.score;
+
+  profile.gender = req.body.gender;
+  profile.gender.score = req.body.gender.score;
+
+  profile.bio = req.body.bio;
+
+  profile.isMentor = req.body.isMentor;
+  profile.mentorStrengths = req.body.mentorStrengths;
+  profile.mentorStrengths.score = req.body.mentorStrengths.score;
+
+  profile.isMentee = req.body.isMentee;
+  profile.menteeGoals = req.body.menteeGoals;
+  profile.menteeGoals.score = req.body.menteeGoals.score;
+
+  profile.language = req.body.language;
+  profile.language.score = req.body.language.score;
+
+  profile.location = req.body.location;
+  profile.location.score = req.body.location.score;
+
+  profile.save(function(err) {
     if(err) {
       console.log(err);
       res.status(404).send(err);
@@ -55,8 +79,8 @@ exports.update = function(req, res) {
 
 /* Delete a person */
 exports.delete = function(req, res) {
-  var person = req.person;
-  person.remove(function(err) {
+  var profile = req.profile;
+  profile.remove(function(err) {
     if(err) {
       res.status(404).send(err);
     }
@@ -68,7 +92,7 @@ exports.delete = function(req, res) {
 
 /* Retreive all the directory persons, sorted alphabetically by person code */
 exports.list = function(req, res) {
-  Person.find({}, null, {sort: {code: 1}}, function(err, obj){
+  Profile.find({}, null, {sort: {code: 1}}, function(err, obj){
     res.json(obj);
   });
 };
@@ -81,11 +105,11 @@ exports.list = function(req, res) {
         then finally call next
  */
 exports.listingByID = function(req, res, next, id) {
-  Person.findById(id).exec(function(err, person) {
+  Profile.findById(id).exec(function(err, profile) {
     if(err) {
       res.status(404).send(err);
     } else {
-      req.person = person;
+      req.profile = profile;
       next();
     }
   });
