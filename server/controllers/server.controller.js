@@ -4,22 +4,22 @@ var mongoose = require('mongoose'),
     Profile = require('../models/server.model.js');
 
 /*
-  In this file, you should use Mongoose queries in order to retrieve/add/remove/update persons.
+  In this file, you should use Mongoose queries in order to retrieve/add/remove/update profiles.
   On an error you should send a 404 status code, as well as the error message.
-  On success (aka no error), you should send the person(s) as JSON in the response.
+  On success (aka no error), you should send the profile(s) as JSON in the response.
 
   HINT: if you are struggling with implementing these functions, refer back to this tutorial
   from assignment 3 https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
  */
 
-/* Create a person */
+/* Create a profile */
 exports.create = function(req, res) {
 
   /* Instantiate a Person */
   var profile = new Profile(req.body);
 
 
-  /* Then save the person */
+  /* Then save the profile */
   profile.save(function(err) {
     if(err) {
       console.log(err);
@@ -30,13 +30,13 @@ exports.create = function(req, res) {
   });
 };
 
-/* Show the current person */
+/* Show the current profile */
 exports.read = function(req, res) {
-  /* send back the person as json from the request */
+  /* send back the profile as json from the request */
   res.json(req.profile);
 };
 
-/* Update a person */
+/* Update a profile */
 exports.update = function(req, res) {
   var profile = req.profile;
   profile.ID = req.body.ID;
@@ -72,12 +72,12 @@ exports.update = function(req, res) {
       console.log(err);
       res.status(404).send(err);
     } else {
-      res.json(person);
+      res.json(profile);
     }
   });
 };
 
-/* Delete a person */
+/* Delete a profile */
 exports.delete = function(req, res) {
   var profile = req.profile;
   profile.remove(function(err) {
@@ -90,7 +90,7 @@ exports.delete = function(req, res) {
   })
 };
 
-/* Retreive all the directory persons, sorted alphabetically by person code */
+/* Retreive all the directory profiles, sorted alphabetically by profile code */
 exports.list = function(req, res) {
   Profile.find({}, null, {sort: {code: 1}}, function(err, obj){
     res.json(obj);
@@ -98,10 +98,10 @@ exports.list = function(req, res) {
 };
 
 /*
-  Middleware: find a person by its ID, then pass it to the next request handler.
+  Middleware: find a profile by its ID, then pass it to the next request handler.
 
-  Find the person using a mongoose query,
-        bind it to the request object as the property 'person',
+  Find the profile using a mongoose query,
+        bind it to the request object as the property 'profile',
         then finally call next
  */
 exports.listingByID = function(req, res, next, id) {

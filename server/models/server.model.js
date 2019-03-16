@@ -25,12 +25,12 @@ var profileSchema = new Schema({
     score:Number
   },
   bio:String,
-  isMentor:boolean,
+  isMentor:Boolean,
   mentorStrengths:{
     type:String,
     score:Number
   },
-  isMentee:boolean,
+  isMentee:Boolean,
   menteeGoals:{
     type:String,
     score:Number
