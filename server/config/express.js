@@ -21,14 +21,14 @@ module.exports.init = function() {
 
 
   /*Serve static files */
-  app.use('/', express.static(__dirname + '/../../client/login.html'));
+  app.use('/', express.static(__dirname + '/../../client'));
 
   /* Use the listings router for requests to the api */
   app.use('/api/listings', router);
 
   /* Go to homepage for all routes not specified */
   app.all('/*', function(req, res) {
-    res.sendFile(path.resolve('client/login.html'));
+    res.sendFile(path.resolve('client/index.html'));
   });
 
   return app;
