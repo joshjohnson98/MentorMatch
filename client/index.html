@@ -3,11 +3,13 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
-    
+    <link href="hide-show-fields-form.css" rel="stylesheet"/>
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+  
   </head>
   <body ng-app="directoryApp">
     <div class="container">
@@ -35,29 +37,107 @@
                             <div class = "row bottom-buffer">
                               <label for="NameInput" class="col-md-2 col-form-label">Name</label>
                               <input type="text" ng-model = "Name" id="NameInput" class="form-control col-md-4" placeholder="Name">
-                              <div class = "col-md-1"></div>
-                              <div class="form-check form-check-inline col-md-2" >
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                  <label class="form-check-label" for="inlineCheckbox1">Use for matching</label>
-                                </div>
-                                <div class="form-check form-check-inline col-md-2" >
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                  <label class="form-check-label" for="inlineCheckbox2">Keep private</label>
-                                </div>
+                              
+                              
                             </div>
                             <div class = "row bottom-buffer">
-                                <label for="NameInput" class="col-md-2 col-form-label">Profession</label>
-                                <input type="text" ng-model = "Profession" id="JobInput" class="form-control col-md-4" placeholder="Name">
+                              <!-- Profession selection -->
+                                <label for="JobSelect" class="col-md-2 col-form-label">Profession</label>
+                                    <select class="form-control col-md-4" id="JobSelect" ng-model="job">
+                                      <option>--</option>
+                                      <option>Aerospace</option>
+                                      <option>Agriculture</option>
+                                      <option>Computer</option>
+                                      <option>Chemical</option>
+                                      <option>Education</option>
+                                    </select>
+                                
                                 <div class = "col-md-1"></div>
-                                <div class="form-check form-check-inline col-md-2" >
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                    <label class="form-check-label" for="inlineCheckbox1">Use for matching</label>
+                                <!-- refer to this for ng-model for radios
+                                  https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio0" value="option0">
+                                    <label class="form-check-label" for="professionRadio0"></label>0</label>
                                   </div>
-                                  <div class="form-check form-check-inline col-md-2" >
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">Keep private</label>
+                                  <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio1" value="option1">
+                                    <label class="form-check-label" for="professionRadio1">1</label>
+                                  </div>
+                                  <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio2" value="option2">
+                                    <label class="form-check-label" for="professionRadio2">2</label>
+                                  </div>
+                                  <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio3" value="option2">
+                                    <label class="form-check-label" for="professionRadio3">3</label>
+                                  </div>
+                                  <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio4" value="option2">
+                                    <label class="form-check-label" for="professionRadio4">4</label>
+                                  </div>
+                                  <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio5" value="option2">
+                                    <label class="form-check-label" for="professionRadio5">5</label>
                                   </div>
                               </div>
+
+
+                              <div class = "row bottom-buffer form-group">
+                              
+                                  <label for="mentorCheck" class="col-md-2 col-form-label">I want to be a mentor</label>
+                                        <select class="form-control col-md-4" id="mentorCheck" ng-model="mentor">
+                                          <option value = "no">no</option>
+                                          <option value = "yes">yes</option>
+                                        </select>
+                                
+
+                              </div>
+
+                              <div class = "row bottom-buffer form-group" id="mentorStrength">
+                                  <!-- Strengths as a mentor selection -->
+                                    <label for="mentorStrength" class="col-md-2 col-form-label">Strengths as a mentor</label>
+                                        <select class="form-control col-md-4"  ng-model="strength">
+                                          <option >--</option>
+                                          <option >Leadership</option>
+                                          <option>Public Speaking</option>
+                                          <option >Data Structures</option>
+                                          <option >Communication</option>
+                                          <option >Confidence</option>
+                                        </select>
+                                    
+                                    <div class = "col-md-1"></div>
+                                    <!-- refer to this for ng-model for radios
+                                      https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                    <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio0" value="option0">
+                                        <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio1" value="option1">
+                                        <label class="form-check-label" for="professionRadio1">1</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio2" value="option2">
+                                        <label class="form-check-label" for="professionRadio2">2</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio3" value="option2">
+                                        <label class="form-check-label" for="professionRadio3">3</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio4" value="option2">
+                                        <label class="form-check-label" for="professionRadio4">4</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio5" value="option2">
+                                        <label class="form-check-label" for="professionRadio5">5</label>
+                                      </div>
+                                  </div>
+
+
+
+
+
                         </div>
                       </form>
                     </div>
@@ -68,7 +148,6 @@
         </div>
       
             <div class="row">
-        
                 <div class="col-md-6">
                     <div class = "card" >
                         <div class="card-header" id="headingOne">
@@ -78,7 +157,7 @@
                               </button>
                             </h5>
                           </div>
-                          <div class = "collapse" id = "matchCollapse" aria-labelledby="headingOne">
+                          <div class = "collapse show" id = "matchCollapse" aria-labelledby="headingOne">
                             <div class = "card-body" >
                                 This is blank rn
                             </div>
@@ -95,7 +174,7 @@
                               </button>
                             </h5>
                           </div>
-                          <div class = "collapse" id = "savedMatchCollapse" aria-labelledby="headingOne">
+                          <div class = "collapse show" id = "savedMatchCollapse" aria-labelledby="headingOne">
                             <div class = "card-body" >
                                 This is blank rn
                             </div>
@@ -109,7 +188,19 @@
       
       
       </div>
-    
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/controllers/formController.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
