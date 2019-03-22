@@ -28,9 +28,10 @@
               auth2.attachClickHandler(element, {},
                       function (googleUser)
                       {
-                          document.getElementById('name').innerText = "Signed in: " +
-                                  googleUser.getBasicProfile().getName() + "\n Email: " +
-                                  googleUser.getBasicProfile().getEmail();
+                          // document.getElementById('name').innerText = "Signed in: " +
+                          //         googleUser.getBasicProfile().getName() + "\n Email: " +
+                          //         googleUser.getBasicProfile().getEmail();
+                          console.log(googleUser.getBasicProfile().getEmail());
                       }, function (error)
                       {
                           alert(JSON.stringify(error, undefined, 2));
@@ -40,7 +41,7 @@
       <style type="text/css">
           #customBtn {
               display: inline-block;
-              background: white;
+              background: #b8ff54;
               color: #444;
               width: 190px;
               border-radius: 5px;
@@ -56,7 +57,7 @@
               font-weight: normal;
           }
           span.icon {
-              background: url('/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+              background: url(' /identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
               display: inline-block;
               vertical-align: middle;
               width: 42px;
@@ -183,16 +184,16 @@
     <script src="js/factories/factory.js"></script>
     <script src="js/controllers/controller.js"></script>
     
-    //Google button is here,,,.........
+    <!--//Google button is here,,,.........-->
     
     <div id="gSignInWrapper">
-        <span class="label">Sign in with:</span>
+        <!--<span class="label">Sign in with:</span>-->
         <div id="customBtn" class="customGPlusSignIn">
             <span class="icon"></span>
             <span class="buttonText">Google</span>
         </div>
     </div>
-    <div id="name"></div>
+    <!--<div id="name"></div>-->
     <script>startApp();</script>
   </body>
 </html>
