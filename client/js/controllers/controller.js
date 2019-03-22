@@ -1,13 +1,17 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings) {
+
+    /* Unique identifier for current user */
+    $scope.currentUserEmail = undefined;
+
+    $scope.detailedInfo = undefined;
+
     /* Get all the listings, then bind it to the scope */
     Listings.getAll().then(function(response) {
       $scope.listings = response.data;
     }, function(error) {
       console.log('Unable to retrieve listings:', error);
     });
-
-    $scope.detailedInfo = undefined;
 
     $scope.addListing = function() {
         /* Save the article using the Listings factory */
@@ -33,6 +37,17 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.showDetails = function(index) {
       $scope.detailedInfo = $scope.listings[index];
     };
+
+    $scope.login = function(email){
+      //For use in other sections of the homepage
+      currentUserEmail = email;
+
+      //If email is already in database, show user information
+
+      //ELSE, create new user
+      //addListing()
+    }
+
   }
 
 
