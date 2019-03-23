@@ -56,27 +56,27 @@
                                 <!-- refer to this for ng-model for radios
                                   https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
                                 <div class="form-check form-check-inline " >
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio0" value="option0">
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio0" value="option0">
                                     <label class="form-check-label" for="professionRadio0"></label>0</label>
                                   </div>
                                   <div class="form-check form-check-inline " >
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio1" value="option1">
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio1" value="option1">
                                     <label class="form-check-label" for="professionRadio1">1</label>
                                   </div>
                                   <div class="form-check form-check-inline " >
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio2" value="option2">
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio2" value="option2">
                                     <label class="form-check-label" for="professionRadio2">2</label>
                                   </div>
                                   <div class="form-check form-check-inline " >
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio3" value="option2">
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio3" value="option2">
                                     <label class="form-check-label" for="professionRadio3">3</label>
                                   </div>
                                   <div class="form-check form-check-inline " >
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio4" value="option2">
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio4" value="option2">
                                     <label class="form-check-label" for="professionRadio4">4</label>
                                   </div>
                                   <div class="form-check form-check-inline " >
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio5" value="option2">
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio5" value="option2">
                                     <label class="form-check-label" for="professionRadio5">5</label>
                                   </div>
                               </div>
@@ -96,10 +96,10 @@
                               <div class = "row bottom-buffer form-group" id="mentorStrength">
                                   <!-- Strengths as a mentor selection -->
                                     <label for="mentorStrength" class="col-md-2 col-form-label">Strengths as a mentor</label>
-                                        <select class="form-control col-md-4"  ng-model="strength">
-                                          <option >--</option>
+                                        <select class="form-control col-md-4" id="mentorStrength1check"  ng-model="strength">
+                                          <option value ="Strength1empty">--</option>
                                           <option >Leadership</option>
-                                          <option>Public Speaking</option>
+                                          <option >Public Speaking</option>
                                           <option >Data Structures</option>
                                           <option >Communication</option>
                                           <option >Confidence</option>
@@ -109,33 +109,85 @@
                                     <!-- refer to this for ng-model for radios
                                       https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
                                     <div class="form-check form-check-inline " >
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio0" value="option0">
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio0" value="option0">
                                         <label class="form-check-label" for="professionRadio0"></label>0</label>
                                       </div>
                                       <div class="form-check form-check-inline " >
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio1" value="option1">
                                         <label class="form-check-label" for="professionRadio1">1</label>
                                       </div>
                                       <div class="form-check form-check-inline " >
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio2" value="option2">
                                         <label class="form-check-label" for="professionRadio2">2</label>
                                       </div>
                                       <div class="form-check form-check-inline " >
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio3" value="option2">
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio3" value="option2">
                                         <label class="form-check-label" for="professionRadio3">3</label>
                                       </div>
                                       <div class="form-check form-check-inline " >
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio4" value="option2">
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio4" value="option2">
                                         <label class="form-check-label" for="professionRadio4">4</label>
                                       </div>
                                       <div class="form-check form-check-inline " >
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="professionRadio5" value="option2">
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio5" value="option2">
                                         <label class="form-check-label" for="professionRadio5">5</label>
                                       </div>
                                   </div>
 
 
 
+                                  <div class = "row bottom-buffer form-group" id="mentorStrength2">
+                                    <!-- 2nd Strength as a mentor selection -->
+                                      <label for="mentorStrength2" class="col-md-2 col-form-label">Strengths as a mentor</label>
+                                          <select class="form-control col-md-4"  ng-model="strength2">
+                                            <option value ="Strength2empty">--</option>
+                                            <option >Leadership</option>
+                                            <option >Public Speaking</option>
+                                            <option >Data Structures</option>
+                                            <option >Communication</option>
+                                            <option >Confidence</option>
+                                          </select>
+                                      
+                                      <div class = "col-md-1"></div>
+                                      <!-- refer to this for ng-model for radios
+                                        https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                      <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio0" value="option0">
+                                          <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                        </div>
+                                        <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio1" value="option1">
+                                          <label class="form-check-label" for="professionRadio1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio2" value="option2">
+                                          <label class="form-check-label" for="professionRadio2">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio3" value="option2">
+                                          <label class="form-check-label" for="professionRadio3">3</label>
+                                        </div>
+                                        <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio4" value="option2">
+                                          <label class="form-check-label" for="professionRadio4">4</label>
+                                        </div>
+                                        <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio5" value="option2">
+                                          <label class="form-check-label" for="professionRadio5">5</label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class = "row bottom-buffer form-group">
+                              
+                                      <label for="menteeCheck" class="col-md-2 col-form-label">I want to be a mentee</label>
+                                            <select class="form-control col-md-4" id="mentorCheck" ng-model="mentor">
+                                              <option value = "no">no</option>
+                                              <option value = "yes">yes</option>
+                                            </select>
+                                    
+    
+                                  </div>
 
 
                         </div>

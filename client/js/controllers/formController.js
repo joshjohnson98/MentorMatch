@@ -10,3 +10,15 @@ $("#mentorCheck").change(function() {
     }
   });
   $("#mentorCheck").trigger("change");
+
+
+  $("#mentorStrength1check").change(function() {
+    if ($(this).val() == "Strength1empty") {
+      $('#mentorStrength2').hide();
+      
+    } else {
+      $('#mentorStrength2').show();
+      
+    }
+  });
+  $("#mentorStrength1check").trigger("change");
