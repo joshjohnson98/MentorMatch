@@ -22,3 +22,15 @@ $("#mentorCheck").change(function() {
     }
   });
   $("#mentorStrength1check").trigger("change");
+
+
+  $("#mentorStrength2check").change(function() {
+    if ($(this).val() == "Strength2empty") {
+      $('#mentorStrength3').hide();
+      
+    } else {
+      $('#mentorStrength3').show();
+      
+    }
+  });
+  $("#mentorStrength2check").trigger("change");
