@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body>
+  <h2>Send feedback to your mentor</h2>
+
+
+  <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+	  Name:<br>
+	  <input type="text" name="name"><br>
+	  E-mail:<br>
+	  <input type="text" name="mail"><br>
+	  Comment:<br>
+	  <input type="text" name="comment" size="50"><br><br>
+	  <input type="submit" value="Send">
+	  <input type="reset" value="Reset">
+	  <input type='submit' value='Submit' onclick='this.form.action="mailto:anhhoang@ufl.edu";' />
+  </form>
+
+
+  <script>
+	  var email = document.getElementById('inputEmail');
+	  var buttonEmail = document.getElementById('sendEmail');
+	  buttonEmail.onclick = function()
+	  {
+	      var link = "mailto:"+ email;
+	      this.href = link;
+	      this.method = "post";
+	  <!--}-->
+	  <!---->
+    </script>
+
+  
+  </body>
+</html>
+
