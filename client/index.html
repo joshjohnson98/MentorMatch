@@ -52,48 +52,757 @@
           <h1 id="pageTitle">Mentor Match</h1>
         </nav>
       </div>
+      <hr class = "bottom-buffer-large">
 
       <div class="row bottom-buffer">
         <div class="col-md-12">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <button id = "profileButton" class="btn bold" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                     Profile
                   </button>
                 </h5>
               </div>
               <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
                 <div class="card-body">
-                    <form novalidate class="simple-form">
-                        <h2>Edit Profile</h2>
+
+
+                  <div class= "row bottom-buffer-large" for= ProfileForm>
+                    <div class = col-md-1></div>
+                    <label class = "col-md-10">All profile information filled out will be public. If you wish to keep any of the information
+                    below private, leave the section blank.
+                    </label>
+                  </div>
+
+                  <!-- <div class= "row bottom-buffer-large" for= ProfileForm>
+                      <div class = col-md-7></div>
+                      <label class = "col-md-4">How important is it for your mentor/mentee to have similar traits? (0-unimportant, 5-very important)
+                      </label>
+                    </div> -->
+
+                    <form novalidate id = ProfileForm class="simple-form">
                           <div class = "container">
                             <div class = "row bottom-buffer">
                               <label for="NameInput" class="col-md-2 col-form-label">Name</label>
+                             
                               <input type="text" ng-model = "Name" id="NameInput" class="form-control col-md-4" placeholder="Name">
-                              <div class = "col-md-1"></div>
-                              <div class="form-check form-check-inline col-md-2" >
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                  <label class="form-check-label" for="inlineCheckbox1">Use for matching</label>
-                                </div>
-                                <div class="form-check form-check-inline col-md-2" >
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                  <label class="form-check-label" for="inlineCheckbox2">Keep private</label>
-                                </div>
+                              <div class = col-md-1></div>
+                              <label class = "col-md-4">How important is it for your mentor/mentee to have similar traits? (0-unimportant, 5-very important)
+                                </label>
+                              
                             </div>
                             <div class = "row bottom-buffer">
-                                <label for="NameInput" class="col-md-2 col-form-label">Profession</label>
-                                <input type="text" ng-model = "Profession" id="JobInput" class="form-control col-md-4" placeholder="Name">
+                              <!-- Profession selection -->
+                                <label for="JobSelect" class="col-md-2 col-form-label">Profession</label>
+                                    <select class="form-control col-md-4" id="JobSelect" ng-model="job">
+                                      <option>--</option>
+                                      <option>Aerospace</option>
+                                      <option>Agriculture</option>
+                                      <option>Computer</option>
+                                      <option>Chemical</option>
+                                      <option>Computer</option>
+                                      <option>Construction</option>
+                                      <option>Defense</option>
+                                      <option>Education</option>
+                                      <option>Energy</option>
+                                      <option>Entertainment</option>
+                                      <option>Financial Services</option>
+                                      <option>Food Services</option>
+                                      <option>Healthcare</option>
+                                      <option>Hospitality</option>
+                                      <option>Information</option>
+                                      <option>Manufacturing</option>
+                                      <option>Mass Media</option>
+                                      <option>Telecomunication</option>
+                                      <option>Transportation</option>
+                                      <option>Water</option>
+                                      <option value="other">Other</option>
+
+                                    </select>
+                                
                                 <div class = "col-md-1"></div>
-                                <div class="form-check form-check-inline col-md-2" >
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                    <label class="form-check-label" for="inlineCheckbox1">Use for matching</label>
+                                <!-- refer to this for ng-model for radios
+                                  https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio0" value="0">
+                                    <label class="form-check-label" for="professionRadio0"></label>0</label>
                                   </div>
-                                  <div class="form-check form-check-inline col-md-2" >
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">Keep private</label>
+                                  <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio1" value="1">
+                                    <label class="form-check-label" for="professionRadio1">1</label>
+                                  </div>
+                                  <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio2" value="2">
+                                    <label class="form-check-label" for="professionRadio2">2</label>
+                                  </div>
+                                  <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio3" value="3">
+                                    <label class="form-check-label" for="professionRadio3">3</label>
+                                  </div>
+                                  <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio4" value="4">
+                                    <label class="form-check-label" for="professionRadio4">4</label>
+                                  </div>
+                                  <div class="form-check form-check-inline " >
+                                    <input class="form-check-input" type="radio" name="jobScore" id="professionRadio5" value="5">
+                                    <label class="form-check-label" for="professionRadio5">5</label>
                                   </div>
                               </div>
+
+                              <div class="row bottom-buffer" id = "jobOther">
+                                <div class="col-md-2"></div>
+                                  <input type="text" ng-model = "jobOtherFill" id="jobOther" class="form-control col-md-3" placeholder="Other">
+                              </div>
+
+                              <div class = "row bottom-buffer">
+                                <!-- Gender selection -->
+                                  <label for="GenderSelect" class="col-md-2 col-form-label">Gender</label>
+                                      <select class="form-control col-md-4" id="GenderSelect" ng-model="gender">
+                                        <option>--</option>
+                                        <option>Female</option>
+                                        <option>Male</option>
+                                        <option>Non-binary</option>
+                                        <option value="other">Other</option>
+                                      </select>
+                                  
+                                  <div class = "col-md-1"></div>
+                                  <!-- refer to this for ng-model for radios
+                                    https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                  <div class="form-check form-check-inline " >
+                                      <input class="form-check-input" type="radio" name="genderScore" id="GenderRadio0" value="0">
+                                      <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline " >
+                                      <input class="form-check-input" type="radio" name="genderScore" id="GenderRadio1" value="1">
+                                      <label class="form-check-label" for="professionRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline " >
+                                      <input class="form-check-input" type="radio" name="genderScore" id="GenderRadio2" value="2">
+                                      <label class="form-check-label" for="professionRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline " >
+                                      <input class="form-check-input" type="radio" name="genderScore" id="GenderRadio3" value="3">
+                                      <label class="form-check-label" for="professionRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline " >
+                                      <input class="form-check-input" type="radio" name="genderScore" id="GenderRadio4" value="4">
+                                      <label class="form-check-label" for="professionRadio4">4</label>
+                                    </div>
+                                    <div class="form-check form-check-inline " >
+                                      <input class="form-check-input" type="radio" name="genderScore" id="GenderRadio5" value="5">
+                                      <label class="form-check-label" for="professionRadio5">5</label>
+                                    </div>
+                                </div>
+
+                                <div class="row bottom-buffer" id = "genderOther">
+                                    <div class="col-md-2"></div>
+                                      <input type="text" ng-model = "genderOtherFill" id="genderOther" class="form-control col-md-3" placeholder="Other">
+                                  </div>
+
+
+
+
+                                <div class = "row bottom-buffer">
+                                  <!-- Sexual Orientation selection -->
+                                    <label for="SexSelect" class="col-md-2 col-form-label">Sexual Orientation</label>
+                                        <select class="form-control col-md-4" id="SexSelect" ng-model="sexualOrientation">
+                                          <option>--</option>
+                                          <option>Lesbian</option>
+                                          <option>Gay</option>
+                                          <option>Straight</option>
+                                          <option>Bi-Sexual</option>
+                                          <option value="other">Other</option>
+                                        </select>
+                                    
+                                    <div class = "col-md-1"></div>
+                                    <!-- refer to this for ng-model for radios
+                                      https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                    <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="sexScore" id="GenderRadio0" value="0">
+                                        <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="sexScore" id="GenderRadio1" value="1">
+                                        <label class="form-check-label" for="professionRadio1">1</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="sexScore" id="GenderRadio2" value="2">
+                                        <label class="form-check-label" for="professionRadio2">2</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="sexScore" id="GenderRadio3" value="3">
+                                        <label class="form-check-label" for="professionRadio3">3</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="sexScore" id="GenderRadio4" value="4">
+                                        <label class="form-check-label" for="professionRadio4">4</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="sexScore" id="GenderRadio5" value="5">
+                                        <label class="form-check-label" for="professionRadio5">5</label>
+                                      </div>
+                                  </div>
+
+                                  <div class="row bottom-buffer" id = "sexOther">
+                                      <div class="col-md-2"></div>
+                                        <input type="text" ng-model = "sexOtherFill" id="sexOther" class="form-control col-md-3" placeholder="Other">
+                                    </div>
+
+                                  <div class = "row bottom-buffer">
+                                      <!-- Ethnicity selection -->
+                                        <label for="EthnicitySelect" class="col-md-2 col-form-label">Ethnicity</label>
+                                            <select class="form-control col-md-4" id="EthnicitySelect" ng-model="ethnicity">
+                                              <option>--</option>
+                                              <option>American Indian or Alaska Native</option>
+                                              <option>Asian</option>
+                                              <option>Black or African American</option>
+                                              <option>Hispanic or Latino</option>
+                                              <option>Native Hawaiian or Other Pacific Islander</option>
+                                              <option>White</option>
+                                              <option value="other">Other</option>
+                                            </select>
+                                        
+                                        <div class = "col-md-1"></div>
+                                        <!-- refer to this for ng-model for radios
+                                          https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                        <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="raceScore" id="RaceRadio0" value="0">
+                                            <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                          </div>
+                                          <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="raceScore" id="RaceRadio1" value="1">
+                                            <label class="form-check-label" for="professionRadio1">1</label>
+                                          </div>
+                                          <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="raceScore" id="RaceRadio2" value="2">
+                                            <label class="form-check-label" for="professionRadio2">2</label>
+                                          </div>
+                                          <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="raceScore" id="RaceRadio3" value="3">
+                                            <label class="form-check-label" for="professionRadio3">3</label>
+                                          </div>
+                                          <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="raceScore" id="RaceRadio4" value="4">
+                                            <label class="form-check-label" for="professionRadio4">4</label>
+                                          </div>
+                                          <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="raceScore" id="RaceRadio5" value="5">
+                                            <label class="form-check-label" for="professionRadio5">5</label>
+                                          </div>
+                                      </div>
+
+                                      <div class="row bottom-buffer" id = "ethnicityOther">
+                                          <div class="col-md-2"></div>
+                                            <input type="text" ng-model = "ethnicityOtherFill" id="ethnicityOther" class="form-control col-md-3" placeholder="Other">
+                                        </div>
+
+
+                                        <div class="row bottom-buffer">
+                                            <label class ="col-md-2" for = "LanguageSelect">Language</label>
+                                            <select class="form-control col-md-4" id="LanguageSelect" ng-model="language">
+                                                <option>--</option>
+                                                <option>English</option>
+                                                <option>Spanish</option>
+                                                <option>Hindi</option>
+                                                <option>Mandarin</option>
+                                                <option>French</option>
+                                                <option>Arabic</option>
+                                                <option value="other">Other</option>
+                                              </select>
+  
+  
+                                          </div>
+                                          <div class="row bottom-buffer" id = "langOther">
+                                              <div class="col-md-2"></div>
+                                                <input type="text" ng-model = "langOtherFill" id="langOther" class="form-control col-md-3" placeholder="Other">
+                                            </div>
+
+                                      <div id="location">
+                                          <div class="row bottom-buffer bold">Location</div>
+                                          <div class = "row bottom-buffer">
+                                              <label for="CountryInput" class="col-md-2 col-form-label">Country</label>
+                                            
+                                              <input type="text" ng-model = "Country" id="CountryInput" class="form-control col-md-4" placeholder="Country">
+                                              <div class = col-md-1></div>
+                                              <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio0" value="0">
+                                                  <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio1" value="1">
+                                                  <label class="form-check-label" for="professionRadio1">1</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio2" value="2">
+                                                  <label class="form-check-label" for="professionRadio2">2</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio3" value="3">
+                                                  <label class="form-check-label" for="professionRadio3">3</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio4" value="4">
+                                                  <label class="form-check-label" for="professionRadio4">4</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio5" value="5">
+                                                  <label class="form-check-label" for="professionRadio5">5</label>
+                                                </div>
+                                              
+                                          </div>
+                                          <div class = "row bottom-buffer">
+                                              <label for="CountryInput" class="col-md-2 col-form-label">State/Province</label>
+                                            
+                                              <input type="text" ng-model = "State" id="StateInput" class="form-control col-md-4" placeholder="State/Province">
+                                              <div class = col-md-1></div>
+                                              
+                                              
+                                          </div>
+                                          <div class = "row bottom-buffer-large">
+                                              <label for="CountryInput" class="col-md-2 col-form-label">City</label>
+                                            
+                                              <input type="text" ng-model = "City" id="CityInput" class="form-control col-md-4" placeholder="City">
+                                              <div class = col-md-1></div>
+                                              
+                                              
+                                          </div>
+                                        </div>
+
+                                        
+
+                              <div class = "row bottom-buffer form-group">
+                              
+                                  <label for="mentorCheck" class="col-md-2 col-form-label bold">I want to be a mentor</label>
+                                        <select class="form-control col-md-4" id="mentorCheck" ng-model="mentor">
+                                          <option value = "no">no</option>
+                                          <option value = "yes">yes</option>
+                                        </select>
+                                
+
+                              </div>
+                              <div id = "allStrength">
+                              <!-- <h3 class="row bottom-buffer" id="mentorStrengthHead">Mentors</h3> -->
+                              <div class = "row bottom-buffer form-group" id="mentorStrength">
+                                  <!-- Strengths as a mentor selection -->
+                                  <div class = "col-md-1"></div>
+                                    
+                                    <label for="mentorStrength" class=" col-form-label col-md-2">Strength</label>
+                                        <select class="form-control col-md-4" id="mentorStrength1check"  ng-model="strength">
+                                          <option value ="Strength1empty">--</option>
+                                          <option >Leadership</option>
+                                          <option >Public Speaking</option>
+                                          <option >Data Structures</option>
+                                          <option >Communication</option>
+                                          <option >Confidence</option>
+                                          <option>Public Speaking</option>
+                                          <option >Writing</option>
+                                          <option >Entrepreneurship</option>
+                                          <option >Interviewing</option>
+                                          <option >Time Management</option>
+                                          <option >Sales</option>
+                                          <option >Marketing</option>
+                                          <option >Team Building</option>
+                                          <option >Teamwork</option>
+                                          <option >Physical Fitness</option>
+                                          <option >Graphic Design</option>
+                                          <option >Object Oriented Programming</option>
+                                          <option value="other">Other</option>
+                                        </select>
+                                    
+                                    <div class = "col-md-1"></div>
+                                    <!-- refer to this for ng-model for radios
+                                      https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                    <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio0" value="0">
+                                        <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio1" value="1">
+                                        <label class="form-check-label" for="professionRadio1">1</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio2" value="2">
+                                        <label class="form-check-label" for="professionRadio2">2</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio3" value="3">
+                                        <label class="form-check-label" for="professionRadio3">3</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio4" value="4">
+                                        <label class="form-check-label" for="professionRadio4">4</label>
+                                      </div>
+                                      <div class="form-check form-check-inline " >
+                                        <input class="form-check-input" type="radio" name="Strength1Score" id="professionRadio5" value="5">
+                                        <label class="form-check-label" for="professionRadio5">5</label>
+                                      </div>
+                                  </div>
+
+                                  <div class="row bottom-buffer" id = "strength1other">
+                                      <div class="col-md-3"></div>
+                                        <input type="text" ng-model = "strength1otherFill" id="strength1other" class="form-control col-md-3" placeholder="Other">
+                                    </div>
+
+
+                                  <div id=strength2>
+                                  <div class = "row bottom-buffer form-group" id="mentorStrength2">
+                                    <!-- 2nd Strength as a mentor selection -->
+                                    <div class = "col-md-1"></div>
+
+                                      <label for="mentorStrength2" class="col-md-2 col-form-label">Strength</label>
+                                          <select class="form-control col-md-4" id="mentorStrength2check"  ng-model="strength2">
+                                            <option value ="Strength2empty">--</option>
+                                            <option >Leadership</option>
+                                          <option >Public Speaking</option>
+                                          <option >Data Structures</option>
+                                          <option >Communication</option>
+                                          <option >Confidence</option>
+                                          <option>Public Speaking</option>
+                                          <option >Writing</option>
+                                          <option >Entrepreneurship</option>
+                                          <option >Interviewing</option>
+                                          <option >Time Management</option>
+                                          <option >Sales</option>
+                                          <option >Marketing</option>
+                                          <option >Team Building</option>
+                                          <option >Teamwork</option>
+                                          <option >Physical Fitness</option>
+                                          <option >Graphic Design</option>
+                                          <option >Object Oriented Programming</option>
+                                          <option value="other">Other</option>
+                                          </select>
+                                      
+                                      <div class = "col-md-1"></div>
+                                      <!-- refer to this for ng-model for radios
+                                        https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                      <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio0" value="0">
+                                          <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                        </div>
+                                        <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio1" value="1">
+                                          <label class="form-check-label" for="professionRadio1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio2" value="2">
+                                          <label class="form-check-label" for="professionRadio2">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio3" value="3">
+                                          <label class="form-check-label" for="professionRadio3">3</label>
+                                        </div>
+                                        <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio4" value="4">
+                                          <label class="form-check-label" for="professionRadio4">4</label>
+                                        </div>
+                                        <div class="form-check form-check-inline " >
+                                          <input class="form-check-input" type="radio" name="Strength2Score" id="professionRadio5" value="5">
+                                          <label class="form-check-label" for="professionRadio5">5</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row bottom-buffer" id = "strength2other">
+                                        <div class="col-md-3"></div>
+                                          <input type="text" ng-model = "strength2otherFill" id="strength2other" class="form-control col-md-3" placeholder="Other">
+                                      </div>
+
+
+                                    <div class = "row bottom-buffer form-group" id="mentorStrength3">
+                                      <!-- 3nd Strength as a mentor selection -->
+                                      <div class = "col-md-1"></div>
+
+                                        <label for="mentorStrength3" class="col-md-2 col-form-label">Strength</label>
+                                            <select class="form-control col-md-4" id="mentorStrength3check" ng-model="strength3">
+                                              <option value ="Strength3empty">--</option>
+                                              <option >Leadership</option>
+                                          <option >Public Speaking</option>
+                                          <option >Data Structures</option>
+                                          <option >Communication</option>
+                                          <option >Confidence</option>
+                                          <option>Public Speaking</option>
+                                          <option >Writing</option>
+                                          <option >Entrepreneurship</option>
+                                          <option >Interviewing</option>
+                                          <option >Time Management</option>
+                                          <option >Sales</option>
+                                          <option >Marketing</option>
+                                          <option >Team Building</option>
+                                          <option >Teamwork</option>
+                                          <option >Physical Fitness</option>
+                                          <option >Graphic Design</option>
+                                          <option >Object Oriented Programming</option>
+                                          <option value="other">Other</option>
+                                            </select>
+                                        
+                                        <div class = "col-md-1"></div>
+                                        <!-- refer to this for ng-model for radios
+                                          https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                        <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="Strength3Score" id="professionRadio0" value="0">
+                                            <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                          </div>
+                                          <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="Strength3Score" id="professionRadio1" value="1">
+                                            <label class="form-check-label" for="professionRadio1">1</label>
+                                          </div>
+                                          <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="Strength3Score" id="professionRadio2" value="2">
+                                            <label class="form-check-label" for="professionRadio2">2</label>
+                                          </div>
+                                          <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="Strength3Score" id="professionRadio3" value="3">
+                                            <label class="form-check-label" for="professionRadio3">3</label>
+                                          </div>
+                                          <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="Strength3Score" id="professionRadio4" value="4">
+                                            <label class="form-check-label" for="professionRadio4">4</label>
+                                          </div>
+                                          <div class="form-check form-check-inline " >
+                                            <input class="form-check-input" type="radio" name="Strength3Score" id="professionRadio5" value="5">
+                                            <label class="form-check-label" for="professionRadio5">5</label>
+                                          </div>
+                                      </div>
+
+
+                                      <div class="row bottom-buffer" id = "strength3other">
+                                          <div class="col-md-3"></div>
+                                            <input type="text" ng-model = "strength3otherFill" id="strength3other" class="form-control col-md-3" placeholder="Other">
+                                        </div>
+
+
+
+                                  </div>
+                                  </div>
+
+
+                                    <div class = "row bottom-buffer form-group">
+                              
+                                      <label for="menteeCheck" class="col-md-2 col-form-label bold">I want to be a mentee</label>
+                                            <select class="form-control col-md-4" id="menteeCheck" ng-model="isMentee">
+                                              <option value = "no">no</option>
+                                              <option value = "yes">yes</option>
+                                            </select>
+                                    
+    
+                                  </div>
+                                  <div id = "allGoal">
+
+                                      <div class = "row bottom-buffer form-group" id="menteeGoal">
+                                          <!-- Strengths as a mentee selection -->
+                                          <div class = "col-md-1"></div>
+                                            
+                                            <label for="menteeGoal" class=" col-form-label col-md-2">Goal</label>
+                                                <select class="form-control col-md-4" id="menteeGoal1check"  ng-model="Goal">
+                                                  <option value ="Goal1empty">--</option>
+                                                  <option >Leadership</option>
+                                                  <option >Public Speaking</option>
+                                                  <option >Data Structures</option>
+                                                  <option >Communication</option>
+                                                  <option >Confidence</option>
+                                                  <option>Public Speaking</option>
+                                                  <option >Writing</option>
+                                                  <option >Entrepreneurship</option>
+                                                  <option >Interviewing</option>
+                                                  <option >Time Management</option>
+                                                  <option >Sales</option>
+                                                  <option >Marketing</option>
+                                                  <option >Team Building</option>
+                                                  <option >Teamwork</option>
+                                                  <option >Physical Fitness</option>
+                                                  <option >Graphic Design</option>
+                                                  <option >Object Oriented Programming</option>
+                                                  <option value="other">Other</option>
+                                                </select>
+                                            
+                                            <div class = "col-md-1"></div>
+                                            <!-- refer to this for ng-model for radios
+                                              https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                            <div class="form-check form-check-inline " >
+                                                <input class="form-check-input" type="radio"  name="Goal1Score" id="professionRadio0" value="0">
+                                                <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                              </div>
+                                              <div class="form-check form-check-inline " >
+                                                <input class="form-check-input" type="radio"  name="Goal1Score" id="professionRadio0" value="1">
+                                                <label class="form-check-label" for="professionRadio1">1</label>
+                                              </div>
+                                              <div class="form-check form-check-inline " >
+                                                <input class="form-check-input" type="radio"  name="Goal1Score" id="professionRadio0" value="2">
+                                                <label class="form-check-label" for="professionRadio2">2</label>
+                                              </div>
+                                              <div class="form-check form-check-inline " >
+                                                <input class="form-check-input" type="radio"  name="Goal1Score" id="professionRadio0" value="3">
+                                                <label class="form-check-label" for="professionRadio3">3</label>
+                                              </div>
+                                              <div class="form-check form-check-inline " >
+                                                <input class="form-check-input" type="radio"  name="Goal1Score" id="professionRadio0" value="4">
+                                                <label class="form-check-label" for="professionRadio4">4</label>
+                                              </div>
+                                              <div class="form-check form-check-inline " >
+                                                <input class="form-check-input" type="radio" name="Goal1Score" id="professionRadio0" value="5">
+                                                <label class="form-check-label" for="professionRadio5">5</label>
+                                              </div>
+                                          </div>
+        
+
+                                          <div class="row bottom-buffer" id = "goal1other">
+                                              <div class="col-md-3"></div>
+                                                <input type="text" ng-model = "goal1otherFill" id="goal1other" class="form-control col-md-3" placeholder="Other">
+                                            </div>
+
+        
+                                          <div id=goal2>
+                                          <div class = "row bottom-buffer form-group" id="menteeGoal2">
+                                            <!-- 2nd Strength as a mentor selection -->
+                                            <div class = "col-md-1"></div>
+        
+                                              <label for="menteeGoal2" class="col-md-2 col-form-label">Goal</label>
+                                                  <select class="form-control col-md-4" id="menteeGoal2check"  ng-model="goal2">
+                                                    <option value ="Goal2empty">--</option>
+                                                    <option >Leadership</option>
+                                                    <option >Public Speaking</option>
+                                                    <option >Data Structures</option>
+                                                    <option >Communication</option>
+                                                    <option >Confidence</option>
+                                                    <option>Public Speaking</option>
+                                                    <option >Writing</option>
+                                                    <option >Entrepreneurship</option>
+                                                    <option >Interviewing</option>
+                                                    <option >Time Management</option>
+                                                    <option >Sales</option>
+                                                    <option >Marketing</option>
+                                                    <option >Team Building</option>
+                                                    <option >Teamwork</option>
+                                                    <option >Physical Fitness</option>
+                                                    <option >Graphic Design</option>
+                                                    <option >Object Oriented Programming</option>
+                                                    <option value="other">Other</option>
+                                                  </select>
+                                              
+                                              <div class = "col-md-1"></div>
+                                              <!-- refer to this for ng-model for radios
+                                                https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                              <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="Goal2Score" id="professionRadio0" value="0">
+                                                  <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="Goal2Score" id="professionRadio1" value="1">
+                                                  <label class="form-check-label" for="professionRadio1">1</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio"  name="Goal2Score" id="professionRadio2" value="2">
+                                                  <label class="form-check-label" for="professionRadio2">2</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="Goal2Score" id="professionRadio3" value="3">
+                                                  <label class="form-check-label" for="professionRadio3">3</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio"  name="Goal2Score" id="professionRadio4" value="4">
+                                                  <label class="form-check-label" for="professionRadio4">4</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="Goal2Score" id="professionRadio5" value="5">
+                                                  <label class="form-check-label" for="professionRadio5">5</label>
+                                                </div>
+                                            </div>
+        
+        
+                                            <div class="row bottom-buffer" id = "goal2other">
+                                                <div class="col-md-3"></div>
+                                                  <input type="text" ng-model = "goal2otherFill" id="goal2other" class="form-control col-md-3" placeholder="Other">
+                                              </div>
+        
+                                            <div class = "row bottom-buffer form-group" id="menteeGoal3">
+                                              <!-- 3nd Strength as a mentor selection -->
+                                              <div class = "col-md-1"></div>
+        
+                                                <label for="menteeGoal3" class="col-md-2 col-form-label">Goal</label>
+                                                    <select class="form-control col-md-4" id="menteeGoal3check" ng-model="goal3">
+                                                      <option value ="Strength3empty">--</option>
+                                                      <option >Leadership</option>
+                                                      <option >Public Speaking</option>
+                                                      <option >Data Structures</option>
+                                                      <option >Communication</option>
+                                                      <option >Confidence</option>
+                                                      <option>Public Speaking</option>
+                                                      <option >Writing</option>
+                                                      <option >Entrepreneurship</option>
+                                                      <option >Interviewing</option>
+                                                      <option >Time Management</option>
+                                                      <option >Sales</option>
+                                                      <option >Marketing</option>
+                                                      <option >Team Building</option>
+                                                      <option >Teamwork</option>
+                                                      <option >Physical Fitness</option>
+                                                      <option >Graphic Design</option>
+                                                      <option >Object Oriented Programming</option>
+                                                      <option value="other">Other</option>
+                                                    </select>
+                                                
+                                                <div class = "col-md-1"></div>
+                                                <!-- refer to this for ng-model for radios
+                                                  https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
+                                                <div class="form-check form-check-inline " >
+                                                    <input class="form-check-input" type="radio" name="Goal3Score" id="professionRadio0" value="0">
+                                                    <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                                  </div>
+                                                  <div class="form-check form-check-inline " >
+                                                    <input class="form-check-input" type="radio" name="Goal3Score" id="professionRadio1" value="1">
+                                                    <label class="form-check-label" for="professionRadio1">1</label>
+                                                  </div>
+                                                  <div class="form-check form-check-inline " >
+                                                    <input class="form-check-input" type="radio" name="Goal3Score" id="professionRadio2" value="2">
+                                                    <label class="form-check-label" for="professionRadio2">2</label>
+                                                  </div>
+                                                  <div class="form-check form-check-inline " >
+                                                    <input class="form-check-input" type="radio" name="Goal3Score" id="professionRadio3" value="3">
+                                                    <label class="form-check-label" for="professionRadio3">3</label>
+                                                  </div>
+                                                  <div class="form-check form-check-inline " >
+                                                    <input class="form-check-input" type="radio" name="Goal3Score" id="professionRadio4" value="4">
+                                                    <label class="form-check-label" for="professionRadio4">4</label>
+                                                  </div>
+                                                  <div class="form-check form-check-inline " >
+                                                    <input class="form-check-input" type="radio" name="Goal3Score" id="professionRadio5" value="5">
+                                                    <label class="form-check-label" for="professionRadio5">5</label>
+                                                  </div>
+                                              </div>
+
+
+                                              <div class="row bottom-buffer" id = "goal3other">
+                                                  <div class="col-md-3"></div>
+                                                    <input type="text" ng-model = "goal3otherFill" id="goal3other" class="form-control col-md-3" placeholder="Other">
+                                                </div>
+
+
+
+                                          </div>
+                                          </div>
+
+                                            
+
+
+
+
+
+
+
+                                            <div class = "row bottom-buffer" id = "bioBlock">
+
+                                              <label class="bottom-buffer col-md-2 col-form-label bold">Bio</label>
+
+                                              <textarea class="form-control col-md-4" id="bioText" ng-model="bio" rows="3"></textarea>
+                                            </div>
+
+                                            <div class = "row bottom-buffer">
+
+                                                <div class = col-md-10></div>
+                                                <button type="button" class="btn btn-primary">Submit</button>
+                                              </div>
+
+
                         </div>
                       </form>
                     </div>
@@ -104,7 +813,6 @@
         </div>
       
             <div class="row">
-        
                 <div class="col-md-6">
                     <div class = "card" >
                         <div class="card-header" id="headingOne">
@@ -114,7 +822,7 @@
                               </button>
                             </h5>
                           </div>
-                          <div class = "collapse" id = "matchCollapse" aria-labelledby="headingOne">
+                          <div class = "collapse show" id = "matchCollapse" aria-labelledby="headingOne">
                             <div class = "card-body" >
                                 This is blank rn
                             </div>
@@ -131,7 +839,7 @@
                               </button>
                             </h5>
                           </div>
-                          <div class = "collapse" id = "savedMatchCollapse" aria-labelledby="headingOne">
+                          <div class = "collapse show" id = "savedMatchCollapse" aria-labelledby="headingOne">
                             <div class = "card-body" >
                                 This is blank rn
                             </div>
@@ -153,16 +861,17 @@
 
         
       </div>
-    
 
 
 
 
+    <script src="js/controllers/formController.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
     <script src="js/app.js"></script>
     <script src="js/factories/factory.js"></script>
     <script src="js/controllers/controller.js"></script>
+    
   </body>
 </html>

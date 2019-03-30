@@ -72,7 +72,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     }
 
   }
-
+  
 
   
 ]);
