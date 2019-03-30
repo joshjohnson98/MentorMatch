@@ -82,9 +82,52 @@ th {
   margin-bottom: 20px;
 }
 
+.top-buffer{
+  margin-top: 20px;
+}
+
 .bottom-buffer-large{
   margin-bottom: 50px;
 }
 .bold{
   font-weight: bold;
+}
+
+
+/* Google Login Button Formatting */
+@import url('https://fonts.googleapis.com/css?family=Robot');
+
+#customBtn {
+  display: inline-block;
+  background: #ffffff;
+  color: #444;
+  width: 190px;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  white-space: nowrap;
+}
+#customBtn:hover {
+  cursor: pointer;
+}
+span.label {
+  font-family: serif;
+  font-weight: normal;
+}
+span.icon {
+  background: url(' /identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 40px;
+}
+span.buttonText {
+  display: inline-block;
+  vertical-align: left;
+  padding-left: 1px;
+  padding-right: 1px;
+  font-size: 18px;
+  font-weight: bold;
+  /* Use the Roboto font that is loaded in the <head> */
+  font-family: 'Roboto', sans-serif;
 }
