@@ -67,7 +67,22 @@
                                       <option>Agriculture</option>
                                       <option>Computer</option>
                                       <option>Chemical</option>
+                                      <option>Computer</option>
+                                      <option>Construction</option>
+                                      <option>Defense</option>
                                       <option>Education</option>
+                                      <option>Energy</option>
+                                      <option>Entertainment</option>
+                                      <option>Financial Services</option>
+                                      <option>Food Services</option>
+                                      <option>Healthcare</option>
+                                      <option>Hospitality</option>
+                                      <option>Information</option>
+                                      <option>Manufacturing</option>
+                                      <option>Mass Media</option>
+                                      <option>Telecomunication</option>
+                                      <option>Transportation</option>
+                                      <option>Water</option>
                                       <option value="other">Other</option>
 
                                     </select>
@@ -203,13 +218,15 @@
                                   <div class = "row bottom-buffer">
                                       <!-- Ethnicity selection -->
                                         <label for="EthnicitySelect" class="col-md-2 col-form-label">Ethnicity</label>
-                                            <select class="form-control col-md-4" id="SexSelect" ng-model="sexualOrientation">
+                                            <select class="form-control col-md-4" id="EthnicitySelect" ng-model="ethnicity">
                                               <option>--</option>
-                                              <option>one</option>
-                                              <option>two</option>
-                                              <option>three</option>
-                                              <option>four</option>
-                                              <option>five</option>
+                                              <option>American Indian or Alaska Native</option>
+                                              <option>Asian</option>
+                                              <option>Black or African American</option>
+                                              <option>Hispanic or Latino</option>
+                                              <option>Native Hawaiian or Other Pacific Islander</option>
+                                              <option>White</option>
+                                              <option value="other">Other</option>
                                             </select>
                                         
                                         <div class = "col-md-1"></div>
@@ -241,6 +258,85 @@
                                           </div>
                                       </div>
 
+                                      <div class="row bottom-buffer" id = "ethnicityOther">
+                                          <div class="col-md-2"></div>
+                                            <input type="text" ng-model = "ethnicityOtherFill" id="ethnicityOther" class="form-control col-md-3" placeholder="Other">
+                                        </div>
+
+
+                                        <div class="row bottom-buffer">
+                                            <label class ="col-md-2" for = "LanguageSelect">Language</label>
+                                            <select class="form-control col-md-4" id="LanguageSelect" ng-model="language">
+                                                <option>--</option>
+                                                <option>English</option>
+                                                <option>Spanish</option>
+                                                <option>Hindi</option>
+                                                <option>Mandarin</option>
+                                                <option>French</option>
+                                                <option>Arabic</option>
+                                                <option value="other">Other</option>
+                                              </select>
+  
+  
+                                          </div>
+                                          <div class="row bottom-buffer" id = "langOther">
+                                              <div class="col-md-2"></div>
+                                                <input type="text" ng-model = "langOtherFill" id="langOther" class="form-control col-md-3" placeholder="Other">
+                                            </div>
+
+                                      <div id="location">
+                                          <div class="row bottom-buffer bold">Location</div>
+                                          <div class = "row bottom-buffer">
+                                              <label for="CountryInput" class="col-md-2 col-form-label">Country</label>
+                                            
+                                              <input type="text" ng-model = "Country" id="CountryInput" class="form-control col-md-4" placeholder="Country">
+                                              <div class = col-md-1></div>
+                                              <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio0" value="0">
+                                                  <label class="form-check-label" for="professionRadio0"></label>0</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio1" value="1">
+                                                  <label class="form-check-label" for="professionRadio1">1</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio2" value="2">
+                                                  <label class="form-check-label" for="professionRadio2">2</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio3" value="3">
+                                                  <label class="form-check-label" for="professionRadio3">3</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio4" value="4">
+                                                  <label class="form-check-label" for="professionRadio4">4</label>
+                                                </div>
+                                                <div class="form-check form-check-inline " >
+                                                  <input class="form-check-input" type="radio" name="LocationScore" id="professionRadio5" value="5">
+                                                  <label class="form-check-label" for="professionRadio5">5</label>
+                                                </div>
+                                              
+                                          </div>
+                                          <div class = "row bottom-buffer">
+                                              <label for="CountryInput" class="col-md-2 col-form-label">State/Province</label>
+                                            
+                                              <input type="text" ng-model = "State" id="StateInput" class="form-control col-md-4" placeholder="State/Province">
+                                              <div class = col-md-1></div>
+                                              
+                                              
+                                          </div>
+                                          <div class = "row bottom-buffer-large">
+                                              <label for="CountryInput" class="col-md-2 col-form-label">City</label>
+                                            
+                                              <input type="text" ng-model = "City" id="CityInput" class="form-control col-md-4" placeholder="City">
+                                              <div class = col-md-1></div>
+                                              
+                                              
+                                          </div>
+                                        </div>
+
+                                        
+
                               <div class = "row bottom-buffer form-group">
                               
                                   <label for="mentorCheck" class="col-md-2 col-form-label bold">I want to be a mentor</label>
@@ -265,6 +361,19 @@
                                           <option >Data Structures</option>
                                           <option >Communication</option>
                                           <option >Confidence</option>
+                                          <option>Public Speaking</option>
+                                          <option >Writing</option>
+                                          <option >Entrepreneurship</option>
+                                          <option >Interviewing</option>
+                                          <option >Time Management</option>
+                                          <option >Sales</option>
+                                          <option >Marketing</option>
+                                          <option >Team Building</option>
+                                          <option >Teamwork</option>
+                                          <option >Physical Fitness</option>
+                                          <option >Graphic Design</option>
+                                          <option >Object Oriented Programming</option>
+                                          <option value="other">Other</option>
                                         </select>
                                     
                                     <div class = "col-md-1"></div>
@@ -296,6 +405,11 @@
                                       </div>
                                   </div>
 
+                                  <div class="row bottom-buffer" id = "strength1other">
+                                      <div class="col-md-3"></div>
+                                        <input type="text" ng-model = "strength1otherFill" id="strength1other" class="form-control col-md-3" placeholder="Other">
+                                    </div>
+
 
                                   <div id=strength2>
                                   <div class = "row bottom-buffer form-group" id="mentorStrength2">
@@ -306,10 +420,23 @@
                                           <select class="form-control col-md-4" id="mentorStrength2check"  ng-model="strength2">
                                             <option value ="Strength2empty">--</option>
                                             <option >Leadership</option>
-                                            <option >Public Speaking</option>
-                                            <option >Data Structures</option>
-                                            <option >Communication</option>
-                                            <option >Confidence</option>
+                                          <option >Public Speaking</option>
+                                          <option >Data Structures</option>
+                                          <option >Communication</option>
+                                          <option >Confidence</option>
+                                          <option>Public Speaking</option>
+                                          <option >Writing</option>
+                                          <option >Entrepreneurship</option>
+                                          <option >Interviewing</option>
+                                          <option >Time Management</option>
+                                          <option >Sales</option>
+                                          <option >Marketing</option>
+                                          <option >Team Building</option>
+                                          <option >Teamwork</option>
+                                          <option >Physical Fitness</option>
+                                          <option >Graphic Design</option>
+                                          <option >Object Oriented Programming</option>
+                                          <option value="other">Other</option>
                                           </select>
                                       
                                       <div class = "col-md-1"></div>
@@ -341,7 +468,10 @@
                                         </div>
                                     </div>
 
-
+                                    <div class="row bottom-buffer" id = "strength2other">
+                                        <div class="col-md-3"></div>
+                                          <input type="text" ng-model = "strength2otherFill" id="strength2other" class="form-control col-md-3" placeholder="Other">
+                                      </div>
 
 
                                     <div class = "row bottom-buffer form-group" id="mentorStrength3">
@@ -352,10 +482,23 @@
                                             <select class="form-control col-md-4" id="mentorStrength3check" ng-model="strength3">
                                               <option value ="Strength3empty">--</option>
                                               <option >Leadership</option>
-                                              <option >Public Speaking</option>
-                                              <option >Data Structures</option>
-                                              <option >Communication</option>
-                                              <option >Confidence</option>
+                                          <option >Public Speaking</option>
+                                          <option >Data Structures</option>
+                                          <option >Communication</option>
+                                          <option >Confidence</option>
+                                          <option>Public Speaking</option>
+                                          <option >Writing</option>
+                                          <option >Entrepreneurship</option>
+                                          <option >Interviewing</option>
+                                          <option >Time Management</option>
+                                          <option >Sales</option>
+                                          <option >Marketing</option>
+                                          <option >Team Building</option>
+                                          <option >Teamwork</option>
+                                          <option >Physical Fitness</option>
+                                          <option >Graphic Design</option>
+                                          <option >Object Oriented Programming</option>
+                                          <option value="other">Other</option>
                                             </select>
                                         
                                         <div class = "col-md-1"></div>
@@ -386,8 +529,17 @@
                                             <label class="form-check-label" for="professionRadio5">5</label>
                                           </div>
                                       </div>
+
+
+                                      <div class="row bottom-buffer" id = "strength3other">
+                                          <div class="col-md-3"></div>
+                                            <input type="text" ng-model = "strength3otherFill" id="strength3other" class="form-control col-md-3" placeholder="Other">
+                                        </div>
+
+
+
                                   </div>
-                                    </div>
+                                  </div>
 
 
                                     <div class = "row bottom-buffer form-group">
@@ -414,6 +566,19 @@
                                                   <option >Data Structures</option>
                                                   <option >Communication</option>
                                                   <option >Confidence</option>
+                                                  <option>Public Speaking</option>
+                                                  <option >Writing</option>
+                                                  <option >Entrepreneurship</option>
+                                                  <option >Interviewing</option>
+                                                  <option >Time Management</option>
+                                                  <option >Sales</option>
+                                                  <option >Marketing</option>
+                                                  <option >Team Building</option>
+                                                  <option >Teamwork</option>
+                                                  <option >Physical Fitness</option>
+                                                  <option >Graphic Design</option>
+                                                  <option >Object Oriented Programming</option>
+                                                  <option value="other">Other</option>
                                                 </select>
                                             
                                             <div class = "col-md-1"></div>
@@ -445,6 +610,12 @@
                                               </div>
                                           </div>
         
+
+                                          <div class="row bottom-buffer" id = "goal1other">
+                                              <div class="col-md-3"></div>
+                                                <input type="text" ng-model = "goal1otherFill" id="goal1other" class="form-control col-md-3" placeholder="Other">
+                                            </div>
+
         
                                           <div id=goal2>
                                           <div class = "row bottom-buffer form-group" id="menteeGoal2">
@@ -459,6 +630,19 @@
                                                     <option >Data Structures</option>
                                                     <option >Communication</option>
                                                     <option >Confidence</option>
+                                                    <option>Public Speaking</option>
+                                                    <option >Writing</option>
+                                                    <option >Entrepreneurship</option>
+                                                    <option >Interviewing</option>
+                                                    <option >Time Management</option>
+                                                    <option >Sales</option>
+                                                    <option >Marketing</option>
+                                                    <option >Team Building</option>
+                                                    <option >Teamwork</option>
+                                                    <option >Physical Fitness</option>
+                                                    <option >Graphic Design</option>
+                                                    <option >Object Oriented Programming</option>
+                                                    <option value="other">Other</option>
                                                   </select>
                                               
                                               <div class = "col-md-1"></div>
@@ -491,7 +675,10 @@
                                             </div>
         
         
-        
+                                            <div class="row bottom-buffer" id = "goal2other">
+                                                <div class="col-md-3"></div>
+                                                  <input type="text" ng-model = "goal2otherFill" id="goal2other" class="form-control col-md-3" placeholder="Other">
+                                              </div>
         
                                             <div class = "row bottom-buffer form-group" id="menteeGoal3">
                                               <!-- 3nd Strength as a mentor selection -->
@@ -505,6 +692,19 @@
                                                       <option >Data Structures</option>
                                                       <option >Communication</option>
                                                       <option >Confidence</option>
+                                                      <option>Public Speaking</option>
+                                                      <option >Writing</option>
+                                                      <option >Entrepreneurship</option>
+                                                      <option >Interviewing</option>
+                                                      <option >Time Management</option>
+                                                      <option >Sales</option>
+                                                      <option >Marketing</option>
+                                                      <option >Team Building</option>
+                                                      <option >Teamwork</option>
+                                                      <option >Physical Fitness</option>
+                                                      <option >Graphic Design</option>
+                                                      <option >Object Oriented Programming</option>
+                                                      <option value="other">Other</option>
                                                     </select>
                                                 
                                                 <div class = "col-md-1"></div>
@@ -535,8 +735,39 @@
                                                     <label class="form-check-label" for="professionRadio5">5</label>
                                                   </div>
                                               </div>
+
+
+                                              <div class="row bottom-buffer" id = "goal3other">
+                                                  <div class="col-md-3"></div>
+                                                    <input type="text" ng-model = "goal3otherFill" id="goal3other" class="form-control col-md-3" placeholder="Other">
+                                                </div>
+
+
+
                                           </div>
+                                          </div>
+
+                                            
+
+
+
+
+
+
+
+                                            <div class = "row bottom-buffer" id = "bioBlock">
+
+                                              <label class="bottom-buffer col-md-2 col-form-label bold">Bio</label>
+
+                                              <textarea class="form-control col-md-4" id="bioText" ng-model="bio" rows="3"></textarea>
                                             </div>
+
+                                            <div class = "row bottom-buffer">
+
+                                                <div class = col-md-10></div>
+                                                <button type="button" class="btn btn-primary">Submit</button>
+                                              </div>
+
 
                         </div>
                       </form>
