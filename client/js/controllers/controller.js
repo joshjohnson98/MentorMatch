@@ -43,7 +43,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       console.log("We are in angular login function now!");
       console.log("Email passed in: " + emailParam);
 
-      var emailAlreadyInDB = false;  //CHANGE LATER (to be based upon if email is in database)
+      var emailAlreadyInDB = false;
 
 
       angular.forEach($scope.listings, function(value,key){
