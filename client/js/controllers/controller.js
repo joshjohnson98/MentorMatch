@@ -50,9 +50,9 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
       }else{  //ELSE, create new user
         var listing = {
-          email: emailParam
+          email: emailParam //Initialize email attribute
+                            //All other attributes are left undefined
         };
-
         $scope.addListing(listing);
 
       }
