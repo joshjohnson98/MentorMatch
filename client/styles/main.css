@@ -4,7 +4,7 @@
 }
 
 #profileButton {
-  color: #e84a5f;
+  
   font-size: 30px;
 }
 
@@ -23,6 +23,10 @@ hr{
   width: 35%;
   margin-left:0;  
   text-align:left;
+}
+h5{
+  color: #e84a5f;
+  font-size: 30px;
 }
 h1{
   font-size:50px;
