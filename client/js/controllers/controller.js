@@ -42,6 +42,9 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       //For use in other sections of the homepage
       currentUserEmail = email;
 
+      console.log("We are in angular login function now!");
+      console.log("Email passed in: " + email);
+
       //If email is already in database, show user information
 
       //ELSE, create new user
@@ -53,3 +56,37 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
   
 ]);
+
+
+
+var googleUser = {};
+var startApp = function() {
+    gapi.load('auth2', function(){
+        // Retrieve the singleton for the GoogleAuth library and set up the client.
+        auth2 = gapi.auth2.init({
+            client_id: '94097431082-u080o437bpmes48td7lh5ojcungl8hsn.apps.googleusercontent.com',
+            cookiepolicy: 'single_host_origin',
+        });
+        attachSignin(document.getElementById('customBtn'));
+    });
+};
+
+
+function attachSignin(element)
+{
+    auth2.attachClickHandler(element, {},
+            function (googleUser)
+            {
+                console.log("Button clicked!\n Email: " + googleUser.getBasicProfile().getEmail());
+
+                var email = googleUser.getBasicProfile().getEmail();
+
+                angular.element($('#MainWrap')).scope().login(email);
+
+            }, function (error)
+            {
+                alert(JSON.stringify(error, undefined, 2));
+            });
+}
+
+startApp();

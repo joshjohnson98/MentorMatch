@@ -8,34 +8,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
       <script src="https://apis.google.com/js/api:client.js"></script>
-      <script>
-          var googleUser = {};
-          var startApp = function() {
-              gapi.load('auth2', function(){
-                  // Retrieve the singleton for the GoogleAuth library and set up the client.
-                  auth2 = gapi.auth2.init({
-                      client_id: '94097431082-u080o437bpmes48td7lh5ojcungl8hsn.apps.googleusercontent.com',
-                      cookiepolicy: 'single_host_origin',
-                  });
-                  attachSignin(document.getElementById('customBtn'));
-              });
-          };
-        
-          function attachSignin(element)
-          {
-              auth2.attachClickHandler(element, {},
-                      function (googleUser)
-                      {
-                          // document.getElementById('name').innerText = "Signed in: " +
-                          //         googleUser.getBasicProfile().getName() + "\n Email: " +
-                          //         googleUser.getBasicProfile().getEmail();
-                          console.log(googleUser.getBasicProfile().getEmail());
-                      }, function (error)
-                      {
-                          alert(JSON.stringify(error, undefined, 2));
-                      });
-          }
-      </script>
       <style type="text/css">
           #customBtn {
               display: inline-block;
@@ -73,8 +45,8 @@
           }
       </style>
   </head>
-  <body ng-app="directoryApp">
-    <div class="container">
+  <body ng-app="directoryApp" id="MainWrap" ng-controller="ListingsController">
+    <div class="container" >
       <div class="row">
         <nav class="navbar navbar-inverse">
           <h1 id="pageTitle">Mentor Match</h1>
@@ -170,28 +142,25 @@
             </div>
 
       
-      
-      
+    
+        <!--//Google button is here,,,.........-->
+        <div id="gSignInWrapper">
+          <div id = "customBtn" class="customGPluSignIn")>
+              <span class="icon"></span>
+              <span class="buttonText">Google</span>
+          </div>
+        </div>
+
+        
       </div>
     
-    <!--//Google button is here,,,.........-->
-    
-    <div id="gSignInWrapper">
-        <!--<span class="label">Sign in with:</span>-->
-        <div id="customBtn" class="customGPlusSignIn">
-            <span class="icon"></span>
-            <span class="buttonText">Google</span>
-        </div>
-    </div>
-    <!--<div id="name"></div>-->
 
 
 
-    <script>startApp();</script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-    <script src="js/login.js"></script>
     <script src="js/app.js"></script>
     <script src="js/factories/factory.js"></script>
     <script src="js/controllers/controller.js"></script>
