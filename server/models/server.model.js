@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 
 /* Create your schema */
 var profileSchema = new Schema({
-  ID: {
+  email: {
     type: String, 
     required: true
   }, 
