@@ -1,10 +1,35 @@
 #pageTitle {
-  color: #2A363B;
-  margin-left: 10px;
+  color: #EEEEEE;
+  font-size: 50px;
+}
+
+#profileButton {
+  color: #e84a5f;
+  font-size: 30px;
 }
 
 body {
+  background-color: #2A363B;
+}
+/* .card-body{
   background-color: #EEEEEE;
+
+} */
+p{
+  color:White;
+}
+hr{
+  border-top: 3px solid #EEEEEE;
+  width: 35%;
+  margin-left:0;  
+  text-align:left;
+}
+h1{
+  font-size:50px;
+  color:#EEEEEE;
+}
+h2{
+  color: #e84a5f;
 }
 
 th {
@@ -22,8 +47,8 @@ th {
 
 }
 
-#addArea h3 {
-  color: #222;
+#addArea h1 {
+  color: #e84a5f;
 }
 
 #searchBar {
@@ -51,4 +76,11 @@ th {
 }
 .bottom-buffer{
   margin-bottom: 20px;
+}
+
+.bottom-buffer-large{
+  margin-bottom: 50px;
+}
+.bold{
+  font-weight: bold;
 }
