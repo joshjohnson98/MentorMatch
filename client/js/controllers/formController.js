@@ -13,6 +13,29 @@ $("#JobSelect").change(function() {
 $("#JobSelect").trigger("change");
 
 
+$("#GenderSelect").change(function() {
+  if ($(this).val() == "other") {
+    $('#genderOther').show();
+    
+  } else {
+    $('#genderOther').hide();
+    
+  }
+});
+$("#GenderSelect").trigger("change");
+
+$("#SexSelect").change(function() {
+  if ($(this).val() == "other") {
+    $('#sexOther').show();
+    
+  } else {
+    $('#sexOther').hide();
+    
+  }
+});
+$("#SexSelect").trigger("change");
+
+
 $("#mentorCheck").change(function() {
     if ($(this).val() == "yes") {
       $('#allStrength').show();
