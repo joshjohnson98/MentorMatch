@@ -45,16 +45,29 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
       var emailAlreadyInDB = false;  //CHANGE LATER (to be based upon if email is in database)
 
+
+      angular.forEach($scope.listings, function(value,key){
+        if(value.email == emailParam){
+          emailAlreadyInDB = true;
+          console.log("Found email in database!");
+        }
+      })
+
+
       //If email is already in database, show user information
       if(emailAlreadyInDB){
+        console.log("Email already in DB");
+
+        //*****TODO******
+
 
       }else{  //ELSE, create new user
+        console.log("Email not found in DB. Adding listing now...");
         var listing = {
           email: emailParam //Initialize email attribute
                             //All other attributes are left undefined
         };
         $scope.addListing(listing);
-
       }
     }
 
