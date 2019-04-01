@@ -1,6 +1,7 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings) {
-
+    var emailUser;
+    var nameUser;
     /* Unique identifier for current user */
     $scope.currentUserEmail = undefined;
 
@@ -39,7 +40,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
     $scope.login = function(emailParam){
       $scope.currentUserEmail = emailParam; //Set currentUserEmail scope variable
-
+        email = emailParam;
       console.log("We are in angular login function now!");
       console.log("Email passed in: " + emailParam);
 
@@ -52,7 +53,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
           console.log("Found email in database!");
         }
       })
-
 
       //If email is already in database, show user information
       if(emailAlreadyInDB){
@@ -71,8 +71,20 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       }
     }
 
+      // $scope.emailuser = email;
+    console.log(nameUser);
+    $scope.sendEmail = function(){
+        // var linkto = "mailto:"
+        //             +email
+        //             + "&subject=Feedback!"
+        //             + "&body=Mentor"
+        // ;
+        var linkto = 'mailto:' + email + '?subject=[MentorMatch] ' + nameUser +
+                    +'&body=Thank you for choosing MentorMatch!\nHere' ;
+        window.open(linkto);
+    }
   }
-  
+
 
   
 ]);
@@ -100,6 +112,8 @@ function attachSignin(element)
                 console.log("Button clicked!\n Email: " + googleUser.getBasicProfile().getEmail());
                 var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
                 angular.element($('#MainWrap')).scope().login(email); //Pass email into angular function (login)
+                var nameuser = googleUser.getBasicProfile().getName();  //Retrieve current user email
+                angular.element($('#MainWrap')).scope().login(name); //Pass email into angular function (login)
 
             }, function (error)
             {
