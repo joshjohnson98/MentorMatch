@@ -796,7 +796,21 @@
                           </div>
                           <div class = "collapse show" id = "matchCollapse" aria-labelledby="headingOne">
                             <div class = "card-body" >
-                                This is blank rn
+                                <!--This is blank rn-->
+                                <div class="tableWrapper">
+                                    <table class="table table-striped table-hover">
+                                        <tr>
+                                            <th></th>
+                                            <th>Name</th>
+            
+                                        </tr>
+                                        <tr ng-repeat="Profile in listings" >
+                                            <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
+                                            <td>{{$index + 1}}</td>
+                                            <td ng-click="showDetails($index)">{{Profile.name}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                           </div>
                     </div>
