@@ -48,9 +48,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
       angular.forEach($scope.listings, function(value,key){
         if(value.email == emailParam){
-          $scope.detailedInfo=value;
-          console.log($scope.detailedInfo);
-          console.log(value);
           emailAlreadyInDB = true;
           console.log("Found email in database!");
         }
