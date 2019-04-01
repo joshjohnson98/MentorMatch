@@ -2,9 +2,69 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
   function($scope, Listings) {
 
     /* Unique identifier for current user */
-    $scope.currentUserEmail = undefined;
+    $scope.jobOther;
+    $scope.detailedInfo = {
+      email:"",
+      name:{
+        value:"",
+        score:0
+      },
+      ethnicity:{
+        value:"",
+        score:0
+      },
+      sexualOrientation:{
+        value:"",
+        score:0
+      },
+      gender:{
+        value:"",
+        score:0
+      },
+      industry:{
+        value:"",
+        score:0
+      },
+      bio:"",
+      isMentor:"",
+      mentorStrength1:{
+        value:"",
+        score:0
+      },
+      mentorStrength2:{
+        value:"",
+        score:0
+      },
+      mentorStrength3:{
+        value:"",
+        score:0
+      },
+      isMentee:"",
+      menteeGoal1:{
+        value:"",
+        score:0
+      },
+      menteeGoal2:{
+        value:"",
+        score:0
+      },
+      menteeGoal3:{
+        value:"",
+        score:0
+      },
+      language:{
+        value:"",
+        score:0
+      },
+      location:{
+        country:"",
+        state:"",
+        city:"",
+        score:0
+      }
 
-    $scope.detailedInfo = undefined;
+
+    };
 
     /* Get all the listings, then bind it to the scope */
     Listings.getAll().then(function(response) {
@@ -24,6 +84,47 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       $scope.listings.push(listing);
     };
 
+
+
+    $scope.updateListing = function() {
+      console.log($scope.detailedInfo);
+      var id = 0;
+      
+
+      /* we will want to update by email once thats in the schema
+      just change the value.name to value.email*/
+      angular.forEach($scope.listings, function(value, key){
+        if(value.email == $scope.detailedInfo.email)
+          id = value._id;
+        });
+        console.log(id);
+
+
+      /* Create new date via update */
+      Listings.create($scope.detailedInfo)
+              .then(function(response) {
+                console.log(response);
+                //location.reload();
+                /* Delete old data */
+                Listings.delete(id)
+                        .then(function(response) {
+                          location.reload();
+                        }, function(error) {
+                          $scope.error = 'Unable to delete listing!' + error;
+                        });
+              }, function(error) {
+                $scope.error = 'Unable to add lyour person isting!' + error;
+              });
+
+
+
+    };
+
+
+
+
+
+
     $scope.deleteListing = function(id) {
       Listings.delete(id)
       .then(function(response) {
@@ -38,7 +139,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     };
 
     $scope.login = function(emailParam){
-      $scope.currentUserEmail = emailParam; //Set currentUserEmail scope variable
+      $scope.detailedInfo.email = emailParam; //Set currentUserEmail scope variable
 
       console.log("We are in angular login function now!");
       console.log("Email passed in: " + emailParam);
@@ -67,7 +168,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
           email: emailParam //Initialize email attribute
                             //All other attributes are left undefined
         };
-        $scope.addListing(listing);
+        $scope.addListing($scope.detailedInfo);
       }
     }
 
