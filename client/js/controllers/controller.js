@@ -1,6 +1,6 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings) {
-    var emailUser;
+    // var emailUser;
     var nameUser;
     /* Unique identifier for current user */
     $scope.currentUserEmail = undefined;
@@ -73,14 +73,10 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
       // $scope.emailuser = email;
     console.log(nameUser);
-    $scope.sendEmail = function(){
-        // var linkto = "mailto:"
-        //             +email
-        //             + "&subject=Feedback!"
-        //             + "&body=Mentor"
-        // ;
-        var linkto = 'mailto:' + email + '?subject=[MentorMatch] ' + nameUser +
-                    +'&body=Thank you for choosing MentorMatch!\nHere' ;
+    $scope.sendEmail = function(emailSendTo){
+
+        var linkto = 'mailto:' + emailSendTo + '?subject=[MentorMatch]&body=Mentor/Mentee ' +
+            'excelled at:%0A%0A%0AThere was room for improvement with:';
         window.open(linkto);
     }
   }

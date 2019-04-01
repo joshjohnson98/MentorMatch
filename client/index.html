@@ -802,12 +802,13 @@
                                         <tr>
                                             <th></th>
                                             <th>Name</th>
-            
+                                            <th></th>
                                         </tr>
                                         <tr ng-repeat="Profile in listings" >
                                             <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
                                             <td>{{$index + 1}}</td>
                                             <td ng-click="showDetails($index)">{{Profile.name}}</td>
+                                            <td><button ng-click = "sendEmail(Profile.email)">send Email</button></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -828,7 +829,7 @@
                           <div class = "collapse show" id = "savedMatchCollapse" aria-labelledby="headingOne">
                             <div class = "card-body" >
                                 This is blank rn
-                               <button ng-click = "sendEmail()">send Email</button>
+                               
                             </div>
                           </div>
                     </div>
