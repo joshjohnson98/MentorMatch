@@ -1,6 +1,7 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings) {
-
+    // var emailUser;
+    var nameUser;
     /* Unique identifier for current user */
     $scope.jobOther;
     $scope.detailedInfo = {
@@ -155,7 +156,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         }
       })
 
-
       //If email is already in database, show user information
       if(emailAlreadyInDB){
         console.log("Email already in DB");
@@ -173,8 +173,16 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       }
     }
 
+      // $scope.emailuser = email;
+    console.log(nameUser);
+    $scope.sendEmail = function(emailSendTo){
+
+        var linkto = 'mailto:' + emailSendTo + '?subject=[MentorMatch]&body=Mentor/Mentee ' +
+            'excelled at:%0A%0A%0AThere was room for improvement with:';
+        window.open(linkto);
+    }
   }
-  
+
 
   
 ]);
@@ -202,6 +210,8 @@ function attachSignin(element)
                 console.log("Button clicked!\n Email: " + googleUser.getBasicProfile().getEmail());
                 var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
                 angular.element($('#MainWrap')).scope().login(email); //Pass email into angular function (login)
+                var nameuser = googleUser.getBasicProfile().getName();  //Retrieve current user email
+                angular.element($('#MainWrap')).scope().login(name); //Pass email into angular function (login)
 
             }, function (error)
             {
