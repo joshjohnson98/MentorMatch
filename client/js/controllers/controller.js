@@ -1,7 +1,6 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings) {
-    // var emailUser;
-    var nameUser;
+
     /* Unique identifier for current user */
     $scope.jobOther;
     $scope.detailedInfo = {
@@ -167,14 +166,13 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         console.log("Email not found in DB. Adding listing now...");
         var listing = {
           email: emailParam //Initialize email attribute
-                            //All other attributes are left undefined
+                 //All other attributes are left undefined
         };
         $scope.addListing($scope.detailedInfo);
       }
     }
 
-      // $scope.emailuser = email;
-    console.log(nameUser);
+
     $scope.sendEmail = function(emailSendTo){
 
         var linkto = 'mailto:' + emailSendTo + '?subject=[MentorMatch]&body=Mentor/Mentee ' +
@@ -209,9 +207,9 @@ function attachSignin(element)
             {
                 console.log("Button clicked!\n Email: " + googleUser.getBasicProfile().getEmail());
                 var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
+                //var nameuser = googleUser.getBasicProfile().getName();  //Retrieve current user email
                 angular.element($('#MainWrap')).scope().login(email); //Pass email into angular function (login)
-                var nameuser = googleUser.getBasicProfile().getName();  //Retrieve current user email
-                angular.element($('#MainWrap')).scope().login(name); //Pass email into angular function (login)
+                
 
             }, function (error)
             {

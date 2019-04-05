@@ -807,7 +807,7 @@
                                         <tr ng-repeat="Profile in listings" >
                                             <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
                                             <td>{{$index + 1}}</td>
-                                            <td ng-click="showDetails($index)">{{Profile.name}}</td>
+                                            <td ng-click="showDetails($index)">{{Profile.name.value}}</td>
                                             <td><button ng-click = "sendEmail(Profile.email)">send Email</button></td>
                                         </tr>
                                     </table>
