@@ -93,7 +93,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
     $scope.updateListing = function ()
     {
-      console.log($scope.detailedInfo);
+      console.log("detailedInfo.email: " + $scope.detailedInfo.email);
       var id = 0;
 
       angular.forEach($scope.listings, function (value, key)
