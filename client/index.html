@@ -7,10 +7,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://apis.google.com/js/api:client.js"></script>
   </head>
   <body ng-app="directoryApp" id="MainWrap" ng-controller="ListingsController">
-    <nav class="navbar navbar-fixed-top">
+    <nav class="navbar fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <h1>Mentor Match <i class="glyphicon glyphicon-remove"></i></h1>
@@ -18,7 +19,7 @@
         <div class = "nav navbar-nav navbar-right" id="gSignInWrapper">
           <div id = "customBtn" class="customGPluSignIn">
             <span class="icon"></span>
-            <span class="buttonText">Sign in with Google</span>
+            <span class="buttonText">Sign In with Google</i></span>
           </div>
         </div>
       </div>
@@ -28,11 +29,11 @@
       <!-- <hr class = "bottom-buffer-large"> -->
       <!--Success alert-->
       <div class="alert alert-success" role="alert">
-        Welcome to Mentor Match, A place to find other people to mentor or be mentored by. To get stated, fill out your profile below.
 
+        Welcome to Mentor Match, a place to find other people to mentor or be mentored by. To get started, fill out your profile below.
+        <span>
+        <i class="fas fa-times"></i>
       </div>
-
-<p>Test test for glyph <span class="glyphicon glyphicon-remove"></span></p>
 
       <div class="row bottom-buffer">
         <div class="col-md-12">
@@ -40,7 +41,7 @@
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                   <button id = "profileButton" class="btn bold salmon" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Profile <i class="glyphicon glyphicon-chevron-down" aria-hidden="true"></i>
+                    Profile <i class="fas fa-chevron-down"></i>
                   </button>
                 </h5>
               </div>
@@ -49,9 +50,8 @@
 
 
                   <div class= "row bottom-buffer-large" for= ProfileForm>
-                    <div class = col-md-1></div>
-                    <label class = "col-md-10">All profile information filled out will be public. If you wish to keep any of the information
-                    below private, leave the section blank.
+                    <div class="col-md-1"></div>
+                    <label class="col-md-6">Fill out profile attributes you would like us to use when finding new matches.
                     </label>
                   </div>
 
@@ -914,7 +914,7 @@
 					<ul class="list-unstyled quick-links">
 						<li><a href="#">Home</a></li>
 						<li><a href="javascript:void();">Ultimate Software</a></li>
-						<li><a href="javascript:void();">University of Florida</a></li>
+						<li><a href="http://www.ufl.edu/">University of Florida</a></li>
 						<li><a href="javascript:void();">Contribute</a></li>
 					</ul>
 				</div>

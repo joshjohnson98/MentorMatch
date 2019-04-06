@@ -16,6 +16,7 @@ nav {
 }
 
 body {
+  margin-top: 100px;
   background-color: #EAECED;
 }
 /* .card-body{
