@@ -5,6 +5,7 @@ window.onload = function() {
 
     // ...
 }
+
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings) {
 
@@ -139,8 +140,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       $scope.detailedInfo.name.value = nameParam;
 
 
-        localStorage.setItem('useremail', emailParam);
-        localStorage[useremail] = emailParam;
+      localStorage.setItem('useremail', emailParam);
+      localStorage['useremail'] = emailParam;
 
 
       console.log("We are in angular login function now!");
@@ -276,7 +277,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
   }
 
     // console.log(localStorage.getItem('email'));
-  
+  }
 ]);
 
 
