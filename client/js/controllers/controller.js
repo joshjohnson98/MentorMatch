@@ -113,7 +113,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
                           $scope.error = 'Unable to delete listing!' + error;
                         });
               }, function(error) {
-                $scope.error = 'Unable to add lyour person isting!' + error;
+                $scope.error = 'Unable to add person listing!' + error;
               });
     };
 
@@ -127,10 +127,12 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       });
     };
 
-    $scope.login = function(emailParam){
+    $scope.login = function(emailParam, nameParam){
       $scope.detailedInfo.email = emailParam; //Set currentUserEmail scope variable
+      $scope.detailedInfo.name.value = nameParam;
 
       console.log("Email passed in: " + emailParam);
+      console.log("Name passed in: " + nameParam);
 
       var emailAlreadyInDB = false;
 
@@ -141,7 +143,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
           emailAlreadyInDB = true;
           console.log("User found. Email already in DB");
           //If email is already in database, show user information in profile form
-          $scope.detailedInfo.name=value.name;
           $scope.detailedInfo.ethnicity.value=value.ethnicity.value;
           $scope.detailedInfo.ethnicity.score=value.ethnicity.score;
           $scope.detailedInfo.sexualOrientation.value=value.sexualOrientation.value;
@@ -179,7 +180,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         var newListing = {
           email: emailParam,
           name:{
-            value:"",
+            value: nameParam,
             score:0
           },
           ethnicity:{
@@ -274,8 +275,8 @@ function attachSignin(element)
             function (googleUser)
             {
                 var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
-                //var nameuser = googleUser.getBasicProfile().getName();  //Retrieve current user email
-                angular.element($('#MainWrap')).scope().login(email); //Pass email into angular function (login)
+                var name = googleUser.getBasicProfile().getName();  //Retrieve current user email
+                angular.element($('#MainWrap')).scope().login(email, name); //Pass email into angular function (login)
                 
 
             }, function (error)
