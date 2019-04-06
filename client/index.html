@@ -10,21 +10,29 @@
     <script src="https://apis.google.com/js/api:client.js"></script>
   </head>
   <body ng-app="directoryApp" id="MainWrap" ng-controller="ListingsController">
-    <div class="container" >
-      <div class="row">
-        <nav class="navbar navbar-inverse col-md-4">
-          <h1 id="pageTitle">Mentor Match</h1>
-        </nav>
-        <div class = "col-md-6"></div>
-        <!--Google Sign in Button-->
-        <div class = "col-md-2 top-buffer" id="gSignInWrapper">
-          <div id = "customBtn" class="customGPluSignIn")>
+    <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h1>Mentor Match <i class="glyphicon glyphicon-remove"></i></h1>
+        </div>
+        <div class = "nav navbar-nav navbar-right" id="gSignInWrapper">
+          <div id = "customBtn" class="customGPluSignIn">
             <span class="icon"></span>
             <span class="buttonText">Sign in with Google</span>
           </div>
         </div>
       </div>
-      <hr class = "bottom-buffer-large">
+    </nav>
+    <div class="container" id="pageBody">
+
+      <!-- <hr class = "bottom-buffer-large"> -->
+      <!--Success alert-->
+      <div class="alert alert-success" role="alert">
+        Welcome to Mentor Match, A place to find other people to mentor or be mentored by. To get stated, fill out your profile below.
+
+      </div>
+
+<p>Test test for glyph <span class="glyphicon glyphicon-remove"></span></p>
 
       <div class="row bottom-buffer">
         <div class="col-md-12">
@@ -32,7 +40,7 @@
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                   <button id = "profileButton" class="btn bold salmon" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Profile
+                    Profile <i class="glyphicon glyphicon-chevron-down" aria-hidden="true"></i>
                   </button>
                 </h5>
               </div>
@@ -57,12 +65,12 @@
                           <div class = "container">
                             <div class = "row bottom-buffer">
                               <label for="NameInput" class="col-md-2 col-form-label">Name</label>
-                             
+
                               <input type="text" ng-model = "detailedInfo.name.value" id="NameInput" class="form-control col-md-4" placeholder="Name">
                               <div class = col-md-1></div>
                               <label class = "col-md-4">How important is it for your mentor/mentee to have similar traits? (0-unimportant, 5-very important)
                                 </label>
-                              
+
                             </div>
                             <div class = "row bottom-buffer">
                               <!-- Profession selection -->
@@ -92,7 +100,7 @@
                                       <option value="other">Other</option>
 
                                     </select>
-                                
+
                                 <div class = "col-md-1"></div>
                                 <!-- refer to this for ng-model for radios
                                   https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
@@ -137,7 +145,7 @@
                                         <option>Non-binary</option>
                                         <option value="other">Other</option>
                                       </select>
-                                  
+
                                   <div class = "col-md-1"></div>
                                   <!-- refer to this for ng-model for radios
                                     https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
@@ -186,7 +194,7 @@
                                           <option>Bi-Sexual</option>
                                           <option value="other">Other</option>
                                         </select>
-                                    
+
                                     <div class = "col-md-1"></div>
                                     <!-- refer to this for ng-model for radios
                                       https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
@@ -234,7 +242,7 @@
                                               <option>White</option>
                                               <option value="other">Other</option>
                                             </select>
-                                        
+
                                         <div class = "col-md-1"></div>
                                         <!-- refer to this for ng-model for radios
                                           https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
@@ -282,8 +290,8 @@
                                                 <option>Arabic</option>
                                                 <option value="other">Other</option>
                                               </select>
-  
-  
+
+
                                           </div>
                                           <div class="row bottom-buffer" id = "langOther">
                                               <div class="col-md-2"></div>
@@ -294,7 +302,7 @@
                                           <div class="row bottom-buffer bold">Location</div>
                                           <div class = "row bottom-buffer">
                                               <label for="CountryInput" class="col-md-2 col-form-label">Country</label>
-                                            
+
                                               <input type="text" ng-model = "detailedInfo.location.country" id="CountryInput" class="form-control col-md-4" placeholder="Country">
                                               <div class = col-md-1></div>
                                               <div class="form-check form-check-inline " >
@@ -321,36 +329,36 @@
                                                   <input class="form-check-input" type="radio" ng-model="detailedInfo.location.score" id="professionRadio5" value="5">
                                                   <label class="form-check-label" for="professionRadio5">5</label>
                                                 </div>
-                                              
+
                                           </div>
                                           <div class = "row bottom-buffer">
                                               <label for="CountryInput" class="col-md-2 col-form-label">State/Province</label>
-                                            
+
                                               <input type="text" ng-model = "detailedInfo.location.state" id="StateInput" class="form-control col-md-4" placeholder="State/Province">
                                               <div class = col-md-1></div>
-                                              
-                                              
+
+
                                           </div>
                                           <div class = "row bottom-buffer-large">
                                               <label for="CountryInput" class="col-md-2 col-form-label">City</label>
-                                            
+
                                               <input type="text" ng-model = "detailedInfo.location.city" id="CityInput" class="form-control col-md-4" placeholder="City">
                                               <div class = col-md-1></div>
-                                              
-                                              
+
+
                                           </div>
                                         </div>
 
-                                        
+
 
                               <div class = "row bottom-buffer form-group">
-                              
+
                                   <label for="mentorCheck" class="col-md-2 col-form-label bold">I want to be a mentor</label>
                                         <select class="form-control col-md-4" id="mentorCheck" ng-model="detailedInfo.isMentor">
                                           <option value = "no">no</option>
                                           <option value = "yes">yes</option>
                                         </select>
-                                
+
 
                               </div>
                               <div id = "allStrength">
@@ -358,7 +366,7 @@
                               <div class = "row bottom-buffer form-group" id="mentorStrength">
                                   <!-- Strengths as a mentor selection -->
                                   <div class = "col-md-1"></div>
-                                    
+
                                     <label for="mentorStrength" class=" col-form-label col-md-2">Strength</label>
                                         <select class="form-control col-md-4" id="mentorStrength1check"  ng-model="detailedInfo.mentorStrength1.value">
                                           <option value ="Strength1empty">--</option>
@@ -381,7 +389,7 @@
                                           <option >Object Oriented Programming</option>
                                           <option value="other">Other</option>
                                         </select>
-                                    
+
                                     <div class = "col-md-1"></div>
                                     <!-- refer to this for ng-model for radios
                                       https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
@@ -444,7 +452,7 @@
                                           <option >Object Oriented Programming</option>
                                           <option value="other">Other</option>
                                           </select>
-                                      
+
                                       <div class = "col-md-1"></div>
                                       <!-- refer to this for ng-model for radios
                                         https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
@@ -506,7 +514,7 @@
                                           <option >Object Oriented Programming</option>
                                           <option value="other">Other</option>
                                             </select>
-                                        
+
                                         <div class = "col-md-1"></div>
                                         <!-- refer to this for ng-model for radios
                                           https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
@@ -549,21 +557,21 @@
 
 
                                     <div class = "row bottom-buffer form-group">
-                              
+
                                       <label for="menteeCheck" class="col-md-2 col-form-label bold">I want to be a mentee</label>
                                             <select class="form-control col-md-4" id="menteeCheck" ng-model="detailedInfo.isMentee">
                                               <option value = "no">no</option>
                                               <option value = "yes">yes</option>
                                             </select>
-                                    
-    
+
+
                                   </div>
                                   <div id = "allGoal">
 
                                       <div class = "row bottom-buffer form-group" id="menteeGoal">
                                           <!-- Strengths as a mentee selection -->
                                           <div class = "col-md-1"></div>
-                                            
+
                                             <label for="menteeGoal" class=" col-form-label col-md-2">Goal</label>
                                                 <select class="form-control col-md-4" id="menteeGoal1check"  ng-model="detailedInfo.menteeGoal1.value">
                                                   <option value ="Goal1empty">--</option>
@@ -586,7 +594,7 @@
                                                   <option >Object Oriented Programming</option>
                                                   <option value="other">Other</option>
                                                 </select>
-                                            
+
                                             <div class = "col-md-1"></div>
                                             <!-- refer to this for ng-model for radios
                                               https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
@@ -615,19 +623,19 @@
                                                 <label class="form-check-label" for="professionRadio5">5</label>
                                               </div>
                                           </div>
-        
+
 
                                           <div class="row bottom-buffer" id = "goal1other">
                                               <div class="col-md-3"></div>
                                                 <input type="text" ng-model = "goal1otherFill" id="goal1other" class="form-control col-md-3" placeholder="Other">
                                             </div>
 
-        
+
                                           <div id=goal2>
                                           <div class = "row bottom-buffer form-group" id="menteeGoal2">
                                             <!-- 2nd Strength as a mentor selection -->
                                             <div class = "col-md-1"></div>
-        
+
                                               <label for="menteeGoal2" class="col-md-2 col-form-label">Goal</label>
                                                   <select class="form-control col-md-4" id="menteeGoal2check"  ng-model="detailedInfo.menteeGoal2.value">
                                                     <option value ="Goal2empty">--</option>
@@ -650,7 +658,7 @@
                                                     <option >Object Oriented Programming</option>
                                                     <option value="other">Other</option>
                                                   </select>
-                                              
+
                                               <div class = "col-md-1"></div>
                                               <!-- refer to this for ng-model for radios
                                                 https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
@@ -679,17 +687,17 @@
                                                   <label class="form-check-label" for="professionRadio5">5</label>
                                                 </div>
                                             </div>
-        
-        
+
+
                                             <div class="row bottom-buffer" id = "goal2other">
                                                 <div class="col-md-3"></div>
                                                   <input type="text" ng-model = "goal2otherFill" id="goal2other" class="form-control col-md-3" placeholder="Other">
                                               </div>
-        
+
                                             <div class = "row bottom-buffer form-group" id="menteeGoal3">
                                               <!-- 3nd Strength as a mentor selection -->
                                               <div class = "col-md-1"></div>
-        
+
                                                 <label for="menteeGoal3" class="col-md-2 col-form-label">Goal</label>
                                                     <select class="form-control col-md-4" id="menteeGoal3check" ng-model="detailedInfo.menteeGoal3.value">
                                                       <option value ="Strength3empty">--</option>
@@ -712,7 +720,7 @@
                                                       <option >Object Oriented Programming</option>
                                                       <option value="other">Other</option>
                                                     </select>
-                                                
+
                                                 <div class = "col-md-1"></div>
                                                 <!-- refer to this for ng-model for radios
                                                   https://docs.angularjs.org/api/ng/input/input%5Bradio%5D -->
@@ -753,7 +761,7 @@
                                           </div>
                                           </div>
 
-                                            
+
 
 
 
@@ -778,19 +786,19 @@
                         </div>
                       </form>
                     </div>
-                    
+
                 </div>
               </div>
-            </div>   
+            </div>
         </div>
-      
+
             <div class="row bottom-buffer">
                 <div class="col-md-6">
                     <div class = "card" >
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
                                 <button id = "matchesButton" class="btn bold salmon" data-toggle="collapse" data-target="#matchCollapse" aria-expanded="false" aria-controls="collapseOne">
-                                  Matches
+                                  Mentor Matches
                                 </button>
                               </h5>
                           </div>
@@ -816,28 +824,120 @@
                           </div>
                     </div>
                 </div>
-        
+
                 <div class="col-md-6">
                     <div class = "card" >
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
                                 <button id = "savedMatchesButton" class="btn bold salmon" data-toggle="collapse" data-target="#savedMatchCollapse" aria-expanded="false" aria-controls="collapseOne">
-                                  Saved Matches
+                                  Saved Mentor Matches
                                 </button>
                               </h5>
                           </div>
                           <div class = "collapse show" id = "savedMatchCollapse" aria-labelledby="headingOne">
                             <div class = "card-body" >
                                 This is blank rn
-                               
+
                             </div>
                           </div>
                     </div>
                 </div>
-        
+
               </div>
-      </div>
-    
+
+
+      <!--New row of menus-->
+      <div class="row bottom-buffer">
+          <div class="col-md-6">
+              <div class = "card" >
+                  <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                          <button id = "matchesButton2" class="btn bold salmon" data-toggle="collapse" data-target="#matchCollapse2" aria-expanded="false" aria-controls="collapseOne">
+                            Mentee Matches
+                          </button>
+                        </h5>
+                    </div>
+                    <div class = "collapse show" id = "matchCollapse2" aria-labelledby="headingOne">
+                      <div class = "card-body" >
+                          <!--This is blank rn-->
+                          <div class="tableWrapper">
+                              <table class="table table-striped table-hover">
+                                  <tr>
+                                      <th></th>
+                                      <th>Name</th>
+                                      <th></th>
+                                  </tr>
+                                  <tr ng-repeat="Profile in listings" >
+                                      <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
+                                      <td>{{$index + 1}}</td>
+                                      <td ng-click="showDetails($index)">{{Profile.name.value}}</td>
+                                      <td><button ng-click = "sendEmail(Profile.email)">send Email</button></td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+                    </div>
+              </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class = "card" >
+                  <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                          <button id = "savedMatchesButton2" class="btn bold salmon" data-toggle="collapse" data-target="#savedMatchCollapse2" aria-expanded="false" aria-controls="collapseOne">
+                            Saved Mentee Matches
+                          </button>
+                        </h5>
+                    </div>
+                    <div class = "collapse show" id = "savedMatchCollapse2" aria-labelledby="headingOne">
+                      <div class = "card-body" >
+                          This is blank rn
+
+                      </div>
+                    </div>
+              </div>
+          </div>
+
+        </div>
+</div>
+
+<!--Footer-->
+<section id="footer">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>About</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin finibus orci vitae magna volutpat molestie. Morbi varius, ipsum eget sagittis eleifend, arcu turpis tempor dui, a pellentesque diam lacus id sapien. Sed tempor elit non nibh egestas aliquet. Nam non nulla volutpat, euismod justo sed, vestibulum odio. Etiam condimentum cursus interdum. Sed a aliquam magna. Donec commodo sit amet augue quis finibus. Integer tempor, velit sed scelerisque sollicitudin, sem felis condimentum dui, vitae semper nunc justo sed risus. Pellentesque at nibh massa. Nulla sed porttitor dolor, nec ullamcorper dolor.</p>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Quick links</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="#">Home</a></li>
+						<li><a href="javascript:void();">Ultimate Software</a></li>
+						<li><a href="javascript:void();">University of Florida</a></li>
+						<li><a href="javascript:void();">Contribute</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Contributors</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="javascript:void();">Joshua Johnson</a></li>
+						<li><a href="javascript:void();">Anthony Lehenbauer</a></li>
+						<li><a href="javascript:void();">Alex Blauth</a></li>
+						<li><a href="javascript:void();">Anh Hoang</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					<p>Mentor Match is a project of CEN3031 at the University of Florida</p>
+					<p class="h6">Spring 2019</p>
+				</div>
+				</hr>
+			</div>
+		</div>
+	</section>
+
 
 
 
@@ -848,6 +948,6 @@
     <script src="js/app.js"></script>
     <script src="js/factories/factory.js"></script>
     <script src="js/controllers/controller.js"></script>
-    
+
   </body>
 </html>

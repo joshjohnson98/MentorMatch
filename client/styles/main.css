@@ -4,24 +4,35 @@
 }
 
 #profileButton {
-  
+
   font-size: 30px;
 }
 
+nav {
+  background-color: red;
+  /* width: 100%; */
+  color: white;
+  background-color: #31444b;
+}
+
 body {
-  background-color: #2A363B;
+  background-color: #EAECED;
 }
 /* .card-body{
   background-color: #EEEEEE;
 
 } */
+#pageBody {
+  min-height: 600px;
+}
+
 p{
   color:White;
 }
 hr{
   border-top: 3px solid #EEEEEE;
   width: 35%;
-  margin-left:0;  
+  margin-left:0;
   text-align:left;
 }
 h5{
@@ -76,7 +87,7 @@ th {
 }
 .form-check-label{
   font-size: 14px;
-  
+
 }
 .bottom-buffer{
   margin-bottom: 20px;
@@ -126,8 +137,83 @@ span.buttonText {
   vertical-align: left;
   padding-left: 1px;
   padding-right: 1px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   /* Use the Roboto font that is loaded in the <head> */
   font-family: 'Roboto', sans-serif;
+}
+
+/*Footer*/
+section .section-title {
+    text-align: center;
+    color: #2A363B;
+    margin-bottom: 50px;
+
+    text-transform: uppercase;
+}
+#footer {
+    background: #2A363B;
+    /* min-height: 1000px; */
+}
+#footer h5{
+  padding-left: 10px;
+  border-left: 3px solid #eeeeee;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  color:#ffffff;
+  margin-top: 20px;
+  /* font-size: 18px; */
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#ffffff;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width:767px) {
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
 }
