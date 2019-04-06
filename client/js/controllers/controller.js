@@ -1,11 +1,3 @@
-
-window.onload = function() {
-
-   console.log("local storage has: " + localStorage.getItem('useremail'));
-
-    // ...
-}
-
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings)
   {
@@ -104,9 +96,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       console.log($scope.detailedInfo);
       var id = 0;
 
-
-      /* we will want to update by email once thats in the schema
-      just change the value.name to value.email*/
       angular.forEach($scope.listings, function (value, key)
       {
         if (value.email == $scope.detailedInfo.email)
@@ -275,8 +264,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     }
 
 
-    // $scope.emailuser = email;
-
     $scope.sendEmail = function ()
     {
       // var linkto = "mailto:"
@@ -295,10 +282,17 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         window.open(linkto);
       }
     }
-
-    // console.log(localStorage.getItem('email'));
   }
 ]);
+
+
+window.onload = function() {
+
+  console.log("local storage has: " + localStorage.getItem('useremail'));
+
+  //Assign local storage email content to scope variable
+  angular.element($('#MainWrap')).scope().detailedInfo.email = localStorage.getItem('useremail');
+};
 
 
 
