@@ -1,3 +1,10 @@
+
+window.onload = function() {
+
+   console.log("local storage has: " + localStorage.getItem('useremail'));
+
+    // ...
+}
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings) {
     var emailUser;
@@ -41,6 +48,11 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.login = function(emailParam){
       $scope.currentUserEmail = emailParam; //Set currentUserEmail scope variable
         email = emailParam;
+
+        localStorage.setItem('useremail', emailParam);
+        localStorage[useremail] = emailParam;
+
+
       console.log("We are in angular login function now!");
       console.log("Email passed in: " + emailParam);
 
@@ -72,7 +84,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     }
 
       // $scope.emailuser = email;
-    console.log(nameUser);
+
     $scope.sendEmail = function(){
         // var linkto = "mailto:"
         //             +email
@@ -85,7 +97,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     }
   }
 
-
+    // console.log(localStorage.getItem('email'));
   
 ]);
 
