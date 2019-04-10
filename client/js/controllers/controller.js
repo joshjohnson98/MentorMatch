@@ -1,6 +1,9 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings)
   {
+    $scope.mentorMatches;
+    $scope.menteeMatches;
+
 
     /* Unique identifier for current user */
     $scope.jobOther;
@@ -282,6 +285,58 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         window.open(linkto);
       }
     }
+  
+  
+  //Matching Algorithm Code
+
+    $scope.populateMatches = function() {
+      var mentorMatchAndScoreArr, menteeMatchAndScoreArr;
+      var mentorMatchScore, menteeMatchScore;
+
+      angular.forEach($scope.listings, function (value, key){
+        if(value.email != $scope.detailedInfo.email){ //If profile in DB is not that of current user
+
+          //Calculate match scores
+          mentorMatchScore = calculateScore(value, $scope.detailedInfo); //Param 1: mentor //Param 2: mentee
+          menteeMatchScore = calculateScore($scope.detailedInfo, value); //Param 1: mentor //Param 2: mentee
+
+          var mentorMatchEntry = {
+            profile: value,
+            score: mentorMatchScore
+          };
+
+          var menteeMatchEntry = {
+            profile: value,
+            score: menteeMatchScore
+          };
+
+          mentorMatchAndScoreArr.push(mentorMatchEntry);
+          menteeMatchAndScoreArr.push(menteeMatchEntry);
+        }
+      });
+
+      //Sort lists of matches by score (descending)
+      mentorMatchAndScoreArr.sort(function(a,b){return b.score - a.score});
+      menteeMatchAndScoreArr.sort(function(a,b){return b.score - a.score});
+
+      //Save sorted lists of matches to scope variables
+      $scope.mentorMatches = mentorMatchAndScoreArr;
+      $scope.menteeMatches = menteeMatchAndScoreArr;
+    };
+
+
+    $scope.calculateScore = function(mentor, mentee) {
+      var score = 0;
+
+
+
+
+
+
+
+      return score;
+    };
+
   }
 ]);
 
@@ -323,6 +378,6 @@ function attachSignin(element)
             {
                 alert(JSON.stringify(error, undefined, 2));
             });
-}
+};
 
 startApp();
