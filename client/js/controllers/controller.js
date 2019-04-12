@@ -126,6 +126,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
           {
             $scope.error = 'Unable to add person listing!' + error;
           });
+
+      $scope.populateMatches(); //Populate matches scope variables
     };
 
 
@@ -264,6 +266,9 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         }
         $scope.addListing(newListing);
       }
+
+
+      $scope.populateMatches(); //Populate matches scope variables
     }
 
 
@@ -289,16 +294,37 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
   
   //Matching Algorithm Code
 
+    $scope.calculateScore = function(mentor, mentee) {
+      var score = 0;
+
+      console.log("Calculating score...");
+
+      if(mentor.isMentor == "no" || mentee.isMentee == "no" ||
+        mentor.isMentor == "" || mentee.isMentee == "")  //If either user doesn't fit the role being tested for in this calculation
+        return 0;
+
+      return 27; //TESTING PURPOSES
+
+
+
+      return score;
+    };
+
+
     $scope.populateMatches = function() {
-      var mentorMatchAndScoreArr, menteeMatchAndScoreArr;
+
+      console.log("Populating matches...");
+
+      var mentorMatchAndScoreArr = new Array();
+      var menteeMatchAndScoreArr = new Array();
       var mentorMatchScore, menteeMatchScore;
 
       angular.forEach($scope.listings, function (value, key){
         if(value.email != $scope.detailedInfo.email){ //If profile in DB is not that of current user
 
           //Calculate match scores
-          mentorMatchScore = calculateScore(value, $scope.detailedInfo); //Param 1: mentor //Param 2: mentee
-          menteeMatchScore = calculateScore($scope.detailedInfo, value); //Param 1: mentor //Param 2: mentee
+          mentorMatchScore = $scope.calculateScore(value, $scope.detailedInfo); //Param 1: mentor //Param 2: mentee
+          menteeMatchScore = $scope.calculateScore($scope.detailedInfo, value); //Param 1: mentor //Param 2: mentee
 
           var mentorMatchEntry = {
             profile: value,
@@ -309,6 +335,9 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             profile: value,
             score: menteeMatchScore
           };
+          
+          console.log("MentorMatchEntry:");
+          console.log(mentorMatchEntry);
 
           mentorMatchAndScoreArr.push(mentorMatchEntry);
           menteeMatchAndScoreArr.push(menteeMatchEntry);
@@ -322,19 +351,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       //Save sorted lists of matches to scope variables
       $scope.mentorMatches = mentorMatchAndScoreArr;
       $scope.menteeMatches = menteeMatchAndScoreArr;
-    };
-
-
-    $scope.calculateScore = function(mentor, mentee) {
-      var score = 0;
-
-
-
-
-
-
-
-      return score;
     };
 
   }
