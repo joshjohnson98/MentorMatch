@@ -314,10 +314,11 @@ function attachSignin(element)
     auth2.attachClickHandler(element, {},
             function (googleUser)
             {
+                localStorage.clear();
                 var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
                 var name = googleUser.getBasicProfile().getName();  //Retrieve current user email
                 angular.element($('#MainWrap')).scope().login(email, name); //Pass email into angular function (login)
-                
+                window.location.href = "index.html";
 
             }, function (error)
             {

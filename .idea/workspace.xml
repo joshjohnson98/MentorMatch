@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7d5155d1-89c0-416c-9f35-386646453bef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/js/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/js/controllers/controller.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -17,29 +18,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="20" column="32" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/js/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="298" column="3" selection-start-line="298" selection-start-column="3" selection-end-line="298" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/controllers/formController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/factories/factory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="29" selection-start-column="29" selection-end-column="29" />
+            <state relative-caret-position="225">
+              <caret line="318" column="51" selection-start-line="318" selection-start-column="51" selection-end-line="318" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -81,6 +82,9 @@
       <find>local</find>
       <find>useremail</find>
       <find>loca</find>
+      <find>mentorStrength</find>
+      <find>lo</find>
+      <find>CustomBtn</find>
     </findStrings>
     <replaceStrings>
       <replace>google</replace>
@@ -96,11 +100,11 @@
         <option value="$PROJECT_DIR$/client/js/app.js" />
         <option value="$PROJECT_DIR$/client/styles/login.css" />
         <option value="$PROJECT_DIR$/client/js/socialLogin.js" />
-        <option value="$PROJECT_DIR$/client/login.html" />
         <option value="$PROJECT_DIR$/client/test.html" />
         <option value="$PROJECT_DIR$/client/js/login.js" />
         <option value="$PROJECT_DIR$/client/email.html" />
         <option value="$PROJECT_DIR$/client/index.html" />
+        <option value="$PROJECT_DIR$/client/login.html" />
         <option value="$PROJECT_DIR$/client/js/controllers/controller.js" />
       </list>
     </option>
@@ -119,87 +123,55 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
               <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="~/Desktop/MentorMatch" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
               <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="~/Desktop/MentorMatch" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Desktop/MentorMatch" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="~/Desktop/MentorMatch" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="~/Desktop/MentorMatch" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="factories" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="styles" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="config" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MentorMatch" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -230,7 +202,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24456000" />
+    <option name="totallyTimeSpent" value="25656000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -242,9 +214,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="799" extended-state="6" />
+    <frame x="44" y="23" width="1445" height="953" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20789288" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20786516" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -256,7 +229,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32390383" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.39256677" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -313,7 +286,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/styles/login.css" />
     <entry file="file://$PROJECT_DIR$/client/test.html" />
-    <entry file="file://$PROJECT_DIR$/client/login.html" />
     <entry file="file://$PROJECT_DIR$/client/js/login.js" />
     <entry file="file://$PROJECT_DIR$/client/js/socialLogin.js" />
     <entry file="file://$PROJECT_DIR$/client/events.html">
@@ -331,13 +303,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="808" column="48" selection-start-line="808" selection-start-column="48" selection-end-line="808" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -365,10 +330,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/signup.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="298" column="3" selection-start-line="298" selection-start-column="3" selection-end-line="298" selection-end-column="3" />
+        <state relative-caret-position="225">
+          <caret line="318" column="51" selection-start-line="318" selection-start-column="51" selection-end-line="318" selection-end-column="51" />
         </state>
       </provider>
     </entry>
