@@ -203,3 +203,4 @@ $("#mentorCheck").change(function() {
   })
 
   $("#submitErr").hide();
+  $("#submitErr2").hide();

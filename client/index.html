@@ -69,7 +69,7 @@
 
                     <label for="mentorCheck" class="col-md-2 col-form-label bold">I want to be a mentor<span style="color:red;">*</span></label>
                     <select class="form-control col-md-4" id="mentorCheck" ng-model="detailedInfo.isMentor" required>
-                      <option selected>no</option>
+                      <option value="no" >no</option>
                       <option value = "yes">yes</option>
                     </select>
                   </div>
@@ -765,6 +765,9 @@
 
                   <div class="alert alert-danger" role="alert" id="submitErr">
                     Please choose to be either a mentor or mentee.
+                  </div>
+                  <div class="alert alert-danger" role="alert" id="submitErr2">
+                    Please choose at least one strength or goal.
                   </div>
                   <div class = "row bottom-buffer">
 

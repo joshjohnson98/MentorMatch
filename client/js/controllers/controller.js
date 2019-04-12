@@ -218,18 +218,29 @@ function attachSignin(element)
 }
 
 function validForm() {
-  var mtor, mtee;
+  var mtor, mtee, strn, goal;
 
   mtor = document.getElementById("mentorCheck").value;
   mtee = document.getElementById("menteeCheck").value;
+
+  strn = document.getElementById("mentorStrength1check").value;
+  goal = document.getElementById("menteeGoal1check").value;
 
    if (mtor == "no" && mtee == "no") {
      text = "Input not valid";
      document.getElementById("submit").disabled = true;
      document.getElementById("submitErr").style.display = "block";
-   } else {
+     document.getElementById("submitErr2").style.display = "none";
+   }
+   else if(strn == "Strength1empty" || goal == "Goal1empty") {
+     document.getElementById("submit").disabled = true;
+     document.getElementById("submitErr2").style.display = "block";
+     document.getElementById("submitErr").style.display = "none";
+   }
+   else {
      document.getElementById("submit").disabled = false;
      document.getElementById("submitErr").style.display = "none";
+     document.getElementById("submitErr2").style.display = "none";
    }
   console.log(text);
 
