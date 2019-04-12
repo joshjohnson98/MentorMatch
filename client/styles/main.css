@@ -3,13 +3,17 @@
   font-size: 50px;
 }
 
+/* html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+} */
+
 #profileButton {
 
   font-size: 30px;
 }
 
 nav {
-  background-color: red;
   /* width: 100%; */
   color: white;
   background-color: #31444b;
@@ -18,13 +22,14 @@ nav {
 body {
   margin-top: 100px;
   background-color: #EAECED;
+  overflow-x: hidden;
 }
 /* .card-body{
   background-color: #EEEEEE;
 
 } */
 #pageBody {
-  min-height: 600px;
+  min-height: 575px;
 }
 
 p{
@@ -55,12 +60,6 @@ th {
 
 .glyphicon-remove-sign {
   color:#990000;
-}
-
-#infoArea {
-  background-color: #31444b;
-  color:white;
-
 }
 
 #addArea h1 {
@@ -105,9 +104,13 @@ th {
   font-weight: bold;
 }
 
-
+.btn-primary:hover{
+  background-color: #e84a5f;
+  outline-color: #e84a5f;
+}
 /* Google Login Button Formatting */
 @import url('https://fonts.googleapis.com/css?family=Robot');
+
 
 #customBtn {
   display: inline-block;
@@ -152,10 +155,16 @@ section .section-title {
 
     text-transform: uppercase;
 }
+
 #footer {
-    background: #2A363B;
+    background: #31444b;
     /* min-height: 1000px; */
 }
+
+#bottomRow {
+  background: #1D282C;
+}
+
 #footer h5{
   padding-left: 10px;
   border-left: 3px solid #eeeeee;

@@ -89,7 +89,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.updateListing = function() {
       console.log($scope.detailedInfo);
       var id = 0;
-      
+
 
       /* we will want to update by email once thats in the schema
       just change the value.name to value.email*/
@@ -149,7 +149,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
       angular.forEach($scope.listings, function(value,key){
         if(value.email == emailParam){
-          
+
           emailAlreadyInDB = true;
           console.log("Found email in database!");
         }
@@ -175,17 +175,17 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
     $scope.sendEmail = function(emailSendTo){
 
-        var linkto = 'mailto:' + emailSendTo + '?subject=[MentorMatch]&body=Mentor/Mentee ' +
-            'excelled at:%0A%0A%0AThere was room for improvement with:';
+        var linkto = 'mailto:' + emailSendTo + '?subject=[MentorMatch] Feedback&body=Please provide feedback to your mentor/mentee. ' +
+            '%0A My mentor/mentee excelled at:%0A%0A%0AWhat did you gain from this experience?%0A%0A%0A ' +
+            'What could your mentor/mentee do to improve your experience next time?%0A%0A%0A' +
+            'Thank you for using Mentor Match!';
         window.open(linkto);
     }
   }
 
 
-  
+
 ]);
-
-
 
 var googleUser = {};
 var startApp = function() {
@@ -209,12 +209,30 @@ function attachSignin(element)
                 var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
                 //var nameuser = googleUser.getBasicProfile().getName();  //Retrieve current user email
                 angular.element($('#MainWrap')).scope().login(email); //Pass email into angular function (login)
-                
+
 
             }, function (error)
             {
                 alert(JSON.stringify(error, undefined, 2));
             });
+}
+
+function validForm() {
+  var mtor, mtee;
+
+  mtor = document.getElementById("mentorCheck").value;
+  mtee = document.getElementById("menteeCheck").value;
+
+   if (mtor == "no" && mtee == "no") {
+     text = "Input not valid";
+     document.getElementById("submit").disabled = true;
+     document.getElementById("submitErr").style.display = "block";
+   } else {
+     document.getElementById("submit").disabled = false;
+     document.getElementById("submitErr").style.display = "none";
+   }
+  console.log(text);
+
 }
 
 startApp();
