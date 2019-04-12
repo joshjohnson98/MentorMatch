@@ -261,7 +261,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         }
         $scope.addListing(newListing);
       }
-    }
+      
+    }//login end
 
 
     $scope.sendEmail = function ()
@@ -287,9 +288,9 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
 
 window.onload = function() {
+  console.log("Scope variable: " + angular.element(document.getElementById( "MainWrap")).scope().detailedInfo.name.value );
 
   console.log("local storage has: " + localStorage.getItem('useremail'));
-
   //Assign local storage email content to scope variable
   angular.element($('#MainWrap')).scope().detailedInfo.email = localStorage.getItem('useremail');
 };
@@ -316,7 +317,7 @@ function attachSignin(element)
             {
                 var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
                 var name = googleUser.getBasicProfile().getName();  //Retrieve current user email
-                angular.element($('#MainWrap')).scope().login(email, name); //Pass email into angular function (login)
+                angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().login(email, name)); //Pass email into angular function (login)
                 
 
             }, function (error)
