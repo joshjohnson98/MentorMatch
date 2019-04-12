@@ -1,10 +1,6 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings)
   {
-    $scope.mentorMatches;
-    $scope.menteeMatches;
-
-
     /* Unique identifier for current user */
     $scope.jobOther;
     $scope.detailedInfo = {
@@ -299,11 +295,28 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
       console.log("Calculating score...");
 
+      //Quick filter based on boolean attributes
       if(mentor.isMentor == "no" || mentee.isMentee == "no" ||
         mentor.isMentor == "" || mentee.isMentee == "")  //If either user doesn't fit the role being tested for in this calculation
         return 0;
 
-      return 27; //TESTING PURPOSES
+      //Location score
+      var locationScore = 0;
+      if(mentor.location.city.toLowerCase() == mentee.location.city.toLowerCase()){ //Same city
+        locationScore = 1;
+      }else if(mentor.location.state.toLowerCase() == mentee.location.state.toLowerCase()){ //Same state
+        locationScore = 0.25;
+      }else if(mentor.location.country.toLowerCase() == mentee.location.country.toLowerCase()){ //Same country
+        locationScore = 0.05;
+      }else{  //Not in same country
+        locationScore = 0;
+      }
+      
+      score += locationScore*(mentor.location.score + mentee.location.score)/1; //Use mentor and mentee attribute weights to update score
+
+      
+      
+      
 
 
 
@@ -312,6 +325,10 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
 
     $scope.populateMatches = function() {
+
+      //Do some check to make sure user is logged in first?
+
+
 
       console.log("Populating matches...");
 
@@ -341,16 +358,23 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
           mentorMatchAndScoreArr.push(mentorMatchEntry);
           menteeMatchAndScoreArr.push(menteeMatchEntry);
+
+          console.log("Done pushing");
         }
       });
 
+      console.log("sorting...");
       //Sort lists of matches by score (descending)
       mentorMatchAndScoreArr.sort(function(a,b){return b.score - a.score});
       menteeMatchAndScoreArr.sort(function(a,b){return b.score - a.score});
 
+      console.log("saving to scope variables...");
       //Save sorted lists of matches to scope variables
       $scope.mentorMatches = mentorMatchAndScoreArr;
       $scope.menteeMatches = menteeMatchAndScoreArr;
+
+      console.log("$scope.mentorMatches:");
+      console.log($scope.mentorMatches);
     };
 
   }
@@ -358,6 +382,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
 
 window.onload = function() {
+  angular.element($('#MainWrap')).scope().populateMatches();
 
   console.log("local storage has: " + localStorage.getItem('useremail'));
 

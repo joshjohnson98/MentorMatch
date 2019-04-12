@@ -797,9 +797,8 @@
                                             <th></th>
                                         </tr>
                                         <tr ng-repeat="Match in mentorMatches" >
-                                            <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
                                             <td>{{$index + 1}}</td>
-                                            <td>{{Match.name.value}}</td>
+                                            <td>{{Match.profile.name.value}}</td>
                                             <td>{{Match.score}}</td>
                                             <td><button ng-click = "sendEmail(Profile.email)">Send Email</button></td>
                                         </tr>
