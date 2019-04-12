@@ -314,10 +314,45 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       
       score += locationScore*(mentor.location.score + mentee.location.score)/1; //Use mentor and mentee attribute weights to update score
 
-      
-      
-      
+      //Language score
+      if(mentor.language.value.toLowerCase() == mentee.language.value.toLowerCase())
+        score += (mentor.language.score + mentee.language.score)/2; //Use mentor and mentee attribute weights to update score
 
+      //Industry score
+      if(mentor.industry.value.toLowerCase() == mentee.industry.value.toLowerCase())
+        score += (mentor.industry.score + mentee.industry.score)/2; //Use mentor and mentee attribute weights to update score
+
+      //Gender score
+      if(mentor.gender.value.toLowerCase() == mentee.gender.value.toLowerCase())
+        score += (mentor.gender.score + mentee.gender.score)/2; //Use mentor and mentee attribute weights to update score
+
+      //Sexual Orientation score
+      if(mentor.sexualOrientation.value.toLowerCase() == mentee.sexualOrientation.value.toLowerCase())
+        score += (mentor.sexualOrientation.score + mentee.sexualOrientation.score)/2; //Use mentor and mentee attribute weights to update score
+
+      //Ethnicity score
+      if(mentor.ethnicity.value.toLowerCase() == mentee.ethnicity.value.toLowerCase())
+        score += (mentor.ethnicity.score + mentee.ethnicity.score)/2; //Use mentor and mentee attribute weights to update score
+
+      //Mentor strengths and mentee goals score
+      var mentorStrengths = new Array();
+      var menteeGoals = new Array();
+
+      mentorStrengths.push(mentor.mentorStrength1);
+      mentorStrengths.push(mentor.mentorStrength2);
+      mentorStrengths.push(mentor.mentorStrength3);
+
+      menteeGoals.push(mentee.menteeGoal1);
+      menteeGoals.push(mentee.menteeGoal2);
+      menteeGoals.push(mentee.menteeGoal3);
+
+      var numOptions = 3; //Adjustable. Preset to 3 for our implementation
+      for(var i=0; i<numOptions; i++){
+        for(var j=0; j<numOptions; j++){
+          if(mentorStrengths[i] == menteeGoals[j])  //Strength and goal match
+            score += (mentorStrengths[i].score + menteeGoals[j].score)/2; //Use mentor and mentee attribute weights to update score
+        }
+      }
 
 
       return score;
