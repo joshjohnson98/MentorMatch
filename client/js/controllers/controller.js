@@ -159,10 +159,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       var emailAlreadyInDB = false;
 
 
-      angular.forEach($scope.listings, function (value, key)
-      {
-        if (value.email == emailParam)
-        {
+      angular.forEach($scope.listings, function(value,key){
+        if(value.email == emailParam){
 
           emailAlreadyInDB = true;
           console.log("User found. Email already in DB");
@@ -283,8 +281,10 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       $scope.sendEmail = function (emailSendTo)
       {
 
-        var linkto = 'mailto:' + emailSendTo + '?subject=[MentorMatch]&body=Mentor/Mentee ' +
-            'excelled at:%0A%0A%0AThere was room for improvement with:';
+        var linkto = 'mailto:' + emailSendTo + '?subject=[MentorMatch] Feedback&body=Please provide feedback to your mentor/mentee. ' +
+            '%0A My mentor/mentee excelled at:%0A%0A%0AWhat did you gain from this experience?%0A%0A%0A ' +
+            'What could your mentor/mentee do to improve your experience next time?%0A%0A%0A' +
+            'Thank you for using Mentor Match!';
         window.open(linkto);
       }
     }
@@ -464,5 +464,34 @@ function attachSignin(element)
                 alert(JSON.stringify(error, undefined, 2));
             });
 };
+
+function validForm() {
+  var mtor, mtee, strn, goal;
+
+  mtor = document.getElementById("mentorCheck").value;
+  mtee = document.getElementById("menteeCheck").value;
+
+  strn = document.getElementById("mentorStrength1check").value;
+  goal = document.getElementById("menteeGoal1check").value;
+
+   if (mtor == "no" && mtee == "no") {
+     text = "Input not valid";
+     document.getElementById("submit").disabled = true;
+     document.getElementById("submitErr").style.display = "block";
+     document.getElementById("submitErr2").style.display = "none";
+   }
+   else if(strn == "Strength1empty" || goal == "Goal1empty") {
+     document.getElementById("submit").disabled = true;
+     document.getElementById("submitErr2").style.display = "block";
+     document.getElementById("submitErr").style.display = "none";
+   }
+   else {
+     document.getElementById("submit").disabled = false;
+     document.getElementById("submitErr").style.display = "none";
+     document.getElementById("submitErr2").style.display = "none";
+   }
+  console.log(text);
+
+}
 
 startApp();

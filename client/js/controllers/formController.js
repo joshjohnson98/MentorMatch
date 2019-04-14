@@ -4,10 +4,10 @@
 $("#JobSelect").change(function() {
   if ($(this).val() == "other") {
     $('#jobOther').show();
-    
+
   } else {
     $('#jobOther').hide();
-    
+
   }
 });
 $("#JobSelect").trigger("change");
@@ -16,10 +16,10 @@ $("#JobSelect").trigger("change");
 $("#GenderSelect").change(function() {
   if ($(this).val() == "other") {
     $('#genderOther').show();
-    
+
   } else {
     $('#genderOther').hide();
-    
+
   }
 });
 $("#GenderSelect").trigger("change");
@@ -27,10 +27,10 @@ $("#GenderSelect").trigger("change");
 $("#SexSelect").change(function() {
   if ($(this).val() == "other") {
     $('#sexOther').show();
-    
+
   } else {
     $('#sexOther').hide();
-    
+
   }
 });
 $("#SexSelect").trigger("change");
@@ -40,10 +40,10 @@ $("#SexSelect").trigger("change");
 $("#EthnicitySelect").change(function() {
   if ($(this).val() == "other") {
     $('#ethnicityOther').show();
-    
+
   } else {
     $('#ethnicityOther').hide();
-    
+
   }
 });
 $("#EthnicitySelect").trigger("change");
@@ -53,10 +53,10 @@ $("#EthnicitySelect").trigger("change");
 $("#LanguageSelect").change(function() {
   if ($(this).val() == "other") {
     $('#langOther').show();
-    
+
   } else {
     $('#langOther').hide();
-    
+
   }
 });
 $("#LanguageSelect").trigger("change");
@@ -67,11 +67,11 @@ $("#LanguageSelect").trigger("change");
 $("#mentorCheck").change(function() {
     if ($(this).val() == "yes") {
       $('#allStrength').show();
-      
+
     } else {
       $('#allStrength').hide();
 
-      
+
     }
   });
   $("#mentorCheck").trigger("change");
@@ -80,14 +80,14 @@ $("#mentorCheck").change(function() {
   $("#mentorStrength1check").change(function() {
     if ($(this).val() == "Strength1empty") {
       $('#strength2').hide();
-      
+
     } else {
       $('#strength2').show();
     }
 
     if ($(this).val() == "other") {
       $('#strength1other').show();
-      
+
     } else {
       $('#strength1other').hide();
     }
@@ -99,14 +99,14 @@ $("#mentorCheck").change(function() {
   $("#mentorStrength2check").change(function() {
     if ($(this).val() == "Strength2empty") {
       $('#mentorStrength3').hide();
-      
+
     } else {
       $('#mentorStrength3').show();
-      
+
     }
     if ($(this).val() == "other") {
       $('#strength2other').show();
-      
+
     } else {
       $('#strength2other').hide();
     }
@@ -118,10 +118,10 @@ $("#mentorCheck").change(function() {
 
 
   $("#mentorStrength3check").change(function() {
-    
+
     if ($(this).val() == "other") {
       $('#strength3other').show();
-      
+
     } else {
       $('#strength3other').hide();
     }
@@ -135,11 +135,11 @@ $("#mentorCheck").change(function() {
   $("#menteeCheck").change(function() {
     if ($(this).val() == "yes") {
       $('#allGoal').show();
-      
+
     } else {
       $('#allGoal').hide();
 
-      
+
     }
   });
   $("#menteeCheck").trigger("change");
@@ -147,13 +147,13 @@ $("#mentorCheck").change(function() {
   $("#menteeGoal1check").change(function() {
     if ($(this).val() == "Goal1empty") {
       $('#goal2').hide();
-      
+
     } else {
       $('#goal2').show();
     }
     if ($(this).val() == "other") {
       $('#goal1other').show();
-      
+
     } else {
       $('#goal1other').hide();
     }
@@ -165,14 +165,14 @@ $("#mentorCheck").change(function() {
   $("#menteeGoal2check").change(function() {
     if ($(this).val() == "Goal2empty") {
       $('#menteeGoal3').hide();
-      
+
     } else {
       $('#menteeGoal3').show();
-      
+
     }
     if ($(this).val() == "other") {
       $('#goal2other').show();
-      
+
     } else {
       $('#goal2other').hide();
     }
@@ -183,12 +183,12 @@ $("#mentorCheck").change(function() {
 
 
 
-  
+
   $("#menteeGoal3check").change(function() {
-    
+
     if ($(this).val() == "other") {
       $('#goal3other').show();
-      
+
     } else {
       $('#goal3other').hide();
     }
@@ -196,3 +196,11 @@ $("#mentorCheck").change(function() {
 
   });
   $("#menteeGoal3check").trigger("change");
+
+  $("#welcomeMsg").show();
+  $("#closeMsg").click(function(){
+      $("#welcomeMsg").hide();
+  })
+
+  $("#submitErr").hide();
+  $("#submitErr2").hide();
