@@ -74,7 +74,8 @@ $("#mentorCheck").change(function() {
 
     }
   });
-  $("#mentorCheck").trigger("change");
+
+$("#mentorCheck").trigger("change");
 
 //shows extra boxes only if the firsts are checked
   $("#mentorStrength1check").change(function() {

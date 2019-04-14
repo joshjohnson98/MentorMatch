@@ -49,16 +49,18 @@
             <div class="card-body">
               <div class= "row bottom-buffer-large" for= ProfileForm>
                 <div class="col-md-1"></div>
-                <label class="col-md-6">Fill out profile attributes you would like us to use when finding new matches.
-                </label>
+                <h2>Hello, {{detailedInfo.name.value}}</h2>
               </div>
 
               <form novalidate id = ProfileForm class="simple-form" >
                 <div class = "container">
                   <div class = "row bottom-buffer">
-                    <label for="NameInput" class="col-md-2 col-form-label">Name</label>
+                    <!-- <label for="NameInput" class="col-md-2 col-form-label">Name</label>
 
-                    <input type="text" ng-model = "detailedInfo.name.value" id="NameInput" class="form-control col-md-4" placeholder="Name">
+                    <input type="text" ng-model = "detailedInfo.name.value" id="NameInput" class="form-control col-md-4" placeholder="Name"> -->
+                  
+                    <label class="col-md-6">Fill out profile attributes you would like us to use when finding new matches.
+                    </label>
                     <div class = col-md-1></div>
                     <label class = "col-md-4">How important is it for your mentor/mentee to have similar traits? (0-unimportant, 5-very important)
                     </label>
