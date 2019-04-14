@@ -168,7 +168,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
           $scope.detailedInfo.ethnicity.value = value.ethnicity.value;
           $scope.detailedInfo.ethnicity.score = value.ethnicity.score;
           $scope.detailedInfo.sexualOrientation.value = value.sexualOrientation.value;
-          $scope.detailedInfo.sexualOrientation.value = value.sexualOrientation.score;
+          $scope.detailedInfo.sexualOrientation.score = value.sexualOrientation.score;
           $scope.detailedInfo.gender.value = value.gender.value;
           $scope.detailedInfo.gender.score = value.gender.score;
           $scope.detailedInfo.industry.value = value.industry.value;
@@ -325,6 +325,12 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       //Gender score
       if(mentor.gender.value.toLowerCase() == mentee.gender.value.toLowerCase())
         score += (mentor.gender.score + mentee.gender.score)/2; //Use mentor and mentee attribute weights to update score
+
+      console.log("mentor.sexualOrientation.value: " + mentor.sexualOrientation.value);
+      console.log("mentor.sexualOrientation.value.toLowerCase(): " + mentor.sexualOrientation.value.toLowerCase());
+      console.log("mentee.sexualOrientation.value: " + mentee.sexualOrientation.value);
+      console.log("mentee.sexualOrientation.value.toLowerCase(): " + mentee.sexualOrientation.value.toLowerCase());
+
 
       //Sexual Orientation score
       if(mentor.sexualOrientation.value.toLowerCase() == mentee.sexualOrientation.value.toLowerCase())
