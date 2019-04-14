@@ -92,7 +92,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
     $scope.updateListing = function ()
     {
-      console.log("detailedInfo.email: " + $scope.detailedInfo.email);
       var id = 0;
 
       angular.forEach($scope.listings, function (value, key)
@@ -150,12 +149,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       localStorage.setItem('username', nameParam);
       localStorage['username'] = nameParam;
 
-
-      console.log("We are in angular login function now!");
-
-      console.log("Email passed in: " + emailParam);
-      console.log("Name passed in: " + nameParam);
-
       var emailAlreadyInDB = false;
 
 
@@ -163,7 +156,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         if(value.email == emailParam){
 
           emailAlreadyInDB = true;
-          console.log("User found. Email already in DB");
           //If email is already in database, show user information in profile form
           $scope.detailedInfo.ethnicity.value = value.ethnicity.value;
           $scope.detailedInfo.ethnicity.score = value.ethnicity.score;
@@ -268,34 +260,22 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     }
 
 
-    $scope.sendEmail = function ()
+    $scope.sendEmail = function (emailSendTo)
     {
-      // var linkto = "mailto:"
-      //             +email
-      //             + "&subject=Feedback!"
-      //             + "&body=Mentor"
-      // ;
-      var linkto = 'mailto:' + email + '?subject=[MentorMatch] ' + nameUser +
-          +'&body=Thank you for choosing MentorMatch!\nHere';
 
-      $scope.sendEmail = function (emailSendTo)
-      {
-
-        var linkto = 'mailto:' + emailSendTo + '?subject=[MentorMatch] Feedback&body=Please provide feedback to your mentor/mentee. ' +
-            '%0A My mentor/mentee excelled at:%0A%0A%0AWhat did you gain from this experience?%0A%0A%0A ' +
-            'What could your mentor/mentee do to improve your experience next time?%0A%0A%0A' +
-            'Thank you for using Mentor Match!';
-        window.open(linkto);
-      }
+      var linkto = 'mailto:' + emailSendTo + '?subject=[MentorMatch] Feedback&body=Please provide feedback to your mentor/mentee. ' +
+          '%0A My mentor/mentee excelled at:%0A%0A%0AWhat did you gain from this experience?%0A%0A%0A ' +
+          'What could your mentor/mentee do to improve your experience next time?%0A%0A%0A' +
+          'Thank you for using Mentor Match!';
+      window.open(linkto);
     }
+    
   
   
   //Matching Algorithm Code
 
     $scope.calculateScore = function(mentor, mentee) {
       var score = 0;
-
-      console.log("Calculating score...");
 
       //Quick filter based on boolean attributes
       if(mentor.isMentor == "no" || mentee.isMentee == "no" ||
@@ -327,12 +307,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       //Gender score
       if(mentor.gender.value.toLowerCase() == mentee.gender.value.toLowerCase())
         score += (mentor.gender.score + mentee.gender.score)/2; //Use mentor and mentee attribute weights to update score
-
-      console.log("mentor.sexualOrientation.value: " + mentor.sexualOrientation.value);
-      console.log("mentor.sexualOrientation.value.toLowerCase(): " + mentor.sexualOrientation.value.toLowerCase());
-      console.log("mentee.sexualOrientation.value: " + mentee.sexualOrientation.value);
-      console.log("mentee.sexualOrientation.value.toLowerCase(): " + mentee.sexualOrientation.value.toLowerCase());
-
 
       //Sexual Orientation score
       if(mentor.sexualOrientation.value.toLowerCase() == mentee.sexualOrientation.value.toLowerCase())
@@ -395,29 +369,20 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             profile: value,
             score: menteeMatchScore
           };
-          
-          console.log("MentorMatchEntry:");
-          console.log(mentorMatchEntry);
 
           mentorMatchAndScoreArr.push(mentorMatchEntry);
           menteeMatchAndScoreArr.push(menteeMatchEntry);
 
-          console.log("Done pushing");
         }
       });
 
-      console.log("sorting...");
       //Sort lists of matches by score (descending)
       mentorMatchAndScoreArr.sort(function(a,b){return b.score - a.score});
       menteeMatchAndScoreArr.sort(function(a,b){return b.score - a.score});
 
-      console.log("saving to scope variables...");
       //Save sorted lists of matches to scope variables
       $scope.mentorMatches = mentorMatchAndScoreArr;
       $scope.menteeMatches = menteeMatchAndScoreArr;
-
-      console.log("$scope.mentorMatches:");
-      console.log($scope.mentorMatches);
     };
 
   }
@@ -427,7 +392,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 window.onload = function() {
   angular.element($('#MainWrap')).scope().populateMatches();
 
-  console.log("local storage has: " + localStorage.getItem('useremail'));
   //Assign local storage email content to scope variable
  if(localStorage.getItem('useremail')!=null){
   angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().login(localStorage.getItem('useremail'), localStorage.getItem('username'))); //Pass email into angular function (login)
@@ -475,7 +439,6 @@ function validForm() {
   goal = document.getElementById("menteeGoal1check").value;
 
    if (mtor == "no" && mtee == "no") {
-     text = "Input not valid";
      document.getElementById("submit").disabled = true;
      document.getElementById("submitErr").style.display = "block";
      document.getElementById("submitErr2").style.display = "none";
@@ -490,8 +453,6 @@ function validForm() {
      document.getElementById("submitErr").style.display = "none";
      document.getElementById("submitErr2").style.display = "none";
    }
-  console.log(text);
-
 }
 
 startApp();

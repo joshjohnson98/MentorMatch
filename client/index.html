@@ -799,7 +799,6 @@
           </div>
           <div class = "collapse show" id = "matchCollapse" aria-labelledby="headingOne">
             <div class = "card-body" >
-              <!--This is blank rn-->
               <div class="tableWrapper">
                 <table class="table table-hover">
                   <thead class="thead dark">
@@ -807,11 +806,10 @@
                     <th>Score</th>
                     <th></th>
                   </thead>
-                  <tr ng-repeat="Profile in listings" >
-                    <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
-                    <td>{{Profile.name.value}}</td>
-                    <td>{{$index + 1}}</td>
-                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Profile.email)">Rate</button></td>
+                  <tr ng-repeat="Match in mentorMatches" >
+                    <td>{{Match.profile.name.value}}</td>
+                    <td>{{Match.score}}</td>
+                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
                   </tr>
                 </table>
               </div>
@@ -831,7 +829,6 @@
           </div>
           <div class = "collapse show" id = "matchCollapse2" aria-labelledby="headingOne">
             <div class = "card-body" >
-              <!--This is blank rn-->
               <div class="tableWrapper">
                 <table class="table table-hover">
                   <thead class="thead dark">
@@ -839,11 +836,10 @@
                     <th>Score</th>
                     <th></th>
                   </thead>
-                  <tr ng-repeat="Profile in listings" >
-                    <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
-                    <td>{{Profile.name.value}}</td>
-                    <td>{{$index + 1}}</td>
-                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Profile.email)">Rate</button></td>
+                  <tr ng-repeat="Match in menteeMatches" >
+                    <td>{{Match.profile.name.value}}</td>
+                    <td>{{Match.score}}</td>
+                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
                   </tr>
                 </table>
               </div>
