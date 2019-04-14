@@ -772,7 +772,7 @@
                   <div class = "row bottom-buffer">
 
                     <div class = col-md-10></div>
-                    <button type="button" ng-click="updateListing()" class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="submit">Save</button>
+                    <button type="button" ng-click="updateListing()" class="btn btn-md btn-outline-secondary salmon" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="submit">Save</button>
 
                   </div>
 
@@ -811,7 +811,7 @@
                     <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
                     <td>{{Profile.name.value}}</td>
                     <td>{{$index + 1}}</td>
-                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "">Save</button></td>
+                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Profile.email)">Rate</button></td>
                   </tr>
                 </table>
               </div>
@@ -820,45 +820,6 @@
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class = "card" >
-          <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-              <button id = "savedMatchesButton" class="btn bold salmon" data-toggle="collapse" data-target="#savedMatchCollapse" aria-expanded="false" aria-controls="collapseOne">
-                Saved Mentor Matches <i class="fas fa-chevron-down"></i>
-              </button>
-            </h5>
-          </div>
-          <div class = "collapse" id = "savedMatchCollapse" aria-labelledby="headingOne">
-            <div class = "card-body" >
-              <div class="tableWrapper">
-                <table class="table table-hover">
-                  <thead class="thead dark">
-
-                    <th>Mentor Name</th>
-                    <th>Score</th>
-                    <th></th>
-                  </thead>
-                  <tr ng-repeat="Profile in listings" >
-                    <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
-
-                    <td>{{Profile.name.value}}</td>
-                    <td>{{$index + 1}}</td>
-                    <td><button class="btn btn-sm btn-outline-secondary" ng-click = "sendEmail(Profile.email)">Rate</button></td>
-                  </tr>
-                </table>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!--New row of menus-->
-    <div class="row bottom-buffer">
       <div class="col-md-6">
         <div class = "card" >
           <div class="card-header" id="headingOne">
@@ -880,6 +841,75 @@
                   </thead>
                   <tr ng-repeat="Profile in listings" >
                     <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
+                    <td>{{Profile.name.value}}</td>
+                    <td>{{$index + 1}}</td>
+                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Profile.email)">Rate</button></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-md-6">
+        <div class = "card" >
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button id = "savedMatchesButton" class="btn bold salmon" data-toggle="collapse" data-target="#savedMatchCollapse" aria-expanded="false" aria-controls="collapseOne">
+                Saved Mentor Matches <i class="fas fa-chevron-down"></i>
+              </button>
+            </h5>
+          </div>
+          <div class = "collapse" id = "savedMatchCollapse" aria-labelledby="headingOne">
+            <div class = "card-body" >
+              <div class="tableWrapper">
+                <table class="table table-hover">
+                  <thead class="thead dark">
+
+                    <th>Mentor Name</th>
+                    <th>Score</th>
+                    <th></th>
+                  </thead>
+                  <tr ng-repeat="Profile in listings" >
+
+                    <td>{{Profile.name.value}}</td>
+                    <td>{{$index + 1}}</td>
+                    <td><button class="btn btn-sm btn-outline-secondary" ng-click = "sendEmail(Profile.email)">Rate</button></td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+
+
+    <!--New row of menus
+    <div class="row bottom-buffer">
+      <div class="col-md-6">
+        <div class = "card" >
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button id = "matchesButton2" class="btn bold salmon" data-toggle="collapse" data-target="#matchCollapse2" aria-expanded="false" aria-controls="collapseOne">
+                Mentee Matches <i class="fas fa-chevron-down"></i>
+              </button>
+            </h5>
+          </div>
+          <div class = "collapse show" id = "matchCollapse2" aria-labelledby="headingOne">
+            <div class = "card-body" >
+
+              <div class="tableWrapper">
+                <table class="table table-hover">
+                  <thead class="thead dark">
+                    <th>Mentee Name</th>
+                    <th>Score</th>
+                    <th></th>
+                  </thead>
+                  <tr ng-repeat="Profile in listings" >
                     <td>{{Profile.name.value}}</td>
                     <td>{{$index + 1}}</td>
                     <td><button class="btn btn-sm btn-outline-secondary" ng-click = "">Save</button></td>
@@ -911,7 +941,6 @@
                     <th></th>
                   </thead>
                   <tr ng-repeat="Profile in listings" >
-                    <!--<td ng-click="deleteListing(Profile._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>-->
 
                     <td>{{Profile.name.value}}</td>
                     <td>{{$index + 1}}</td>
@@ -925,7 +954,7 @@
         </div>
       </div>
 
-    </div>
+    </div>-->
   </div>
 
   <!--Footer-->
@@ -934,7 +963,9 @@
       <div class="row text-center text-xs-center text-sm-left text-md-left">
         <div class="col-xs-12 col-sm-6 col-md-6">
           <h5>About</h5>
-          <p>Mentor Match is a mentorship and advocacy matching service. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin finibus orci vitae magna volutpat molestie. Morbi varius, ipsum eget sagittis eleifend, arcu turpis tempor dui, a pellentesque diam lacus id sapien. Sed tempor elit non nibh egestas aliquet. Nam non nulla volutpat, euismod justo sed, vestibulum odio. Etiam condimentum cursus interdum. Sed a aliquam magna. Donec commodo sit amet augue quis finibus. Integer tempor, velit sed scelerisque sollicitudin, sem felis condimentum dui, vitae semper nunc justo sed risus. Pellentesque at nibh massa.</p>
+          <p>Want to learn tips from an industry pro? Want to help like-minded people accomplish their goals?
+           Want to expand your professional network? You can do it all and more with Mentor Match. Mentor Match is a mentorship and advocacy matching service that connects users across industries and backgrounds in order to
+         help them learn, grow, and achieve more.</p>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-3">
           <h5>Quick links</h5>
