@@ -147,6 +147,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
       localStorage.setItem('useremail', emailParam);
       localStorage['useremail'] = emailParam;
+      localStorage.setItem('username', nameParam);
+      localStorage['username'] = nameParam;
 
 
       console.log("We are in angular login function now!");
@@ -426,9 +428,10 @@ window.onload = function() {
   angular.element($('#MainWrap')).scope().populateMatches();
 
   console.log("local storage has: " + localStorage.getItem('useremail'));
-
   //Assign local storage email content to scope variable
-  angular.element($('#MainWrap')).scope().detailedInfo.email = localStorage.getItem('useremail');
+ if(localStorage.getItem('useremail')!=null){
+  angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().login(localStorage.getItem('useremail'), localStorage.getItem('username'))); //Pass email into angular function (login)
+ }
 };
 
 
@@ -453,7 +456,7 @@ function attachSignin(element)
             {
                 var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
                 var name = googleUser.getBasicProfile().getName();  //Retrieve current user email
-                angular.element($('#MainWrap')).scope().login(email, name); //Pass email into angular function (login)
+                angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().login(email, name)); //Pass email into angular function (login)
                 
 
             }, function (error)
