@@ -804,21 +804,21 @@
                     <th>Score</th>
                     <th></th>
                   </thead>
-                  <tr ng-repeat="Match in mentorMatches" >
-                    <td><button ng-click= "displayProfile($index, Profile, mentorString)" class = "btn"data-toggle="collapse"data-target="#userInfo--{{$index}}">{{Match.profile.name.value}}</button></td>                    <td>{{Match.score}}</td>
+                  <tr ng-repeat-start="Match in mentorMatches" >
+                    <td><button ng-click= "displayProfile($index, Match.profile, mentorString)" class = "btn"data-toggle="collapse"data-target="#mentor-userInfo--{{$index}}">{{Match.profile.name.value}}</button></td>                    <td>{{Match.score}}</td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
                   </tr>
-                  <tr ng-repeat-end class ="collapse" id="userInfo--{{$index}}">
+                  <tr ng-repeat-end class ="collapse" id="mentor-userInfo--{{$index}}">
                     <td colspan=3>
-                      <p id="mentor-{{$index}}-job"><b>Profession:</b> {{Profile.industry.value}}</p>
-                      <p id="mentor-{{$index}}-strength1"><b>Mentor Strength</b>: {{Match.profile.mentorStrength1.value}}</p>
-                      <p id="mentor-{{$index}}-strength2"><b>Mentor Strength</b>: {{Match.profile.mentorStrength2.value}}</p>
-                      <p id="mentor-{{$index}}-strength3"><b>Mentor Strength</b>: {{Match.profile.mentorStrength3.value}}</p>
-                      <p id="mentor-{{$index}}-sexualOrientation"><b>Sexual Orientation</b>: {{Match.profile.sexualOrientation.value}}</p>
-                      <p id="mentor-{{$index}}-gender"><b>Gender</b>: {{Match.profile.gender.value}}</p>
-                      <p id="mentor-{{$index}}-ethnicity"><b>Ethnicity</b>: {{Match.profile.ethnicity.value}}</p>
-                      <p id="mentor-{{$index}}-city"><b>City</b>: {{Match.profile.location.city}}</p>
-                      <p id="mentor-{{$index}}-bio"><b>Bio</b>: {{Match.profile.bio}}</p>
+                      <p1 id="mentor-{{$index}}-job"><b>Profession:</b> {{Match.profile.industry.value}}</p1>
+                      <p1 id="mentor-{{$index}}-strength1"><b>Mentor Strength</b>: {{Match.profile.mentorStrength1.value}}</p1>
+                      <p1 id="mentor-{{$index}}-strength2"><b>Mentor Strength</b>: {{Match.profile.mentorStrength2.value}}</p1>
+                      <p1 id="mentor-{{$index}}-strength3"><b>Mentor Strength</b>: {{Match.profile.mentorStrength3.value}}</p1>
+                      <p1 id="mentor-{{$index}}-sexualOrientation"><b>Sexual Orientation</b>: {{Match.profile.sexualOrientation.value}}</p1>
+                      <p1 id="mentor-{{$index}}-gender"><b>Gender</b>: {{Match.profile.gender.value}}</p1>
+                      <p1 id="mentor-{{$index}}-ethnicity"><b>Ethnicity</b>: {{Match.profile.ethnicity.value}}</p1>
+                      <p1 id="mentor-{{$index}}-city"><b>City</b>: {{Match.profile.location.city}}</p1>
+                      <p1 id="mentor-{{$index}}-bio"><b>Bio</b>: {{Match.profile.bio}}</p1>
 
 
                     </td>
@@ -850,10 +850,24 @@
                     <th>Score</th>
                     <th></th>
                   </thead>
-                  <tr ng-repeat="Match in menteeMatches" >
-                    <td>{{Match.profile.name.value}}</td>
-                    <td>{{Match.score}}</td>
+                  <tr ng-repeat-start="Match in menteeMatches" >
+                    <td><button ng-click= "displayProfile($index, Match.profile, menteeString)" class = "btn"data-toggle="collapse"data-target="#mentee-userInfo--{{$index}}">{{Match.profile.name.value}}</button></td>                    <td>{{Match.score}}</td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
+                  </tr>
+                  <tr ng-repeat-end class ="collapse" id="mentee-userInfo--{{$index}}">
+                    <td colspan=3>
+                      <p1 id="mentee-{{$index}}-job"><b>Profession:</b> {{Match.profile.industry.value}}</p1>
+                      <p1 id="mentee-{{$index}}-goal1"><b>Mentee Goal</b>: {{Match.profile.menteeGoal1.value}}</p1>
+                      <p1 id="mentee-{{$index}}-goal2"><b>Mentee Goal</b>: {{Match.profile.menteeGoal2.value}}</p1>
+                      <p1 id="mentee-{{$index}}-goal3"><b>Mentee Goal</b>: {{Match.profile.menteeGoal3.value}}</p1>
+                      <p1 id="mentee-{{$index}}-sexualOrientation"><b>Sexual Orientation</b>: {{Match.profile.sexualOrientation.value}}</p1>
+                      <p1 id="mentee-{{$index}}-gender"><b>Gender</b>: {{Match.profile.gender.value}}</p1>
+                      <p1 id="mentee-{{$index}}-ethnicity"><b>Ethnicity</b>: {{Match.profile.ethnicity.value}}</p1>
+                      <p1 id="mentee-{{$index}}-city"><b>City</b>: {{Match.profile.location.city}}</p1>
+                      <p1 id="mentee-{{$index}}-bio"><b>Bio</b>: {{Match.profile.bio}}</p1>
+
+
+                    </td>
                   </tr>
                 </table>
               </div>
