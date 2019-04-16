@@ -106,28 +106,28 @@ th {
   border: thin solid #888;
   box-shadow: 1px 1px 1px grey;
   white-space: nowrap;
+  margin: 30%;
 }
 #customBtn:hover {
   cursor: pointer;
 }
-span.label {
-  font-family: serif;
-  font-weight: normal;
+
+
+.main-div {
+  display: block;
+  width: 50%;
+  height: 50%;
+  justify-content: center;
+  margin-left: 25%;
+  margin-bottom: 25%;
+  background:#990000;
+  /*border: 3px solid #3caa3d;*/
 }
-span.icon {
-  background: url(' /identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 20px;
-  height: 40px;
-}
-span.buttonText {
-  display: inline-block;
-  vertical-align: left;
-  padding-left: 1px;
-  padding-right: 1px;
-  font-size: 18px;
-  font-weight: bold;
-  /* Use the Roboto font that is loaded in the <head> */
-  font-family: 'Roboto', sans-serif;
+
+.main-div #signinText {
+  margin-right : 25%;
+  margin-top:30px;
+  font-size : 70px;
+  color: azure;
+  justify-content: center;
 }

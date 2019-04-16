@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d5155d1-89c0-416c-9f35-386646453bef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/js/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/js/controllers/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/js/controllers/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/js/controllers/loginController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/main.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,26 +23,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18209">
-              <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/controllers/controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-261">
-              <caret line="313" column="36" selection-start-line="313" selection-start-column="36" selection-end-line="313" selection-end-column="36" />
+            <state relative-caret-position="176">
+              <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/js/controllers/loginController.js">
+        <entry file="file://$PROJECT_DIR$/client/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+            <state relative-caret-position="220">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/styles/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="8" selection-start-column="1" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -55,14 +58,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pop</find>
-      <find>getBasi</find>
-      <find>ng-model</find>
-      <find>customB</find>
-      <find>console.log(</find>
-      <find>name</find>
-      <find>Email passed</find>
-      <find>ng-</find>
       <find>emailParam</find>
       <find>push</find>
       <find>emailuser</find>
@@ -78,13 +73,21 @@
       <find>google</find>
       <find>att</find>
       <find>attach</find>
-      <find>sign</find>
       <find>log</find>
-      <find>onload</find>
-      <find>login</find>
       <find>o</find>
       <find>href</find>
       <find>l</find>
+      <find>page</find>
+      <find>onload</find>
+      <find>Mentor</find>
+      <find>login</find>
+      <find>font-size</find>
+      <find>custom</find>
+      <find>customBtn</find>
+      <find>signin</find>
+      <find>pageTit</find>
+      <find>sign</find>
+      <find>mentor</find>
     </findStrings>
     <replaceStrings>
       <replace>google</replace>
@@ -98,22 +101,22 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/client/js/app.js" />
-        <option value="$PROJECT_DIR$/client/styles/login.css" />
         <option value="$PROJECT_DIR$/client/js/socialLogin.js" />
-        <option value="$PROJECT_DIR$/client/login.html" />
         <option value="$PROJECT_DIR$/client/test.html" />
         <option value="$PROJECT_DIR$/client/js/login.js" />
         <option value="$PROJECT_DIR$/client/email.html" />
-        <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/client/js/controllers/controller.js" />
         <option value="$PROJECT_DIR$/client/js/controllers/loginController.js" />
+        <option value="$PROJECT_DIR$/client/index.html" />
+        <option value="$PROJECT_DIR$/client/styles/login.css" />
+        <option value="$PROJECT_DIR$/client/styles/main.css" />
+        <option value="$PROJECT_DIR$/client/login.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-14" />
-    <option name="y" value="50" />
-    <option name="width" value="1580" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="51" />
+    <option name="width" value="1440" />
     <option name="height" value="799" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -198,6 +201,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -229,11 +233,12 @@
       <workItem from="1553270820747" duration="14330000" />
       <workItem from="1553956702610" duration="4544000" />
       <workItem from="1554586857002" duration="1340000" />
+      <workItem from="1555355298193" duration="1637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27401000" />
+    <option name="totallyTimeSpent" value="33040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -245,10 +250,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="827" extended-state="6" />
+    <frame x="0" y="51" width="1440" height="799" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20718816" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18816067" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -260,14 +265,14 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3292517" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.40952381" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.145686" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20718816" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20718816" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -278,8 +283,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.040816326" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3292517" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.40952381" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -315,9 +320,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/styles/login.css" />
     <entry file="file://$PROJECT_DIR$/client/test.html" />
-    <entry file="file://$PROJECT_DIR$/client/login.html" />
     <entry file="file://$PROJECT_DIR$/client/js/login.js" />
     <entry file="file://$PROJECT_DIR$/client/js/socialLogin.js" />
     <entry file="file://$PROJECT_DIR$/client/events.html">
@@ -357,29 +360,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/controllers/formController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1905">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="22">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/index.html">
+    <entry file="file://$PROJECT_DIR$/client/styles/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18209">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/controllers/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-261">
-          <caret line="313" column="36" selection-start-line="313" selection-start-column="36" selection-end-line="313" selection-end-column="36" />
+        <state relative-caret-position="129">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/controllers/loginController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+        <state relative-caret-position="198">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/controllers/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="303" column="50" selection-start-line="303" selection-start-column="44" selection-end-line="303" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
         </state>
       </provider>
     </entry>
