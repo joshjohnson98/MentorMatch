@@ -35,6 +35,9 @@ body {
 p{
   color:White;
 }
+p1{
+  color:Black;
+}
 hr{
   border-top: 3px solid #EEEEEE;
   width: 35%;
