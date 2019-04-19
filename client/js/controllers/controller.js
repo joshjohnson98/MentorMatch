@@ -101,15 +101,12 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         if (value.email == $scope.detailedInfo.email)
           id = value._id;
       });
-      console.log(id);
-
 
       /* Create new date via update */
       Listings.create($scope.detailedInfo)
           .then(function (response)
           {
             console.log(response);
-            //location.reload();
             /* Delete old data */
             Listings.delete(id)
                 .then(function (response)
@@ -140,11 +137,16 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
           });
     };
 
+    $scope.logout = function()
+    {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+
     $scope.login = function (emailParam, nameParam)
     {
       $scope.detailedInfo.email = emailParam; //Set currentUserEmail scope variable
       $scope.detailedInfo.name.value = nameParam;
-
 
       localStorage.setItem('useremail', emailParam);
       localStorage['useremail'] = emailParam;
@@ -457,12 +459,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
     $scope.populateMatches = function() {
 
-      //Do some check to make sure user is logged in first?
-
-
-
-      console.log("Populating matches...");
-
       var mentorMatchAndScoreArr = new Array();
       var menteeMatchAndScoreArr = new Array();
       var mentorMatchScore, menteeMatchScore;
@@ -502,45 +498,17 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
   }
 ]);
 
-
 window.onload = function() {
   angular.element($('#MainWrap')).scope().populateMatches();
 
-  //Assign local storage email content to scope variable
- if(localStorage.getItem('useremail')!=null){
-  angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().login(localStorage.getItem('useremail'), localStorage.getItem('username'))); //Pass email into angular function (login)
- }
-};
-
-
-
-var googleUser = {};
-var startApp = function() {
-    gapi.load('auth2', function(){
-        // Retrieve the singleton for the GoogleAuth library and set up the client.
-        auth2 = gapi.auth2.init({
-            client_id: '94097431082-u080o437bpmes48td7lh5ojcungl8hsn.apps.googleusercontent.com',
-            cookiepolicy: 'single_host_origin',
-        });
-        attachSignin(document.getElementById('customBtn'));
-    });
-};
-
-
-function attachSignin(element)
-{
-    auth2.attachClickHandler(element, {},
-            function (googleUser)
-            {
-                var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
-                var name = googleUser.getBasicProfile().getName();  //Retrieve current user email
-                angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().login(email, name)); //Pass email into angular function (login)
-                
-
-            }, function (error)
-            {
-                alert(JSON.stringify(error, undefined, 2));
-            });
+  angular.element($('#MainWrap')).scope().detailedInfo.email = localStorage.getItem('useremail');
+  angular.element($('#MainWrap')).scope().detailedInfo.name.value = localStorage.getItem('username');
+  setTimeout(function(){  //Half second delay to prevent duplicate entries
+    if(localStorage.getItem('useremail')!=null){
+      angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().
+      login(localStorage.getItem('useremail'), localStorage.getItem('username'))); //Pass email into angular function (login)
+    }
+  }, 500);
 };
 
 function validForm() {
@@ -569,4 +537,3 @@ function validForm() {
    }
 }
 
-startApp();
