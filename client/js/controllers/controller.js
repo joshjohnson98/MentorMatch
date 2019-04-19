@@ -271,7 +271,13 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
           'Thank you for using Mentor Match!';
       window.open(linkto);
     }
-    
+
+    $scope.contactEmail = function (email, yourName, theirName) {
+      var linkto = 'mailto:' + email + '?subject=[MentorMatch] ' + yourName + ' would like to connect&body=Hello ' + theirName +
+          ',%0AI saw your profile on Mentor Match and would like to connect! %0A%0ABest,%0A' + yourName;
+      window.open(linkto);
+    }
+
     $scope.displayProfile = function (index,listing,list){
       if(listing.industry.value==""||listing.industry.value=="--")
       {
@@ -327,7 +333,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         {
         document.getElementById(list+""+index+"-strength1").style.display = "table-row";
         }
-        
+
         if(listing.mentorStrength2.value==""||listing.mentorStrength2.value=="--")
         {
           document.getElementById(list+""+index+"-strength2").style.display = "none";
@@ -381,11 +387,11 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         {
         document.getElementById(list+""+index+"-city").style.display = "table-row";
         }
-        
+
 
 
     }
-  
+
   //Matching Algorithm Code
 
     $scope.calculateScore = function(mentor, mentee) {
@@ -407,7 +413,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       }else{  //Not in same country
         locationScore = 0;
       }
-      
+
       score += locationScore*(mentor.location.score + mentee.location.score)/1; //Use mentor and mentee attribute weights to update score
 
       //Language score
@@ -535,7 +541,7 @@ function attachSignin(element)
                 var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
                 var name = googleUser.getBasicProfile().getName();  //Retrieve current user email
                 angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().login(email, name)); //Pass email into angular function (login)
-                
+
 
             }, function (error)
             {
