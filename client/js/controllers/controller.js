@@ -140,7 +140,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.logout = function()
     {
       localStorage.clear();
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     }
 
     $scope.login = function (emailParam, nameParam)

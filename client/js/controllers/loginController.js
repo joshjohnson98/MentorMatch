@@ -22,7 +22,7 @@ function attachSignin(element)
             var name = googleUser.getBasicProfile().getName();  //Retrieve current user email
             localStorage.setItem("useremail", email);
             localStorage.setItem("username", name);
-            window.location.href = "index.html";
+            window.location.href = "home.html";
         }, function (error)
         {
             alert(JSON.stringify(error, undefined, 2));
