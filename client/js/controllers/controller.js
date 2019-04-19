@@ -292,7 +292,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 ]);
 
 window.onload = function() {
-
+  
   console.log("local storage has: " + localStorage.getItem('useremail'));
 
   //Assign local storage email content to scope variable
@@ -300,8 +300,10 @@ window.onload = function() {
 
   angular.element($('#MainWrap')).scope().detailedInfo.email = localStorage.getItem('useremail');
   angular.element($('#MainWrap')).scope().detailedInfo.name = localStorage.getItem('username');
-  if(localStorage.getItem('useremail')!=null){
-    angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().
-    login(localStorage.getItem('useremail'), localStorage.getItem('username'))); //Pass email into angular function (login)
-  }
+  setTimeout(function(){  //Half second delay to prevent duplicate entries
+    if(localStorage.getItem('useremail')!=null){
+      angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().
+      login(localStorage.getItem('useremail'), localStorage.getItem('username'))); //Pass email into angular function (login)
+    }
+  }, 500);
 };
