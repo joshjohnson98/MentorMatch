@@ -19,6 +19,10 @@ nav {
   background-color: #31444b;
 }
 
+#logo {
+  font-size:30px;
+}
+
 body {
   margin-top: 100px;
   background-color: #EAECED;
@@ -124,23 +128,11 @@ th {
   border: thin solid #888;
   box-shadow: 1px 1px 1px grey;
   white-space: nowrap;
-  margin: 30%;
 }
 #customBtn:hover {
   cursor: pointer;
 }
 
-
-.main-div {
-  display: block;
-  width: 50%;
-  height: 50%;
-  justify-content: center;
-  margin-left: 25%;
-  margin-bottom: 25%;
-  background:#990000;
-  /*border: 3px solid #3caa3d;*/
-}
 span.buttonText {
   display: inline-block;
   vertical-align: left;
@@ -233,10 +225,77 @@ section .section-title {
   }
 }
 
+
 .main-div #signinText {
-  margin-right : 25%;
-  margin-top:30px;
-  font-size : 70px;
-  color: azure;
+  margin-top:10%;
+  font-size : 4vw;
+  color: #e84a5f;
   justify-content: center;
+  text-align:center;
+  button-align:center;
+ }
+ .main-div #customBtn
+ {
+  display: inline-block;
+  background: #ffffff;
+  padding: 5%;
+  text-bold : true;
+  width: 190px;
+  border-radius: 3px;
+  border: thin solid #e84a5f;
+  white-space: nowrap;
+  text-align:center;
+  margin-top: 10%;
+  
+ }
+ 
+ #customBtn:hover {
+  cursor: pointer;
+ }
+ 
+ 
+ .main-div {
+  display: block;
+  width: 30%;
+  height: 60%;
+  margin-left: 35%;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  background:white;
+  justify-content: center;
+  text-align: center;
+  /*border: 3px solid #3caa3d;*/
+ }
+ 
+ #logOutBtn
+ {
+  border-color: transparent;
+  background-color: transparent;
+ }
+ #logOutBtn:hover
+ {
+  color: #e84a5f;
+ }
+ #logoutText
+ {
+  color : white;
+ }
+ 
+ #loginbody
+ {
+  background-image: url(“./client/friends-smiling1.jpg”);
+ }
+ #logoutText:hover
+ {
+  color : #e84a5f;
+ }
+ 
+ #textButton
+ {
+  color:#e84a5f;
+ }
+
+ h1:hover
+{
+ cursor: pointer;
 }

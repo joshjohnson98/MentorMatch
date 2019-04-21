@@ -13,11 +13,11 @@
 <body ng-app="directoryApp" id="MainWrap" ng-controller="ListingsController">
   <nav class="navbar fixed-top">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <h1>Mentor Match</h1>
-      </div>
+        <div class="navbar-header">
+            <span class="navbar-brand" id="logo"><img src="/logo.svg">    Mentor Match</span>
+          </div>
       <div class = "nav navbar-nav navbar-right" id="gSignInWrapper">
-          <button id = "logOutBtn" ng-click = "logout()">Log out</button>
+          <button id = "logOutBtn" ng-click = "logout()"><text id="logoutText">Log Out</text></button>
       </div>
     </div>
   </nav>
