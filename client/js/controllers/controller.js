@@ -459,6 +459,10 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         }
       }
 
+      //if(mentee.name.value = "Joshua Johnson"){
+      //  console.log("Joshua Johnson is being compared with " + mentor.name.value);
+      //}
+
 
       return score;
     };
