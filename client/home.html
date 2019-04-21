@@ -14,7 +14,7 @@
   <nav class="navbar fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <h1>Mentor Match </h1>
+        <h1>Mentor Match</h1>
       </div>
       <div class = "nav navbar-nav navbar-right" id="gSignInWrapper">
           <button id = "logOutBtn" ng-click = "logout()">Log out</button>
@@ -788,7 +788,7 @@
                 <table class="table table-hover">
                   <thead class="thead dark">
                     <th>Mentor Name</th>
-                    <th>Score</th>
+                    <th>Compatibility Score</th>
                     <th></th>
                     <th></th>
                   </thead>
@@ -807,8 +807,8 @@
                       <p1 id="mentor-{{$index}}-gender"><b>Gender</b>: {{Match.profile.gender.value}}</p1>
                       <p1 id="mentor-{{$index}}-ethnicity"><b>Ethnicity</b>: {{Match.profile.ethnicity.value}}</p1>
                       <p1 id="mentor-{{$index}}-city"><b>City</b>: {{Match.profile.location.city}}</p1>
+                      <p1 id="mentor-{{$index}}-language"><b>Language</b>: {{Match.profile.language.value}}</p1>
                       <p1 id="mentor-{{$index}}-bio"><b>Bio</b>: {{Match.profile.bio}}</p1>
-
 
                     </td>
                   </tr>
@@ -836,7 +836,7 @@
                 <table class="table table-hover">
                   <thead class="thead dark">
                     <th>Mentee Name</th>
-                    <th>Score</th>
+                    <th>Compatibility Score</th>
                     <th></th>
                     <th></th>
                   </thead>
@@ -856,8 +856,9 @@
                       <p1 id="mentee-{{$index}}-gender"><b>Gender</b>: {{Match.profile.gender.value}}</p1>
                       <p1 id="mentee-{{$index}}-ethnicity"><b>Ethnicity</b>: {{Match.profile.ethnicity.value}}</p1>
                       <p1 id="mentee-{{$index}}-city"><b>City</b>: {{Match.profile.location.city}}</p1>
+                      <p1 id="mentee-{{$index}}-language"><b>Language</b>: {{Match.profile.language.value}}</p1>
                       <p1 id="mentee-{{$index}}-bio"><b>Bio</b>: {{Match.profile.bio}}</p1>
-
+                      
 
                     </td>
                   </tr>
