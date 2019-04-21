@@ -264,9 +264,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     }
 
 
-    $scope.sendEmail = function (emailSendTo)
-    {
-
+    $scope.sendEmail = function (emailSendTo){
       var linkto = 'mailto:' + emailSendTo + '?subject=[MentorMatch] Feedback&body=Please provide feedback to your mentor/mentee. ' +
           '%0A My mentor/mentee excelled at:%0A%0A%0AWhat did you gain from this experience?%0A%0A%0A ' +
           'What could your mentor/mentee do to improve your experience next time?%0A%0A%0A' +
@@ -406,7 +404,10 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
       //Location score
       var locationScore = 0;
-      if(mentor.location.city.toLowerCase() == mentee.location.city.toLowerCase()){ //Same city
+      if(mentor.location.city == "" && mentor.location.state == "" && mentor.location.country == "" &&
+          mentee.location.city == "" && mentee.location.state == "" && mentee.location.country == ""){  //If info is not filled out for either user
+        locationScore = 0;
+      }else if(mentor.location.city.toLowerCase() == mentee.location.city.toLowerCase()){ //Same city
         locationScore = 1;
       }else if(mentor.location.state.toLowerCase() == mentee.location.state.toLowerCase()){ //Same state
         locationScore = 0.25;
