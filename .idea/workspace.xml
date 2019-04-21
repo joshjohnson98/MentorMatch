@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d5155d1-89c0-416c-9f35-386646453bef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/main.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="37" column="53" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="53" />
+            <state relative-caret-position="-1613">
+              <caret line="840" column="193" selection-start-line="840" selection-start-column="193" selection-end-line="840" selection-end-column="193" />
             </state>
           </provider>
         </entry>
@@ -28,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/styles/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="10" column="9" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="147">
+              <caret line="245" column="2" selection-start-line="245" selection-start-column="2" selection-end-line="245" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -45,13 +46,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loca</find>
-      <find>ng-click</find>
-      <find>google</find>
-      <find>att</find>
-      <find>attach</find>
-      <find>log</find>
-      <find>o</find>
       <find>href</find>
       <find>l</find>
       <find>page</find>
@@ -75,6 +69,13 @@
       <find>mentee</find>
       <find>mentee name</find>
       <find>fas fa-chevron-down</find>
+      <find>profileB</find>
+      <find>button bold</find>
+      <find>potential</find>
+      <find>bold</find>
+      <find>salmon</find>
+      <find>fas fa</find>
+      <find>hover</find>
     </findStrings>
     <replaceStrings>
       <replace>google</replace>
@@ -97,8 +98,8 @@
         <option value="$PROJECT_DIR$/client/styles/login.css" />
         <option value="$PROJECT_DIR$/client/login.html" />
         <option value="$PROJECT_DIR$/client/js/controllers/loginController.js" />
-        <option value="$PROJECT_DIR$/client/styles/main.css" />
         <option value="$PROJECT_DIR$/client/home.html" />
+        <option value="$PROJECT_DIR$/client/styles/main.css" />
       </list>
     </option>
   </component>
@@ -222,12 +223,12 @@
       <workItem from="1553956702610" duration="4544000" />
       <workItem from="1554586857002" duration="1340000" />
       <workItem from="1555355298193" duration="1637000" />
-      <workItem from="1555869120345" duration="1790000" />
+      <workItem from="1555869120345" duration="2234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34830000" />
+    <option name="totallyTimeSpent" value="35274000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -242,7 +243,7 @@
     <frame x="0" y="51" width="1440" height="799" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18816067" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18816067" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -254,7 +255,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3292517" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.37482318" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.37482318" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -352,13 +353,6 @@
     <entry file="file://$PROJECT_DIR$/client/carot.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/styles/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -380,17 +374,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/styles/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="62" column="15" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="37" column="53" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="53" />
+        <state relative-caret-position="-1613">
+          <caret line="840" column="193" selection-start-line="840" selection-start-column="193" selection-end-line="840" selection-end-column="193" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="147">
+          <caret line="245" column="2" selection-start-line="245" selection-start-column="2" selection-end-line="245" selection-end-column="2" />
         </state>
       </provider>
     </entry>

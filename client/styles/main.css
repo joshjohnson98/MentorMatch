@@ -242,9 +242,11 @@ section .section-title {
 }
 
 tr.showCarot i {
-  opacity: 0;
+
+  color: grey;
 }
 
 tr.showCarot:hover i {
   opacity: 1;
+  color: salmon;
 }
