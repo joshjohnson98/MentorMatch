@@ -20,6 +20,8 @@ function attachSignin(element)
             localStorage.clear();
             var email = googleUser.getBasicProfile().getEmail();  //Retrieve current user email
             var name = googleUser.getBasicProfile().getName();  //Retrieve current user email
+            var img = googleUser.getBasicProfile().getImageUrl();
+            localStorage.setItem("userimage", img);
             localStorage.setItem("useremail", email);
             localStorage.setItem("username", name);
             window.location.href = "home.html";
