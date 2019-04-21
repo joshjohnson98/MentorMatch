@@ -788,7 +788,7 @@
                 <table class="table table-hover">
                   <thead class="thead dark">
                     <th>Mentor Name</th>
-                    <th>Compatibility Score</th>
+                    <th>Compatibility</th>
                     <th></th>
                     <th></th>
                   </thead>
@@ -836,7 +836,7 @@
                 <table class="table table-hover">
                   <thead class="thead dark">
                     <th>Mentee Name</th>
-                    <th>Compatibility Score</th>
+                    <th>Compatibility</th>
                     <th></th>
                     <th></th>
                   </thead>
@@ -844,7 +844,6 @@
                     <td><button ng-click= "displayProfile($index, Match.profile, menteeString)" class = "btn"data-toggle="collapse"data-target="#mentee-userInfo--{{$index}}">{{Match.profile.name.value}}  <i class="fas fa-chevron-down salmon"></i></button></td>     <td>{{Match.score}}%</td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "contactEmail(Match.profile.email, detailedInfo.name.value, Match.profile.name.value)">Contact</button></td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
-                    <td></td>
                   </tr>
                   <tr ng-repeat-end class ="collapse" id="mentee-userInfo--{{$index}}">
                     <td colspan=3>
