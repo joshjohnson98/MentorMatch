@@ -3,18 +3,12 @@
   font-size: 50px;
 }
 
-/* html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-} */
-
 #profileButton {
 
   font-size: 30px;
 }
 
 nav {
-  /* width: 100%; */
   color: white;
   background-color: #31444b;
 }
@@ -28,10 +22,7 @@ body {
   background-color: #EAECED;
   overflow-x: hidden;
 }
-/* .card-body{
-  background-color: #EEEEEE;
 
-} */
 #pageBody {
   min-height: 575px;
 }
@@ -143,7 +134,6 @@ section .section-title {
 
 #footer {
     background: #31444b;
-    /* min-height: 1000px; */
 }
 
 #bottomRow {
@@ -157,7 +147,6 @@ section .section-title {
   margin-bottom: 20px;
   color:#ffffff;
   margin-top: 20px;
-  /* font-size: 18px; */
 }
 #footer a {
     color: #ffffff;
@@ -254,7 +243,6 @@ section .section-title {
   background:white;
   justify-content: center;
   text-align: center;
-  /*border: 3px solid #3caa3d;*/
  }
  
  #logOutBtn
@@ -284,10 +272,6 @@ section .section-title {
  {
   color:#e84a5f;
  }
-
- /* #textButton:hover {
-  color: white;
- } */
 
  h1:hover
 {

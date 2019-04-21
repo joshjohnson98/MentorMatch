@@ -39,7 +39,6 @@ exports.read = function(req, res) {
 /* Update a profile */
 exports.update = function(req, res) {
 
-  /*unimplemented profile attributes are commented out*/
   var profile = new Profile();
   profile.email = req.body.email;
   profile.name.value = req.body.name.value;
@@ -51,11 +50,7 @@ exports.update = function(req, res) {
   profile.industry.score = req.body.industry.score;
   profile.bio = req.body.bio;
   profile.isMentor = req.body.isMentor;
-  //profile.mentorStrengths = req.body.mentorStrengths;
-  //profile.mentorStrengths.score = req.body.mentorStrengths.score;
   profile.isMentee = req.body.isMentee;
-  //profile.menteeGoals = req.body.menteeGoals;
-  //profile.goaScore = req.body.goaScore;
   profile.language.value = req.body.language.value;
   profile.language.score = req.body.language.score;
   profile.location.country = req.body.location.country;
@@ -63,7 +58,6 @@ exports.update = function(req, res) {
   profile.location.city = req.body.location.city;
   profile.location.score = req.body.location.score;
   
-  //console.log(req.body._id);  //For debugging
   profile.save(function(err) {
       if(err) {
         console.log(err);
