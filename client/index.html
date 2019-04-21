@@ -788,7 +788,7 @@
                 <table class="table table-hover">
                   <thead class="thead dark">
                     <th>Mentor Name</th>
-                    <th>Score</th>
+                    <th>Compatibility Score</th>
                     <th></th>
                   </thead>
                   <tr ng-repeat-start="Match in mentorMatches" >
@@ -805,8 +805,8 @@
                       <p1 id="mentor-{{$index}}-gender"><b>Gender</b>: {{Match.profile.gender.value}}</p1>
                       <p1 id="mentor-{{$index}}-ethnicity"><b>Ethnicity</b>: {{Match.profile.ethnicity.value}}</p1>
                       <p1 id="mentor-{{$index}}-city"><b>City</b>: {{Match.profile.location.city}}</p1>
+                      <p1 id="mentor-{{$index}}-language"><b>Language</b>: {{Match.profile.language.value}}</p1>
                       <p1 id="mentor-{{$index}}-bio"><b>Bio</b>: {{Match.profile.bio}}</p1>
-
 
                     </td>
                   </tr>
@@ -834,7 +834,7 @@
                 <table class="table table-hover">
                   <thead class="thead dark">
                     <th>Mentee Name</th>
-                    <th>Score</th>
+                    <th>Compatibility Score</th>
                     <th></th>
                   </thead>
                   <tr ng-repeat-start="Match in menteeMatches" >
@@ -851,8 +851,9 @@
                       <p1 id="mentee-{{$index}}-gender"><b>Gender</b>: {{Match.profile.gender.value}}</p1>
                       <p1 id="mentee-{{$index}}-ethnicity"><b>Ethnicity</b>: {{Match.profile.ethnicity.value}}</p1>
                       <p1 id="mentee-{{$index}}-city"><b>City</b>: {{Match.profile.location.city}}</p1>
+                      <p1 id="mentee-{{$index}}-language"><b>Language</b>: {{Match.profile.language.value}}</p1>
                       <p1 id="mentee-{{$index}}-bio"><b>Bio</b>: {{Match.profile.bio}}</p1>
-
+                      
 
                     </td>
                   </tr>

@@ -2,7 +2,18 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
   function($scope, Listings)
   {
     /* Unique identifier for current user */
-    $scope.jobOther;
+    $scope.jobOtherFill="";
+    $scope.strength1otherFill="";
+    $scope.strength2otherFill="";
+    $scope.strength3otherFill="";
+    $scope.goal1otherFill="";
+    $scope.goal2otherFill="";
+    $scope.goal3otherFill="";
+    $scope.genderOtherFill="";
+    $scope.sexOtherFill="";
+    $scope.ethnicityOtherFill="";
+    $scope.langOtherFill="";
+
     $scope.menteeString = "mentee-";
     $scope.mentorString = "mentor-";
     $scope.detailedInfo = {
@@ -101,7 +112,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         if (value.email == $scope.detailedInfo.email)
           id = value._id;
       });
-
+      $scope.checkOtherFill();
       /* Create new date via update */
       Listings.create($scope.detailedInfo)
           .then(function (response)
@@ -136,6 +147,177 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             $scope.error = 'Unable to delete listing!' + error;
           });
     };
+
+    $scope.checkOtherFill = function(){
+        if($scope.jobOtherFill!="" && $scope.detailedInfo.industry.value=="other"){
+          $scope.detailedInfo.industry.value = $scope.jobOtherFill;
+        }
+        if($scope.sexOtherFill!="" && $scope.detailedInfo.sexualOrientation.value=="other"){
+          $scope.detailedInfo.sexualOrientation.value = $scope.sexOtherFill;
+        }
+        if($scope.genderOtherFill!="" && $scope.detailedInfo.gender.value=="other"){
+          $scope.detailedInfo.gender.value = $scope.genderOtherFill;
+        }
+        if($scope.strength1otherFill!="" && $scope.detailedInfo.mentorStrength1.value=="other"){
+          $scope.detailedInfo.mentorStrength1.value = $scope.strength1otherFill;
+        }
+        if($scope.strength2otherFill!="" && $scope.detailedInfo.mentorStrength2.value=="other"){
+          $scope.detailedInfo.mentorStrength2.value = $scope.strength2otherFill;
+        }
+        if($scope.strength3otherFill!="" && $scope.detailedInfo.mentorStrength3.value=="other"){
+          $scope.detailedInfo.mentorStrength3.value = $scope.strength3otherFill;
+        }
+        if($scope.goal1otherFill!="" && $scope.detailedInfo.menteeGoal1.value=="other"){
+          $scope.detailedInfo.menteeGoal1.value = $scope.goal1otherFill;
+        }
+        if($scope.goal2otherFill!="" && $scope.detailedInfo.menteeGoal2.value=="other"){
+          $scope.detailedInfo.menteeGoal2.value = $scope.goal2otherFill;
+        }
+        if($scope.goal3otherFill!="" && $scope.detailedInfo.menteeGoal3.value=="other"){
+          $scope.detailedInfo.menteeGoal3.value = $scope.goal3otherFill;
+        }
+        if($scope.langOtherFill!="" && $scope.detailedInfo.language.value=="other"){
+          $scope.detailedInfo.language.value = $scope.langOtherFill;
+        }
+        if($scope.ethnicityOtherFill!="" && $scope.detailedInfo.ethnicity.value=="other"){
+          $scope.detailedInfo.ethnicity.value = $scope.ethnicityOtherFill;
+        }
+
+
+    };
+
+    $scope.fillOtherFill = function(){
+      
+      
+      
+      
+      
+      var exists =false;
+        
+      $('#JobSelect option').each(function(){
+        if (this.value == $scope.detailedInfo.industry.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.jobOtherFill = $scope.detailedInfo.industry.value;
+        $scope.detailedInfo.industry.value = "other";
+      }
+      exists = false;
+      $('#SexSelect option').each(function(){
+        if (this.value == $scope.detailedInfo.sexualOrientation.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.sexOtherFill = $scope.detailedInfo.sexualOrientation.value;
+        $scope.detailedInfo.sexualOrientation.value = "other";
+      }
+      exists = false;
+      $('#GenderSelect option').each(function(){
+        if (this.value == $scope.detailedInfo.gender.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.genderOtherFill = $scope.detailedInfo.gender.value;
+        $scope.detailedInfo.gender.value = "other";
+      }
+      exists = false;
+
+      $('#mentorStrength1check option').each(function(){
+        if (this.value == $scope.detailedInfo.mentorStrength1.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.strength1otherFill = $scope.detailedInfo.mentorStrength1.value;
+        $scope.detailedInfo.mentorStrength1.value = "other";
+      }
+      exists = false;
+      $('#mentorStrength2check option').each(function(){
+        if (this.value == $scope.detailedInfo.mentorStrength2.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.strength2otherFill = $scope.detailedInfo.mentorStrength2.value;
+        $scope.detailedInfo.mentorStrength2.value = "other";
+      }
+      exists = false;
+      $('#mentorStrength3check option').each(function(){
+        if (this.value == $scope.detailedInfo.mentorStrength3.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.strength3otherFill = $scope.detailedInfo.mentorStrength3.value;
+        $scope.detailedInfo.mentorStrength3.value = "other";
+      }
+      exists = false;
+
+      $('#menteeGoal1check option').each(function(){
+        if (this.value == $scope.detailedInfo.menteeGoal1.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.goal1otherFill = $scope.detailedInfo.menteeGoal1.value;
+        $scope.detailedInfo.menteeGoal1.value = "other";
+      }
+      exists = false;
+      $('#menteeGoal2check option').each(function(){
+        if (this.value == $scope.detailedInfo.menteeGoal2.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.goal2otherFill = $scope.detailedInfo.menteeGoal2.value;
+        $scope.detailedInfo.menteeGoal2.value = "other";
+      }
+      exists = false;
+      $('#menteeGoal3check option').each(function(){
+        if (this.value == $scope.detailedInfo.menteeGoal3.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.goal3otherFill = $scope.detailedInfo.menteeGoal3.value;
+        $scope.detailedInfo.menteeGoal3.value = "other";
+      }
+      exists = false;
+      $('#LanguageSelect option').each(function(){
+        if (this.value == $scope.detailedInfo.language.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.langOtherFill = $scope.detailedInfo.language.value;
+        $scope.detailedInfo.language.value = "other";
+      }
+      exists = false;
+      $('#EthnicitySelect option').each(function(){
+        if (this.value == $scope.detailedInfo.ethnicity.value) {
+            exists = true;
+            return false;
+        }
+      });
+      if(!exists){
+        $scope.ethnicityOtherFill = $scope.detailedInfo.ethnicity.value;
+        $scope.detailedInfo.ethnicity.value = "other";
+      }
+      exists = false;
+    }
 
     $scope.logout = function()
     {
@@ -189,6 +371,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
           $scope.detailedInfo.location.state = value.location.state;
           $scope.detailedInfo.location.country = value.location.country;
           $scope.detailedInfo.language.value = value.language.value;
+
+          $scope.fillOtherFill();
         }
       })
 
@@ -347,6 +531,14 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         {
         document.getElementById(list+""+index+"-strength3").style.display = "table-row";
         }
+        if(listing.language.value==""||listing.language.value=="--")
+        {
+          document.getElementById(list+""+index+"-language").style.display = "none";
+        }
+        else
+        {
+        document.getElementById(list+""+index+"-language").style.display = "table-row";
+        }
       }
       //only displayed in potentail mentee
       if(list==$scope.menteeString){
@@ -383,7 +575,14 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         {
         document.getElementById(list+""+index+"-city").style.display = "table-row";
         }
-        
+        if(listing.language.value==""||listing.language.value=="--")
+        {
+          document.getElementById(list+""+index+"-language").style.display = "none";
+        }
+        else
+        {
+        document.getElementById(list+""+index+"-language").style.display = "table-row";
+        }
 
 
     }
@@ -508,9 +707,209 @@ window.onload = function() {
       angular.element($('#MainWrap')).scope().$apply( angular.element($('#MainWrap')).scope().
       login(localStorage.getItem('useremail'), localStorage.getItem('username'))); //Pass email into angular function (login)
     }
+    formCheck();
   }, 500);
-};
 
+};
+function formCheck()//form Controller code
+{
+  // this will show the other fill in box if other is selected in dropdown
+  $("#JobSelect").change(function() {
+    if ($(this).val() == "other") {
+      $('#jobOther').show();
+  
+    } else {
+      $('#jobOther').hide();
+  
+    }
+  });
+  $("#JobSelect").trigger("change");
+  
+  // this will show the other fill in box if other is selected in dropdown
+  $("#GenderSelect").change(function() {
+    if ($(this).val() == "other") {
+      $('#genderOther').show();
+  
+    } else {
+      $('#genderOther').hide();
+  
+    }
+  });
+  $("#GenderSelect").trigger("change");
+  // this will show the other fill in box if other is selected in dropdown
+  $("#SexSelect").change(function() {
+    if ($(this).val() == "other") {
+      $('#sexOther').show();
+  
+    } else {
+      $('#sexOther').hide();
+  
+    }
+  });
+  $("#SexSelect").trigger("change");
+  
+  
+  
+  $("#EthnicitySelect").change(function() {
+    if ($(this).val() == "other") {
+      $('#ethnicityOther').show();
+  
+    } else {
+      $('#ethnicityOther').hide();
+  
+    }
+  });
+  $("#EthnicitySelect").trigger("change");
+  
+  
+  
+  $("#LanguageSelect").change(function() {
+    if ($(this).val() == "other") {
+      $('#langOther').show();
+  
+    } else {
+      $('#langOther').hide();
+  
+    }
+  });
+  $("#LanguageSelect").trigger("change");
+  
+  
+  // this section is showing mentor strength boxes if checked yes to mentor
+  
+  $("#mentorCheck").change(function() {
+      if ($(this).val() == "yes") {
+        $('#allStrength').show();
+  
+      } else {
+        $('#allStrength').hide();
+  
+  
+      }
+    });
+    $("#mentorCheck").trigger("change");
+  
+  //shows extra boxes only if the firsts are checked
+    $("#mentorStrength1check").change(function() {
+      if ($(this).val() == "Strength1empty") {
+        $('#strength2').hide();
+  
+      } else {
+        $('#strength2').show();
+      }
+  
+      if ($(this).val() == "other") {
+        $('#strength1other').show();
+  
+      } else {
+        $('#strength1other').hide();
+      }
+  
+    });
+    $("#mentorStrength1check").trigger("change");
+  
+  
+    $("#mentorStrength2check").change(function() {
+      if ($(this).val() == "Strength2empty") {
+        $('#mentorStrength3').hide();
+  
+      } else {
+        $('#mentorStrength3').show();
+  
+      }
+      if ($(this).val() == "other") {
+        $('#strength2other').show();
+  
+      } else {
+        $('#strength2other').hide();
+      }
+  
+  
+    });
+    $("#mentorStrength2check").trigger("change");
+  
+  
+  
+    $("#mentorStrength3check").change(function() {
+  
+      if ($(this).val() == "other") {
+        $('#strength3other').show();
+  
+      } else {
+        $('#strength3other').hide();
+      }
+  
+  
+    });
+    $("#mentorStrength3check").trigger("change");
+  
+  
+  
+    $("#menteeCheck").change(function() {
+      if ($(this).val() == "yes") {
+        $('#allGoal').show();
+  
+      } else {
+        $('#allGoal').hide();
+  
+  
+      }
+    });
+    $("#menteeCheck").trigger("change");
+  
+    $("#menteeGoal1check").change(function() {
+      if ($(this).val() == "Goal1empty") {
+        $('#goal2').hide();
+  
+      } else {
+        $('#goal2').show();
+      }
+      if ($(this).val() == "other") {
+        $('#goal1other').show();
+  
+      } else {
+        $('#goal1other').hide();
+      }
+  
+    });
+    $("#menteeGoal1check").trigger("change");
+  
+  
+    $("#menteeGoal2check").change(function() {
+      if ($(this).val() == "Goal2empty") {
+        $('#menteeGoal3').hide();
+  
+      } else {
+        $('#menteeGoal3').show();
+  
+      }
+      if ($(this).val() == "other") {
+        $('#goal2other').show();
+  
+      } else {
+        $('#goal2other').hide();
+      }
+  
+  
+    });
+    $("#menteeGoal2check").trigger("change");
+  
+  
+  
+  
+    $("#menteeGoal3check").change(function() {
+  
+      if ($(this).val() == "other") {
+        $('#goal3other').show();
+  
+      } else {
+        $('#goal3other').hide();
+      }
+  
+  
+    });
+    $("#menteeGoal3check").trigger("change");
+    }
 function validForm() {
   var mtor, mtee, strn, goal;
 
