@@ -594,6 +594,10 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
   //Matching Algorithm Code
 
     $scope.calculateScore = function(mentor, mentee) {
+      if(mentee.name.value == "Joshua Johnson" && mentor.name.value == "Julian Hall"){
+        console.log(mentee.name.value + " is being compared with " + mentor.name.value);
+      }
+
       var score = 0;
 
       //Quick filter based on boolean attributes
@@ -616,27 +620,45 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         locationScore = 0;
       }
       
-      score += locationScore*(mentor.location.score + mentee.location.score)/1; //Use mentor and mentee attribute weights to update score
+      score += locationScore*$scope.detailedInfo.location.score; //Use current user attribute weight to update score
+      
+      if(mentee.name.value == "Joshua Johnson" && mentor.name.value == "Julian Hall") 
+          console.log("Location Match Score: " + locationScore*$scope.detailedInfo.location.score);
 
       //Language score
-      if(mentor.language.value.toLowerCase() == mentee.language.value.toLowerCase())
-        score += (mentor.language.score + mentee.language.score)/2; //Use mentor and mentee attribute weights to update score
+      if(mentor.language.value.toLowerCase() == mentee.language.value.toLowerCase()){
+        score += $scope.detailedInfo.language.score; //Use current user attribute weight to update score
+        if(mentee.name.value == "Joshua Johnson" && mentor.name.value == "Julian Hall")
+          console.log("Language Match Score: " + $scope.detailedInfo.language.score);
+      }
 
       //Industry score
-      if(mentor.industry.value.toLowerCase() == mentee.industry.value.toLowerCase())
-        score += (mentor.industry.score + mentee.industry.score)/2; //Use mentor and mentee attribute weights to update score
+      if(mentor.industry.value.toLowerCase() == mentee.industry.value.toLowerCase()){
+        score += $scope.detailedInfo.industry.score; //Use current user attribute weight to update score
+        if(mentee.name.value == "Joshua Johnson" && mentor.name.value == "Julian Hall")
+          console.log("Industry Match Score: " + $scope.detailedInfo.industry.score);
+      }
 
       //Gender score
-      if(mentor.gender.value.toLowerCase() == mentee.gender.value.toLowerCase())
-        score += (mentor.gender.score + mentee.gender.score)/2; //Use mentor and mentee attribute weights to update score
+      if(mentor.gender.value.toLowerCase() == mentee.gender.value.toLowerCase()){
+        score += $scope.detailedInfo.gender.score; //Use current user attribute weight to update score
+        if(mentee.name.value == "Joshua Johnson" && mentor.name.value == "Julian Hall")
+          console.log("Gender Match Score: " + $scope.detailedInfo.gender.score);
+      }
 
       //Sexual Orientation score
-      if(mentor.sexualOrientation.value.toLowerCase() == mentee.sexualOrientation.value.toLowerCase())
-        score += (mentor.sexualOrientation.score + mentee.sexualOrientation.score)/2; //Use mentor and mentee attribute weights to update score
+      if(mentor.sexualOrientation.value.toLowerCase() == mentee.sexualOrientation.value.toLowerCase()){
+        score += $scope.detailedInfo.sexualOrientation.score; //Use current user attribute weight to update score
+        if(mentee.name.value == "Joshua Johnson" && mentor.name.value == "Julian Hall")
+          console.log("Sexual Orient. Match Score: " + $scope.detailedInfo.sexualOrientation.score);
+      }
 
       //Ethnicity score
-      if(mentor.ethnicity.value.toLowerCase() == mentee.ethnicity.value.toLowerCase())
-        score += (mentor.ethnicity.score + mentee.ethnicity.score)/2; //Use mentor and mentee attribute weights to update score
+      if(mentor.ethnicity.value.toLowerCase() == mentee.ethnicity.value.toLowerCase()){
+        score += $scope.detailedInfo.ethnicity.score; //Use current user attribute weight to update score
+        if(mentee.name.value == "Joshua Johnson" && mentor.name.value == "Julian Hall")
+          console.log("Ethnicity Match Score: " + $scope.detailedInfo.ethnicity.score);
+      }
 
       //Mentor strengths and mentee goals score
       var mentorStrengths = new Array();
@@ -653,17 +675,50 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       var numOptions = 3; //Adjustable. Preset to 3 for our implementation
       for(var i=0; i<numOptions; i++){
         for(var j=0; j<numOptions; j++){
-          if(mentorStrengths[i] == menteeGoals[j])  //Strength and goal match
-            score += (mentorStrengths[i].score + menteeGoals[j].score)/2; //Use mentor and mentee attribute weights to update score
+          if(mentorStrengths[i].value == menteeGoals[j].value){  //Strength and goal match
+            if(mentor.email == $scope.detailedInfo.email)
+              score += mentorStrengths[i].score; //Use current user attribute weight to update score
+            else if(mentee.email == $scope.detailedInfo.email)
+              score += menteeGoals[j].score; //Use current user attribute weight to update score
+
+            if(mentee.name.value == "Joshua Johnson" && mentor.name.value == "Julian Hall"){
+              console.log(mentorStrengths[i].value + " matched with " + menteeGoals[j].value + " for ")
+              if(mentor.email == $scope.detailedInfo.email)
+                console.log(mentorStrengths[i].score + " points");
+              else if(mentee.email == $scope.detailedInfo.email)
+                console.log(menteeGoals[j].score + " points");
+            }
+
+          }
         }
       }
 
-      //if(mentee.name.value = "Joshua Johnson"){
-      //  console.log("Joshua Johnson is being compared with " + mentor.name.value);
-      //}
+      var maxPossibleScore = 0;
+      maxPossibleScore += $scope.detailedInfo.location.score;
+      maxPossibleScore += $scope.detailedInfo.language.score;
+      maxPossibleScore += $scope.detailedInfo.industry.score;
+      maxPossibleScore += $scope.detailedInfo.gender.score;
+      maxPossibleScore += $scope.detailedInfo.sexualOrientation.score;
+      maxPossibleScore += $scope.detailedInfo.ethnicity.score;
+      
+      if(mentor.email == $scope.detailedInfo.email){  //Current user is the potential mentor
+        maxPossibleScore += $scope.detailedInfo.mentorStrength1.score;
+        maxPossibleScore += $scope.detailedInfo.mentorStrength2.score;
+        maxPossibleScore += $scope.detailedInfo.mentorStrength3.score;
+      }else if(mentee.email == $scope.detailedInfo.email){  //Current user is the potential mentee
+        maxPossibleScore += $scope.detailedInfo.menteeGoal1.score;
+        maxPossibleScore += $scope.detailedInfo.menteeGoal2.score;
+        maxPossibleScore += $scope.detailedInfo.menteeGoal3.score;
+      }
 
 
-      return score;
+      if(mentee.name.value == "Joshua Johnson" && mentor.name.value == "Julian Hall"){
+        console.log("Total Raw Match Score: " + score);
+        console.log("Max Possible Raw Match Score: " + maxPossibleScore);
+      }
+        
+
+      return ((score/maxPossibleScore)*100).toFixed(0);
     };
 
 
