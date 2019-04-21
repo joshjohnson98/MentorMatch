@@ -240,3 +240,11 @@ section .section-title {
   color: azure;
   justify-content: center;
 }
+
+tr.showCarot i {
+  opacity: 0;
+}
+
+tr.showCarot:hover i {
+  opacity: 1;
+}

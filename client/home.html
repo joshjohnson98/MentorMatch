@@ -14,7 +14,7 @@
   <nav class="navbar fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <h1>Mentor Match</h1>
+        <h1>Mentor Match </h1>
       </div>
       <div class = "nav navbar-nav navbar-right" id="gSignInWrapper">
           <button id = "logOutBtn" ng-click = "logout()">Log out</button>
@@ -791,9 +791,10 @@
                     <th>Score</th>
                     <th></th>
                   </thead>
-                  <tr ng-repeat-start="Match in mentorMatches" >
+                  <tr ng-repeat-start="Match in mentorMatches" class = "showCarot">
                     <td><button ng-click= "displayProfile($index, Match.profile, mentorString)" class = "btn"data-toggle="collapse"data-target="#mentor-userInfo--{{$index}}">{{Match.profile.name.value}}</button></td>                    <td>{{Match.score}}</td>
-                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
+                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button> </td>
+                    <td><i class="fas fa-chevron-down"></i></td>
                   </tr>
                   <tr ng-repeat-end class ="collapse" id="mentor-userInfo--{{$index}}">
                     <td colspan=3>
@@ -837,9 +838,10 @@
                     <th>Score</th>
                     <th></th>
                   </thead>
-                  <tr ng-repeat-start="Match in menteeMatches" >
+                  <tr ng-repeat-start="Match in menteeMatches" class = "showCarot">
                     <td><button ng-click= "displayProfile($index, Match.profile, menteeString)" class = "btn"data-toggle="collapse"data-target="#mentee-userInfo--{{$index}}">{{Match.profile.name.value}}</button></td>                    <td>{{Match.score}}</td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
+                    <td><i class="fas fa-chevron-down"></i></td>
                   </tr>
                   <tr ng-repeat-end class ="collapse" id="mentee-userInfo--{{$index}}">
                     <td colspan=3>

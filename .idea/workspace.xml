@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7d5155d1-89c0-416c-9f35-386646453bef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/main.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -21,28 +19,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/index.html">
+        <entry file="file://$PROJECT_DIR$/client/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="46" />
+            <state relative-caret-position="194">
+              <caret line="796" column="53" lean-forward="true" selection-start-line="796" selection-start-column="34" selection-end-line="796" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/styles/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" selection-start-column="1" selection-end-column="8" />
+            <state relative-caret-position="191">
+              <caret line="247" column="6" selection-start-line="247" selection-start-column="6" selection-end-line="247" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -58,13 +47,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>emailParam</find>
-      <find>push</find>
-      <find>emailuser</find>
-      <find>Listing</find>
-      <find>_id</find>
-      <find>this is</find>
-      <find>localstor</find>
       <find>localS</find>
       <find>local</find>
       <find>useremail</find>
@@ -87,7 +69,14 @@
       <find>signin</find>
       <find>pageTit</find>
       <find>sign</find>
+      <find>mentor.</find>
+      <find>mentor nam</find>
       <find>mentor</find>
+      <find>profile</find>
+      <find>c</find>
+      <find>fas</find>
+      <find>poten</find>
+      <find>mentor name</find>
     </findStrings>
     <replaceStrings>
       <replace>google</replace>
@@ -106,11 +95,12 @@
         <option value="$PROJECT_DIR$/client/js/login.js" />
         <option value="$PROJECT_DIR$/client/email.html" />
         <option value="$PROJECT_DIR$/client/js/controllers/controller.js" />
-        <option value="$PROJECT_DIR$/client/js/controllers/loginController.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/client/styles/login.css" />
-        <option value="$PROJECT_DIR$/client/styles/main.css" />
         <option value="$PROJECT_DIR$/client/login.html" />
+        <option value="$PROJECT_DIR$/client/js/controllers/loginController.js" />
+        <option value="$PROJECT_DIR$/client/home.html" />
+        <option value="$PROJECT_DIR$/client/styles/main.css" />
       </list>
     </option>
   </component>
@@ -234,11 +224,12 @@
       <workItem from="1553956702610" duration="4544000" />
       <workItem from="1554586857002" duration="1340000" />
       <workItem from="1555355298193" duration="1637000" />
+      <workItem from="1555869120345" duration="1286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33040000" />
+    <option name="totallyTimeSpent" value="34326000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -265,7 +256,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3292517" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.145686" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.37482318" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -323,13 +314,7 @@
     <entry file="file://$PROJECT_DIR$/client/test.html" />
     <entry file="file://$PROJECT_DIR$/client/js/login.js" />
     <entry file="file://$PROJECT_DIR$/client/js/socialLogin.js" />
-    <entry file="file://$PROJECT_DIR$/client/events.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/events.html" />
     <entry file="file://$PROJECT_DIR$/client/email.html" />
     <entry file="file://$PROJECT_DIR$/server/models/server.model.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -358,52 +343,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/controllers/formController.js">
+    <entry file="file://$PROJECT_DIR$/client/login.html" />
+    <entry file="file://$PROJECT_DIR$/client/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="57">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/carot.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/client/styles/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/controllers/loginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state relative-caret-position="66">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="303" column="50" selection-start-line="303" selection-start-column="44" selection-end-line="303" selection-end-column="50" />
+        <state relative-caret-position="100">
+          <caret line="303" selection-start-line="303" selection-end-line="303" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/controllers/loginController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/controllers/formController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="796" column="53" lean-forward="true" selection-start-line="796" selection-start-column="34" selection-end-line="796" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        <state relative-caret-position="191">
+          <caret line="247" column="6" selection-start-line="247" selection-start-column="6" selection-end-line="247" selection-end-column="6" />
         </state>
       </provider>
     </entry>
