@@ -119,19 +119,7 @@ th {
 @import url('https://fonts.googleapis.com/css?family=Robot');
 
 
-#customBtn {
-  display: inline-block;
-  background: #ffffff;
-  color: #444;
-  width: 190px;
-  border-radius: 5px;
-  border: thin solid #888;
-  box-shadow: 1px 1px 1px grey;
-  white-space: nowrap;
-}
-#customBtn:hover {
-  cursor: pointer;
-}
+
 
 span.buttonText {
   display: inline-block;
@@ -233,6 +221,7 @@ section .section-title {
   justify-content: center;
   text-align:center;
   button-align:center;
+  font-family: 'Roboto', sans-serif;
  }
  .main-div #customBtn
  {
@@ -245,12 +234,13 @@ section .section-title {
   border: thin solid #e84a5f;
   white-space: nowrap;
   text-align:center;
-  margin-top: 10%;
+  margin-top: 20%;
   
  }
  
  #customBtn:hover {
-  cursor: pointer;
+  cursor: pointer; 
+  box-shadow: 0px 0px 7px #e84a5f;
  }
  
  
@@ -294,6 +284,10 @@ section .section-title {
  {
   color:#e84a5f;
  }
+
+ /* #textButton:hover {
+  color: white;
+ } */
 
  h1:hover
 {
