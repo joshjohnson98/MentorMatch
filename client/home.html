@@ -792,7 +792,7 @@
                     <th></th>
                   </thead>
                   <tr ng-repeat-start="Match in mentorMatches" class = "showCarot">
-                    <td><button ng-click= "displayProfile($index, Match.profile, mentorString)" class = "btn"data-toggle="collapse"data-target="#mentor-userInfo--{{$index}}">{{Match.profile.name.value}} <i class="fas fa-chevron-down salmon"></i></button></td>                    <td>{{Match.score}}</td>
+                    <td><button ng-click= "displayProfile($index, Match.profile, mentorString)" class = "btn"data-toggle="collapse"data-target="#mentor-userInfo--{{$index}}">{{Match.profile.name.value}}  <i class="fas fa-chevron-down salmon"></i></button></td>                    <td>{{Match.score}}</td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button> </td>
                   </tr>
                   <tr ng-repeat-end class ="collapse" id="mentor-userInfo--{{$index}}">
@@ -838,7 +838,7 @@
                     <th></th>
                   </thead>
                   <tr ng-repeat-start="Match in menteeMatches" class = "showCarot">
-                    <td><button ng-click= "displayProfile($index, Match.profile, menteeString)" class = "btn"data-toggle="collapse"data-target="#mentee-userInfo--{{$index}}">{{Match.profile.name.value}}<i class="fas fa-chevron-down salmon"></i></button></td>                    <td>{{Match.score}}</td>
+                    <td><button ng-click= "displayProfile($index, Match.profile, menteeString)" class = "btn"data-toggle="collapse"data-target="#mentee-userInfo--{{$index}}">{{Match.profile.name.value}}  <i class="fas fa-chevron-down salmon"></i></button></td>                    <td>{{Match.score}}</td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
                     <td></td>
                   </tr>
