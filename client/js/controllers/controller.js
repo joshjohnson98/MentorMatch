@@ -200,7 +200,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.industry.value != ""){
         $scope.jobOtherFill = $scope.detailedInfo.industry.value;
         $scope.detailedInfo.industry.value = "other";
       }
@@ -211,7 +211,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.sexualOrientation.value != ""){
         $scope.sexOtherFill = $scope.detailedInfo.sexualOrientation.value;
         $scope.detailedInfo.sexualOrientation.value = "other";
       }
@@ -222,7 +222,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.gender.value != ""){
         $scope.genderOtherFill = $scope.detailedInfo.gender.value;
         $scope.detailedInfo.gender.value = "other";
       }
@@ -234,7 +234,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.mentorStrength1.value != ""){
         $scope.strength1otherFill = $scope.detailedInfo.mentorStrength1.value;
         $scope.detailedInfo.mentorStrength1.value = "other";
       }
@@ -245,7 +245,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.mentorStrength2.value != ""){
         $scope.strength2otherFill = $scope.detailedInfo.mentorStrength2.value;
         $scope.detailedInfo.mentorStrength2.value = "other";
       }
@@ -256,7 +256,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.mentorStrength3.value != ""){
         $scope.strength3otherFill = $scope.detailedInfo.mentorStrength3.value;
         $scope.detailedInfo.mentorStrength3.value = "other";
       }
@@ -268,7 +268,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.menteeGoal1.value != ""){
         $scope.goal1otherFill = $scope.detailedInfo.menteeGoal1.value;
         $scope.detailedInfo.menteeGoal1.value = "other";
       }
@@ -279,7 +279,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.menteeGoal2.value != ""){
         $scope.goal2otherFill = $scope.detailedInfo.menteeGoal2.value;
         $scope.detailedInfo.menteeGoal2.value = "other";
       }
@@ -290,7 +290,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.menteeGoal3.value != ""){
         $scope.goal3otherFill = $scope.detailedInfo.menteeGoal3.value;
         $scope.detailedInfo.menteeGoal3.value = "other";
       }
@@ -301,7 +301,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.language.value != ""){
         $scope.langOtherFill = $scope.detailedInfo.language.value;
         $scope.detailedInfo.language.value = "other";
       }
@@ -312,11 +312,11 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             return false;
         }
       });
-      if(!exists){
+      if(!exists && $scope.detailedInfo.ethnicity.value != ""){
         $scope.ethnicityOtherFill = $scope.detailedInfo.ethnicity.value;
         $scope.detailedInfo.ethnicity.value = "other";
       }
-      exists = false;
+      
     }
 
     $scope.logout = function()
