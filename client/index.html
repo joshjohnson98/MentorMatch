@@ -1,26 +1,78 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
 <html>
 <head>
   <title>MentorMatch Login</title>
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/main.css">
   <script src="https://apis.google.com/js/api:client.js"></script>
-
+  
 </head>
 <body>
-<h1 id="pageTitle">Mentor Match</h1>
+  <div id = "loginbody">
+      <nav class="navbar fixed-top">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  
+                  <span class="navbar-brand" id="logo"><img src="/logo.svg">    Mentor Match</span>
+                </div>
+           
+          </div>
+        </nav>
 <div class ="main-div">
-  <div id = "signinText">Sign In</div>
+  <div id = "signinText">Let's Match!</div>
+  
   <div id = "customBtn" class="customGPluSignIn")>
     <span class="icon"></span>
-    <text>Sign in with Google</text>
+    <text id = "textButton">Sign in with <br><i class="fab fa-google"></i>  Google  </text>
   </div>
 </div>
-
 <script src="js/controllers/loginController.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
 <script src="js/app.js"></script>
 <script src="js/factories/factory.js"></script>
+  </div>
+  <section id="footer">
+    <div class="container">
+      <div class="row text-center text-xs-center text-sm-left text-md-left">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <h5>About</h5>
+          <p>Want to learn tips from an industry pro? Want to help like-minded people accomplish their goals?
+            Want to expand your professional network? You can do it all and more with Mentor Match. Mentor Match is a mentorship and advocacy matching service that connects users across industries and backgrounds in order to
+            help them learn, grow, and achieve more.</p>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <h5>Quick links</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="https://www.ultimatesoftware.com">Ultimate Software</a></li>
+            <li><a href="http://www.ufl.edu/">University of Florida</a></li>
+            <li><a href="https://github.com/joshjohnson98/MentorMatch">Contribute <i class="fab fa-github"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <h5>Contributors</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="javascript:void();">Joshua Johnson</a></li>
+            <li><a href="javascript:void();">Anthony Lehenbauer</a></li>
+            <li><a href="javascript:void();">Alex Blauth</a></li>
+            <li><a href="javascript:void();">Anh Hoang</a></li>
+          </ul>
+        </div>
+      </div>
+  </section>
+  <section id="bottomRow">
+    <div class="row" >
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+        <p>Mentor Match is a project of CEN3031 at the University of Florida</p>
+        <p class="h6">Spring 2019</p>
+      </div>
+      </hr>
+    </div>
+    </div>
+  </section>
 </body>
 </html>
