@@ -778,7 +778,7 @@
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
               <button id = "matchesButton" class="btn bold salmon" data-toggle="collapse" data-target="#matchCollapse" aria-expanded="true" aria-controls="collapseOne">
-                Potential Mentor <i class="fas fa-chevron-down"></i>
+                Potential Mentors <i class="fas fa-chevron-down"></i>
               </button>
             </h5>
           </div>
@@ -790,9 +790,11 @@
                     <th>Mentor Name</th>
                     <th>Score</th>
                     <th></th>
+                    <th></th>
                   </thead>
                   <tr ng-repeat-start="Match in mentorMatches" >
                     <td><button ng-click= "displayProfile($index, Match.profile, mentorString)" class = "btn"data-toggle="collapse"data-target="#mentor-userInfo--{{$index}}">{{Match.profile.name.value}}</button></td>                    <td>{{Match.score}}</td>
+                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "contactEmail(Match.profile.email, detailedInfo.name.value, Match.profile.name.value)">Contact</button></td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
                   </tr>
                   <tr ng-repeat-end class ="collapse" id="mentor-userInfo--{{$index}}">
@@ -836,9 +838,11 @@
                     <th>Mentee Name</th>
                     <th>Score</th>
                     <th></th>
+                    <th></th>
                   </thead>
                   <tr ng-repeat-start="Match in menteeMatches" >
                     <td><button ng-click= "displayProfile($index, Match.profile, menteeString)" class = "btn"data-toggle="collapse"data-target="#mentee-userInfo--{{$index}}">{{Match.profile.name.value}}</button></td>                    <td>{{Match.score}}</td>
+                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "contactEmail(Match.profile.email, detailedInfo.name.value, Match.profile.name.value)">Contact</button></td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
                   </tr>
                   <tr ng-repeat-end class ="collapse" id="mentee-userInfo--{{$index}}">

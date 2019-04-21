@@ -273,6 +273,12 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
           'Thank you for using Mentor Match!';
       window.open(linkto);
     }
+
+    $scope.contactEmail = function (email, yourName, theirName) {
+      var linkto = 'mailto:' + email + '?subject=[MentorMatch] ' + yourName + ' would like to connect&body=Hello ' + theirName +
+          ',%0AI saw your profile on Mentor Match and would like to connect! %0A%0ABest,%0A' + yourName;
+      window.open(linkto);
+    }
     
     $scope.displayProfile = function (index,listing,list){
       if(listing.industry.value==""||listing.industry.value=="--")
