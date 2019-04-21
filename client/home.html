@@ -13,11 +13,11 @@
 <body ng-app="directoryApp" id="MainWrap" ng-controller="ListingsController">
   <nav class="navbar fixed-top">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <h1>Mentor Match</h1>
-      </div>
+        <div class="navbar-header">
+            <span class="navbar-brand" id="logo"><img src="/logo.svg">    Mentor Match</span>
+          </div>
       <div class = "nav navbar-nav navbar-right" id="gSignInWrapper">
-          <button id = "logOutBtn" ng-click = "logout()">Log out</button>
+          <button id = "logOutBtn" ng-click = "logout()"><text id="logoutText">Log Out</text></button>
       </div>
     </div>
   </nav>
@@ -48,15 +48,17 @@
 
               <form novalidate id = ProfileForm class="simple-form" >
                 <div class = "container">
-                  <div class = "row bottom-buffer">
-                    <label class="col-md-6">Fill out profile attributes you would like us to use when finding new matches.
-                    </label>
-                    <div class = col-md-1></div>
-                    <label class = "col-md-4">How important is it for your mentor/mentee to have similar traits? (0-unimportant, 5-very important)
-                    </label>
-
-                  </div>
-
+                  
+                    <div class="alert alert-success col-md-7 float-left" role="alert">
+                    Fill out profile attributes you would like us to use when finding new matches.
+                    </div>
+                    <div class="col-md-4 float-right" role="alert">
+                    How important is it for your mentor/mentee to have similar traits? (0-unimportant, 5-very important)
+                    
+                    </div>
+                
+                  <div class="row bottom-buffer col-md-12"></div>
+                  
                   <div class = "row bottom-buffer form-group">
 
                     <label for="mentorCheck" class="col-md-2 col-form-label bold">I want to be a mentor<span style="color:red;">*</span></label>
@@ -778,7 +780,7 @@
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
               <button id = "matchesButton" class="btn bold salmon" data-toggle="collapse" data-target="#matchCollapse" aria-expanded="true" aria-controls="collapseOne">
-                Potential Mentor <i class="fas fa-chevron-down"></i>
+                Potential Mentors <i class="fas fa-chevron-down"></i>
               </button>
             </h5>
           </div>
@@ -788,11 +790,13 @@
                 <table class="table table-hover">
                   <thead class="thead dark">
                     <th>Mentor Name</th>
-                    <th>Score</th>
+                    <th>Compatibility</th>
+                    <th></th>
                     <th></th>
                   </thead>
-                  <tr ng-repeat-start="Match in mentorMatches" >
-                    <td><button ng-click= "displayProfile($index, Match.profile, mentorString)" class = "btn"data-toggle="collapse"data-target="#mentor-userInfo--{{$index}}">{{Match.profile.name.value}}</button></td>                    <td>{{Match.score}}</td>
+                  <tr ng-repeat-start="Match in mentorMatches" class = "showCarot" >
+                    <td><button ng-click= "displayProfile($index, Match.profile, mentorString)" class = "btn"data-toggle="collapse"data-target="#mentor-userInfo--{{$index}}">{{Match.profile.name.value}}  <i class="fas fa-chevron-down salmon"></i></button></td>     <td>{{Match.score}}%</td>
+                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "contactEmail(Match.profile.email, detailedInfo.name.value, Match.profile.name.value)">Contact</button></td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
                   </tr>
                   <tr ng-repeat-end class ="collapse" id="mentor-userInfo--{{$index}}">
@@ -805,8 +809,8 @@
                       <p1 id="mentor-{{$index}}-gender"><b>Gender</b>: {{Match.profile.gender.value}}</p1>
                       <p1 id="mentor-{{$index}}-ethnicity"><b>Ethnicity</b>: {{Match.profile.ethnicity.value}}</p1>
                       <p1 id="mentor-{{$index}}-city"><b>City</b>: {{Match.profile.location.city}}</p1>
+                      <p1 id="mentor-{{$index}}-language"><b>Language</b>: {{Match.profile.language.value}}</p1>
                       <p1 id="mentor-{{$index}}-bio"><b>Bio</b>: {{Match.profile.bio}}</p1>
-
 
                     </td>
                   </tr>
@@ -834,11 +838,13 @@
                 <table class="table table-hover">
                   <thead class="thead dark">
                     <th>Mentee Name</th>
-                    <th>Score</th>
+                    <th>Compatibility</th>
+                    <th></th>
                     <th></th>
                   </thead>
-                  <tr ng-repeat-start="Match in menteeMatches" >
-                    <td><button ng-click= "displayProfile($index, Match.profile, menteeString)" class = "btn"data-toggle="collapse"data-target="#mentee-userInfo--{{$index}}">{{Match.profile.name.value}}</button></td>                    <td>{{Match.score}}</td>
+                  <tr ng-repeat-start="Match in menteeMatches" class = "showCarot">
+                    <td><button ng-click= "displayProfile($index, Match.profile, menteeString)" class = "btn"data-toggle="collapse"data-target="#mentee-userInfo--{{$index}}">{{Match.profile.name.value}}  <i class="fas fa-chevron-down salmon"></i></button></td>     <td>{{Match.score}}%</td>
+                    <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "contactEmail(Match.profile.email, detailedInfo.name.value, Match.profile.name.value)">Contact</button></td>
                     <td><button class="btn btn-sm btn-outline-secondary salmon" ng-click = "sendEmail(Match.profile.email)">Rate</button></td>
                   </tr>
                   <tr ng-repeat-end class ="collapse" id="mentee-userInfo--{{$index}}">
@@ -851,8 +857,9 @@
                       <p1 id="mentee-{{$index}}-gender"><b>Gender</b>: {{Match.profile.gender.value}}</p1>
                       <p1 id="mentee-{{$index}}-ethnicity"><b>Ethnicity</b>: {{Match.profile.ethnicity.value}}</p1>
                       <p1 id="mentee-{{$index}}-city"><b>City</b>: {{Match.profile.location.city}}</p1>
+                      <p1 id="mentee-{{$index}}-language"><b>Language</b>: {{Match.profile.language.value}}</p1>
                       <p1 id="mentee-{{$index}}-bio"><b>Bio</b>: {{Match.profile.bio}}</p1>
-
+                      
 
                     </td>
                   </tr>
