@@ -957,7 +957,7 @@ function validForm() {
      document.getElementById("submitErr").style.display = "block";
      document.getElementById("submitErr2").style.display = "none";
    }
-   else if(strn == "Strength1empty" || goal == "Goal1empty") {
+   else if(strn == "Strength1empty" && goal == "Goal1empty") {
      document.getElementById("submit").disabled = true;
      document.getElementById("submitErr2").style.display = "block";
      document.getElementById("submitErr").style.display = "none";
